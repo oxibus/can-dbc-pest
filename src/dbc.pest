@@ -1,0 +1,217 @@
+//! DBC (Database CAN) file parser grammar
+//!
+//! This grammar parses DBC files used for CAN bus communication definitions.
+//! DBC files contain message definitions, signal specifications, node information,
+//! and various attributes for automotive and industrial CAN networks.
+
+/// Main DBC file structure
+file = { SOI ~ (line)* ~ EOI }
+
+/// A single line in the DBC file - can be various types of statements or empty
+line = {
+    (
+        version |
+        new_symbols |
+        bit_timing |
+        nodes |
+        message |
+        signal |
+        comment |
+        attr_def |
+        attr_value |
+        value_table_def |
+        value_table |
+        signal_group |
+        signal_value_type |
+        bo_tx_bu |
+        ba_def_rel |
+        ba_rel |
+        ba_def_def_rel |
+        ba_def_def |
+        sg_mul_val |
+        environment_variable |
+        comment_line |
+        empty_line |
+        section_header_line
+    )
+}
+
+// ============================================================================
+// WHITESPACE AND COMMENTS
+// ============================================================================
+
+/// Implicit whitespace - spaces and tabs
+WHITESPACE = _{ " " | "\t" }
+
+/// Line comments starting with //
+COMMENT = _{ "//" ~ (!NEWLINE ~ ANY)* }
+
+// ============================================================================
+// BASIC TOKENS
+// ============================================================================
+
+/// Integer numbers (positive and negative, including scientific notation)
+integer = @{ ("+" | "-")? ~ ASCII_DIGIT+ }
+
+/// A number which can be integer or floating point
+number = @{ ("+" | "-")? ~ ASCII_DIGIT+ ~ ("." ~ ASCII_DIGIT+)? ~ (("e" | "E") ~ ("+" | "-")? ~ ASCII_DIGIT+)? }
+
+/// String literals in double quotes
+string = @{ "\"" ~ char* ~ "\"" }
+char = { "\\\"" | !"\"" ~ ANY }
+
+/// Identifiers (node names, message names, signal names, etc.)
+identifier = @{ ASCII_ALPHA ~ (ASCII_ALPHANUMERIC | "_")* }
+
+/// Extended identifiers that can start with numbers or contain special chars
+extended_identifier = @{ (ASCII_ALPHANUMERIC | "_" | "." | "-")+ }
+
+// ============================================================================
+// DBC FILE SECTIONS
+// ============================================================================
+
+/// Version statement: VERSION "version_string"
+version = { "VERSION" ~ string }
+
+/// New Symbol section: NS_ : symbol1 symbol2 ...
+new_symbols = { "NS_" ~ ":" ~ (extended_identifier)* }
+
+/// Bit Timing section: BS_:
+bit_timing = { "BS_" ~ ":" }
+
+/// Node definition: BU_: node1 node2 node3 ...
+nodes = { "BU_" ~ ":" ~ (identifier)* }
+
+/// Message definition: BO_ message_id message_name: message_size transmitter
+message = {
+    "BO_" ~ integer ~ identifier ~ ":" ~ integer ~ identifier
+}
+
+/// Signal definition: SG_ signal_name : start_bit|signal_size@byte_order+/- (factor,offset) [min|max] "unit" receiver
+signal = {
+    "SG_" ~ (identifier ~ WHITESPACE*)+ ~ ":" ~ WHITESPACE* ~
+    (
+        integer ~ ("|" ~ integer)? ~ "@" ~ integer ~ ("+" | "-") ~
+        "(" ~ number ~ "," ~ number ~ ")" ~
+        "[" ~ number ~ "|" ~ number ~ "]" ~
+        string ~ identifier ~ ("," ~ identifier)*
+    )
+}
+
+/// Comment definitions: CM_ [BU_|BO_|SG_|EV_] object_name "comment_text";
+comment = {
+    "CM_" ~ (
+        ("BU_" ~ identifier) |
+        ("BO_" ~ integer) |
+        ("SG_" ~ integer ~ identifier) |
+        ("EV_" ~ identifier)
+    )? ~ string ~ ";"
+}
+
+/// Attribute definition: BA_DEF_ [object_type] attribute_name attribute_type [min max];
+attr_def = {
+    "BA_DEF_" ~
+    (("BU_" | "BO_" | "SG_" | "EV_") ~ identifier?)? ~
+    string ~
+    (
+        "INT" ~ number ~ number |
+        "HEX" ~ number ~ number |
+        "FLOAT" ~ number ~ number |
+        "STRING" |
+        "ENUM" ~ string ~ (WHITESPACE* ~ "," ~ WHITESPACE* ~ string)*
+    ) ~
+    ";"
+}
+
+/// Attribute value: BA_ attribute_name [object_type] object_name value;
+attr_value = {
+    "BA_" ~ string ~ (
+        ("BU_" ~ identifier) |
+        ("BO_" ~ integer) |
+        ("SG_" ~ integer ~ identifier) |
+        ("EV_" ~ identifier)
+    )? ~ (number | string) ~ ";"
+}
+
+/// Value table definition: VAL_ message_id signal_name value1 "description1" value2 "description2" ... ;
+value_table_def = {
+    "VAL_" ~ integer ~ identifier ~
+    (integer ~ string)* ~ ";"
+}
+
+/// Value table: VAL_TABLE_ table_name value1 "description1" value2 "description2" ... ;
+value_table = {
+    "VAL_TABLE_" ~ identifier ~
+    (integer ~ string)* ~ ";"
+}
+
+/// Signal group: SIG_GROUP_ message_id group_name multiplexer_id : signal1 signal2 ... ;
+signal_group = {
+    "SIG_GROUP_" ~ integer ~ identifier ~ integer ~ ":" ~ (identifier)* ~ ";"
+}
+
+/// Signal value type: SIG_VALTYPE_ message_id signal_name : value_type;
+signal_value_type = {
+    "SIG_VALTYPE_" ~ integer ~ identifier ~ ":" ~ integer ~ ";"
+}
+
+/// Message transmitter: BO_TX_BU_ message_id : transmitter1,transmitter2,... ;
+bo_tx_bu = {
+    "BO_TX_BU_" ~ integer ~ ":" ~ (identifier ~ ("," ~ identifier)*)? ~ ";"
+}
+
+/// Relative attribute definition: BA_DEF_REL_ object_type attribute_name attribute_type [min max];
+ba_def_rel = {
+    "BA_DEF_REL_" ~
+    ("BU_SG_REL_" | "BU_BO_REL_" | "BU_EV_REL_") ~
+    string ~
+    (
+        "INT" ~ integer ~ integer |
+        "FLOAT" ~ number ~ number |
+        "STRING" |
+        "ENUM" ~ string ~ (WHITESPACE* ~ "," ~ WHITESPACE* ~ string)*
+    ) ~ WHITESPACE* ~ ";"
+}
+
+/// Relative attribute value: BA_REL_ attribute_name object_type object_name value;
+ba_rel = {
+    "BA_REL_" ~ string ~
+    (
+        ("BU_SG_REL_" ~ identifier ~ "SG_" ~ integer ~ identifier ~ (number | string)) |
+        ("BU_BO_REL_" ~ identifier ~ integer ~ (number | string)) |
+        ("BU_EV_REL_" ~ identifier ~ "EV_" ~ identifier ~ (number | string))
+    ) ~ ";"
+}
+
+/// Relative attribute default: BA_DEF_DEF_REL_ attribute_name default_value;
+ba_def_def_rel = {
+    "BA_DEF_DEF_REL_" ~ string ~ (number | string) ~ ";"
+}
+
+/// Global attribute default: BA_DEF_DEF_ attribute_name default_value;
+ba_def_def = {
+    "BA_DEF_DEF_" ~ string ~ (number | string) ~ ";"
+}
+
+/// Multiplexed signal value definition: SG_MUL_VAL_ <message_id> <signal_name> <multiplexor_name> <value_pairs>;
+sg_mul_val = {
+    "SG_MUL_VAL_" ~ integer ~ identifier ~ identifier ~ (integer ~ "-" ~ integer ~ (WHITESPACE* ~ "," ~ WHITESPACE* ~ integer ~ "-" ~ integer)*) ~ ";"
+}
+
+/// Environment variable definition: EV_ variable_name : type [min|max] "unit" access_type access_node node_name1 node_name2;
+environment_variable = {
+    "EV_" ~ identifier ~ ":" ~ integer ~ "[" ~ integer ~ "|" ~ integer ~ "]" ~ string ~ integer ~ integer ~ identifier ~ identifier ~ ";"
+}
+
+// ============================================================================
+// UTILITY RULES
+// ============================================================================
+
+/// Empty line (just whitespace and/or comments)
+empty_line = _{ (WHITESPACE | COMMENT)* ~ NEWLINE }
+
+/// Comment-only line
+comment_line = _{ COMMENT ~ NEWLINE }
+
+/// Section header line (e.g., NS_DESC_)
+section_header_line = _{ extended_identifier ~ NEWLINE }

@@ -1,0 +1,31 @@
+[package]
+name = "can-dbc-pest"
+version = "0.1.0"
+description = "A Pest-based parser for the DBC format. The DBC format is used to exchange CAN network data."
+authors = ["Yuri Astrakhan <YuriAstrakhan@gmail.com>"]
+repository = "https://github.com/oxibus/can-dbc-pest"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+keywords = ["dbc", "can", "automotive", "ecu"]
+categories = ["embedded", "encoding", "parsing"]
+rust-version = "1.81"
+
+[features]
+default = ["encoding"]
+encoding = ["dep:encoding_rs"]
+
+[dependencies]
+encoding_rs = { version = "0.8.35", optional = true }
+pest = "2.8.3"
+pest_derive = "2.8.3"
+
+[dev-dependencies]
+insta = "1.43.2"
+
+[lints.rust]
+unsafe_code = "forbid"
+unused_qualifications = "warn"
+
+[lints.clippy]
+cargo = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
