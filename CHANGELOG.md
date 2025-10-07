@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- improve pest, pass openocd ([#4](https://github.com/oxibus/can-dbc-pest/pull/4))
+- improve pest, pass opendbc ([#4](https://github.com/oxibus/can-dbc-pest/pull/4))
 
 ## [0.1.1](https://github.com/oxibus/can-dbc-pest/compare/v0.1.0...v0.1.1) - 2025-10-06
 
