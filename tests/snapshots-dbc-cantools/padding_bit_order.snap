@@ -11,27 +11,27 @@ source: tests/snapshots.rs
         },
         inner: [
             Pair {
-                rule: line,
+                rule: version,
                 span: Span {
-                    str: "VERSION \"VER\"",
+                    str: "VERSION \"VER\"\n",
                     start: 0,
-                    end: 13,
+                    end: 14,
                 },
                 inner: [
                     Pair {
-                        rule: version,
+                        rule: string,
                         span: Span {
-                            str: "VERSION \"VER\"",
-                            start: 0,
+                            str: "\"VER\"",
+                            start: 8,
                             end: 13,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"VER\"",
-                                    start: 8,
-                                    end: 13,
+                                    str: "VER",
+                                    start: 9,
+                                    end: 12,
                                 },
                                 inner: [],
                             },
@@ -40,70 +40,15 @@ source: tests/snapshots.rs
                 ],
             },
             Pair {
-                rule: line,
+                rule: new_symbols,
                 span: Span {
-                    str: "\n",
-                    start: 13,
-                    end: 14,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 14,
-                    end: 15,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 15,
-                    end: 16,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "NS_ : ",
+                    str: "NS_ : \n\tNS_DESC_\n\tCM_\n\tBA_DEF_\n\tBA_\n\tVAL_\n\tCAT_DEF_\n\tCAT_\n\tFILTER\n\tBA_DEF_DEF_\n\tEV_DATA_\n\tENVVAR_DATA_\n\tSGTYPE_\n\tSGTYPE_VAL_\n\tBA_DEF_SGTYPE_\n\tBA_SGTYPE_\n\tSIG_TYPE_REF_\n\tVAL_TABLE_\n\tSIG_GROUP_\n\tSIG_VALTYPE_\n\tSIGTYPE_VALTYPE_\n\tBO_TX_BU_\n\tBA_DEF_REL_\n\tBA_REL_\n\tBA_DEF_DEF_REL_\n\tBU_SG_REL_\n\tBU_EV_REL_\n\tBU_BO_REL_\n\tSG_MUL_VAL_\n\n",
                     start: 16,
-                    end: 22,
+                    end: 340,
                 },
                 inner: [
                     Pair {
-                        rule: new_symbols,
-                        span: Span {
-                            str: "NS_ : ",
-                            start: 16,
-                            end: 22,
-                        },
-                        inner: [],
-                    },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 22,
-                    end: 23,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "NS_DESC_\n",
-                    start: 24,
-                    end: 33,
-                },
-                inner: [
-                    Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "NS_DESC_",
                             start: 24,
@@ -111,18 +56,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "CM_\n",
-                    start: 34,
-                    end: 38,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "CM_",
                             start: 34,
@@ -130,18 +65,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_DEF_\n",
-                    start: 39,
-                    end: 47,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_DEF_",
                             start: 39,
@@ -149,18 +74,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_\n",
-                    start: 48,
-                    end: 52,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_",
                             start: 48,
@@ -168,18 +83,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "VAL_\n",
-                    start: 53,
-                    end: 58,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "VAL_",
                             start: 53,
@@ -187,18 +92,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "CAT_DEF_\n",
-                    start: 59,
-                    end: 68,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "CAT_DEF_",
                             start: 59,
@@ -206,18 +101,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "CAT_\n",
-                    start: 69,
-                    end: 74,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "CAT_",
                             start: 69,
@@ -225,18 +110,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "FILTER\n",
-                    start: 75,
-                    end: 82,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "FILTER",
                             start: 75,
@@ -244,18 +119,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_DEF_DEF_\n",
-                    start: 83,
-                    end: 95,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_DEF_DEF_",
                             start: 83,
@@ -263,18 +128,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "EV_DATA_\n",
-                    start: 96,
-                    end: 105,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "EV_DATA_",
                             start: 96,
@@ -282,18 +137,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "ENVVAR_DATA_\n",
-                    start: 106,
-                    end: 119,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "ENVVAR_DATA_",
                             start: 106,
@@ -301,18 +146,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SGTYPE_\n",
-                    start: 120,
-                    end: 128,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SGTYPE_",
                             start: 120,
@@ -320,18 +155,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SGTYPE_VAL_\n",
-                    start: 129,
-                    end: 141,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SGTYPE_VAL_",
                             start: 129,
@@ -339,18 +164,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_DEF_SGTYPE_\n",
-                    start: 142,
-                    end: 157,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_DEF_SGTYPE_",
                             start: 142,
@@ -358,18 +173,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_SGTYPE_\n",
-                    start: 158,
-                    end: 169,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_SGTYPE_",
                             start: 158,
@@ -377,18 +182,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SIG_TYPE_REF_\n",
-                    start: 170,
-                    end: 184,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SIG_TYPE_REF_",
                             start: 170,
@@ -396,18 +191,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "VAL_TABLE_\n",
-                    start: 185,
-                    end: 196,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "VAL_TABLE_",
                             start: 185,
@@ -415,18 +200,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SIG_GROUP_\n",
-                    start: 197,
-                    end: 208,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SIG_GROUP_",
                             start: 197,
@@ -434,18 +209,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SIG_VALTYPE_\n",
-                    start: 209,
-                    end: 222,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SIG_VALTYPE_",
                             start: 209,
@@ -453,18 +218,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SIGTYPE_VALTYPE_\n",
-                    start: 223,
-                    end: 240,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SIGTYPE_VALTYPE_",
                             start: 223,
@@ -472,18 +227,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BO_TX_BU_\n",
-                    start: 241,
-                    end: 251,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BO_TX_BU_",
                             start: 241,
@@ -491,18 +236,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_DEF_REL_\n",
-                    start: 252,
-                    end: 264,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_DEF_REL_",
                             start: 252,
@@ -510,18 +245,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_REL_\n",
-                    start: 265,
-                    end: 273,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_REL_",
                             start: 265,
@@ -529,18 +254,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_DEF_DEF_REL_\n",
-                    start: 274,
-                    end: 290,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_DEF_DEF_REL_",
                             start: 274,
@@ -548,18 +263,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BU_SG_REL_\n",
-                    start: 291,
-                    end: 302,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BU_SG_REL_",
                             start: 291,
@@ -567,18 +272,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BU_EV_REL_\n",
-                    start: 303,
-                    end: 314,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BU_EV_REL_",
                             start: 303,
@@ -586,18 +281,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BU_BO_REL_\n",
-                    start: 315,
-                    end: 326,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BU_BO_REL_",
                             start: 315,
@@ -605,18 +290,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SG_MUL_VAL_\n",
-                    start: 327,
-                    end: 339,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SG_MUL_VAL_",
                             start: 327,
@@ -627,109 +302,35 @@ source: tests/snapshots.rs
                 ],
             },
             Pair {
-                rule: line,
+                rule: bit_timing,
                 span: Span {
-                    str: "\n",
-                    start: 339,
-                    end: 340,
+                    str: "BS_:\n",
+                    start: 340,
+                    end: 345,
                 },
                 inner: [],
             },
             Pair {
-                rule: line,
+                rule: nodes,
                 span: Span {
-                    str: "BS_:",
-                    start: 340,
-                    end: 344,
+                    str: "BU_: E1\n\n\n",
+                    start: 346,
+                    end: 356,
                 },
                 inner: [
                     Pair {
-                        rule: bit_timing,
+                        rule: ident,
                         span: Span {
-                            str: "BS_:",
-                            start: 340,
-                            end: 344,
+                            str: "E1",
+                            start: 351,
+                            end: 353,
                         },
                         inner: [],
                     },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 344,
-                    end: 345,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 345,
-                    end: 346,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BU_: E1",
-                    start: 346,
-                    end: 353,
-                },
-                inner: [
-                    Pair {
-                        rule: nodes,
-                        span: Span {
-                            str: "BU_: E1",
-                            start: 346,
-                            end: 353,
-                        },
-                        inner: [
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 351,
-                                    end: 353,
-                                },
-                                inner: [],
-                            },
-                        ],
-                    },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 353,
-                    end: 354,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 354,
-                    end: 355,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 355,
-                    end: 356,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: message,
                 span: Span {
                     str: "BO_ 1 MSG0: 8 E1",
                     start: 356,
@@ -737,64 +338,45 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message,
+                        rule: can_id,
                         span: Span {
-                            str: "BO_ 1 MSG0: 8 E1",
-                            start: 356,
+                            str: "1",
+                            start: 360,
+                            end: 361,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident_ext,
+                        span: Span {
+                            str: "MSG0",
+                            start: 362,
+                            end: 366,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "8",
+                            start: 368,
+                            end: 369,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 370,
                             end: 372,
                         },
-                        inner: [
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 360,
-                                    end: 361,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "MSG0",
-                                    start: 362,
-                                    end: 366,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "8",
-                                    start: 368,
-                                    end: 369,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 370,
-                                    end: 372,
-                                },
-                                inner: [],
-                            },
-                        ],
+                        inner: [],
                     },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 372,
-                    end: 373,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ A : 6|15@0+ (1,0) [0|32767] \"\"  E1",
                     start: 374,
@@ -802,118 +384,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ A : 6|15@0+ (1,0) [0|32767] \"\"  E1",
-                            start: 374,
-                            end: 412,
+                            str: "A",
+                            start: 378,
+                            end: 379,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "6",
+                            start: 382,
+                            end: 383,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "15",
+                            start: 384,
+                            end: 386,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "0",
+                            start: 387,
+                            end: 388,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 391,
+                            end: 392,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 393,
+                            end: 394,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 397,
+                            end: 398,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "32767",
+                            start: 399,
+                            end: 404,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 406,
+                            end: 408,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "A",
-                                    start: 378,
-                                    end: 379,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "6",
-                                    start: 382,
-                                    end: 383,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "15",
-                                    start: 384,
-                                    end: 386,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "0",
-                                    start: 387,
-                                    end: 388,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 391,
-                                    end: 392,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 393,
-                                    end: 394,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 397,
-                                    end: 398,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "32767",
-                                    start: 399,
-                                    end: 404,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 406,
-                                    end: 408,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 410,
-                                    end: 412,
+                                    str: "",
+                                    start: 407,
+                                    end: 407,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 410,
+                            end: 412,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 412,
-                    end: 413,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ B : 7|1@0+ (1,0) [0|1] \"\"  E1",
                     start: 414,
@@ -921,118 +494,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ B : 7|1@0+ (1,0) [0|1] \"\"  E1",
-                            start: 414,
-                            end: 447,
+                            str: "B",
+                            start: 418,
+                            end: 419,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "7",
+                            start: 422,
+                            end: 423,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 424,
+                            end: 425,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "0",
+                            start: 426,
+                            end: 427,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 430,
+                            end: 431,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 432,
+                            end: 433,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 436,
+                            end: 437,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 438,
+                            end: 439,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 441,
+                            end: 443,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "B",
-                                    start: 418,
-                                    end: 419,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "7",
-                                    start: 422,
-                                    end: 423,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 424,
-                                    end: 425,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "0",
-                                    start: 426,
-                                    end: 427,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 430,
-                                    end: 431,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 432,
-                                    end: 433,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 436,
-                                    end: 437,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 438,
-                                    end: 439,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 441,
-                                    end: 443,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 445,
-                                    end: 447,
+                                    str: "",
+                                    start: 442,
+                                    end: 442,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 445,
+                            end: 447,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 447,
-                    end: 448,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ C : 38|15@0+ (1,0) [0|32767] \"\"  E1",
                     start: 449,
@@ -1040,118 +604,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ C : 38|15@0+ (1,0) [0|32767] \"\"  E1",
-                            start: 449,
-                            end: 488,
+                            str: "C",
+                            start: 453,
+                            end: 454,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "38",
+                            start: 457,
+                            end: 459,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "15",
+                            start: 460,
+                            end: 462,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "0",
+                            start: 463,
+                            end: 464,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 467,
+                            end: 468,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 469,
+                            end: 470,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 473,
+                            end: 474,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "32767",
+                            start: 475,
+                            end: 480,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 482,
+                            end: 484,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "C",
-                                    start: 453,
-                                    end: 454,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "38",
-                                    start: 457,
-                                    end: 459,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "15",
-                                    start: 460,
-                                    end: 462,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "0",
-                                    start: 463,
-                                    end: 464,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 467,
-                                    end: 468,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 469,
-                                    end: 470,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 473,
-                                    end: 474,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "32767",
-                                    start: 475,
-                                    end: 480,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 482,
-                                    end: 484,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 486,
-                                    end: 488,
+                                    str: "",
+                                    start: 483,
+                                    end: 483,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 486,
+                            end: 488,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 488,
-                    end: 489,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ D : 39|1@0+ (1,0) [0|1] \"\"  E1",
                     start: 490,
@@ -1159,127 +714,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ D : 39|1@0+ (1,0) [0|1] \"\"  E1",
-                            start: 490,
-                            end: 524,
+                            str: "D",
+                            start: 494,
+                            end: 495,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "39",
+                            start: 498,
+                            end: 500,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 501,
+                            end: 502,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "0",
+                            start: 503,
+                            end: 504,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 507,
+                            end: 508,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 509,
+                            end: 510,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 513,
+                            end: 514,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 515,
+                            end: 516,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 518,
+                            end: 520,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "D",
-                                    start: 494,
-                                    end: 495,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "39",
-                                    start: 498,
-                                    end: 500,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 501,
-                                    end: 502,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "0",
-                                    start: 503,
-                                    end: 504,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 507,
-                                    end: 508,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 509,
-                                    end: 510,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 513,
-                                    end: 514,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 515,
-                                    end: 516,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 518,
-                                    end: 520,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 522,
-                                    end: 524,
+                                    str: "",
+                                    start: 519,
+                                    end: 519,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 522,
+                            end: 524,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 524,
-                    end: 525,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 525,
-                    end: 526,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: message,
                 span: Span {
                     str: "BO_ 2 MSG1: 8 E1",
                     start: 526,
@@ -1287,64 +824,45 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message,
+                        rule: can_id,
                         span: Span {
-                            str: "BO_ 2 MSG1: 8 E1",
-                            start: 526,
+                            str: "2",
+                            start: 530,
+                            end: 531,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident_ext,
+                        span: Span {
+                            str: "MSG1",
+                            start: 532,
+                            end: 536,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "8",
+                            start: 538,
+                            end: 539,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 540,
                             end: 542,
                         },
-                        inner: [
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "2",
-                                    start: 530,
-                                    end: 531,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "MSG1",
-                                    start: 532,
-                                    end: 536,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "8",
-                                    start: 538,
-                                    end: 539,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 540,
-                                    end: 542,
-                                },
-                                inner: [],
-                            },
-                        ],
+                        inner: [],
                     },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 542,
-                    end: 543,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ E : 0|1@1+ (1,0) [0|1] \"\"  E1",
                     start: 544,
@@ -1352,118 +870,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ E : 0|1@1+ (1,0) [0|1] \"\"  E1",
-                            start: 544,
-                            end: 577,
+                            str: "E",
+                            start: 548,
+                            end: 549,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "0",
+                            start: 552,
+                            end: 553,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 554,
+                            end: 555,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 556,
+                            end: 557,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 560,
+                            end: 561,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 562,
+                            end: 563,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 566,
+                            end: 567,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 568,
+                            end: 569,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 571,
+                            end: 573,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "E",
-                                    start: 548,
-                                    end: 549,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "0",
-                                    start: 552,
-                                    end: 553,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 554,
-                                    end: 555,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 556,
-                                    end: 557,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 560,
-                                    end: 561,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 562,
-                                    end: 563,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 566,
-                                    end: 567,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 568,
-                                    end: 569,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 571,
-                                    end: 573,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 575,
-                                    end: 577,
+                                    str: "",
+                                    start: 572,
+                                    end: 572,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 575,
+                            end: 577,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 577,
-                    end: 578,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ F : 1|15@1+ (1,0) [0|32767] \"\"  E1",
                     start: 579,
@@ -1471,118 +980,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ F : 1|15@1+ (1,0) [0|32767] \"\"  E1",
-                            start: 579,
-                            end: 617,
+                            str: "F",
+                            start: 583,
+                            end: 584,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 587,
+                            end: 588,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "15",
+                            start: 589,
+                            end: 591,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 592,
+                            end: 593,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 596,
+                            end: 597,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 598,
+                            end: 599,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 602,
+                            end: 603,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "32767",
+                            start: 604,
+                            end: 609,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 611,
+                            end: 613,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "F",
-                                    start: 583,
-                                    end: 584,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 587,
-                                    end: 588,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "15",
-                                    start: 589,
-                                    end: 591,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 592,
-                                    end: 593,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 596,
-                                    end: 597,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 598,
-                                    end: 599,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 602,
-                                    end: 603,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "32767",
-                                    start: 604,
-                                    end: 609,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 611,
-                                    end: 613,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 615,
-                                    end: 617,
+                                    str: "",
+                                    start: 612,
+                                    end: 612,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 615,
+                            end: 617,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 617,
-                    end: 618,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ G : 32|1@1+ (1,0) [0|1] \"\"  E1",
                     start: 619,
@@ -1590,118 +1090,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ G : 32|1@1+ (1,0) [0|1] \"\"  E1",
-                            start: 619,
-                            end: 653,
+                            str: "G",
+                            start: 623,
+                            end: 624,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "32",
+                            start: 627,
+                            end: 629,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 630,
+                            end: 631,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 632,
+                            end: 633,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 636,
+                            end: 637,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 638,
+                            end: 639,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 642,
+                            end: 643,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 644,
+                            end: 645,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 647,
+                            end: 649,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "G",
-                                    start: 623,
-                                    end: 624,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "32",
-                                    start: 627,
-                                    end: 629,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 630,
-                                    end: 631,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 632,
-                                    end: 633,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 636,
-                                    end: 637,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 638,
-                                    end: 639,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 642,
-                                    end: 643,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 644,
-                                    end: 645,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 647,
-                                    end: 649,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 651,
-                                    end: 653,
+                                    str: "",
+                                    start: 648,
+                                    end: 648,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 651,
+                            end: 653,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 653,
-                    end: 654,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ H : 33|15@1+ (1,0) [0|32767] \"\"  E1",
                     start: 655,
@@ -1709,127 +1200,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ H : 33|15@1+ (1,0) [0|32767] \"\"  E1",
-                            start: 655,
-                            end: 694,
+                            str: "H",
+                            start: 659,
+                            end: 660,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "33",
+                            start: 663,
+                            end: 665,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "15",
+                            start: 666,
+                            end: 668,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 669,
+                            end: 670,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 673,
+                            end: 674,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 675,
+                            end: 676,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 679,
+                            end: 680,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "32767",
+                            start: 681,
+                            end: 686,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 688,
+                            end: 690,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "H",
-                                    start: 659,
-                                    end: 660,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "33",
-                                    start: 663,
-                                    end: 665,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "15",
-                                    start: 666,
-                                    end: 668,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 669,
-                                    end: 670,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 673,
-                                    end: 674,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 675,
-                                    end: 676,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 679,
-                                    end: 680,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "32767",
-                                    start: 681,
-                                    end: 686,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 688,
-                                    end: 690,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 692,
-                                    end: 694,
+                                    str: "",
+                                    start: 689,
+                                    end: 689,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 692,
+                            end: 694,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 694,
-                    end: 695,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 695,
-                    end: 696,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: message,
                 span: Span {
                     str: "BO_ 3 MSG2: 8 E1",
                     start: 696,
@@ -1837,64 +1310,45 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message,
+                        rule: can_id,
                         span: Span {
-                            str: "BO_ 3 MSG2: 8 E1",
-                            start: 696,
+                            str: "3",
+                            start: 700,
+                            end: 701,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident_ext,
+                        span: Span {
+                            str: "MSG2",
+                            start: 702,
+                            end: 706,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "8",
+                            start: 708,
+                            end: 709,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 710,
                             end: 712,
                         },
-                        inner: [
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "3",
-                                    start: 700,
-                                    end: 701,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "MSG2",
-                                    start: 702,
-                                    end: 706,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "8",
-                                    start: 708,
-                                    end: 709,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 710,
-                                    end: 712,
-                                },
-                                inner: [],
-                            },
-                        ],
+                        inner: [],
                     },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 712,
-                    end: 713,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ I : 0|4@1+ (1,0) [0|15] \"\"  E1",
                     start: 714,
@@ -1902,118 +1356,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ I : 0|4@1+ (1,0) [0|15] \"\"  E1",
-                            start: 714,
-                            end: 748,
+                            str: "I",
+                            start: 718,
+                            end: 719,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "0",
+                            start: 722,
+                            end: 723,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "4",
+                            start: 724,
+                            end: 725,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 726,
+                            end: 727,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 730,
+                            end: 731,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 732,
+                            end: 733,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 736,
+                            end: 737,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "15",
+                            start: 738,
+                            end: 740,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 742,
+                            end: 744,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "I",
-                                    start: 718,
-                                    end: 719,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "0",
-                                    start: 722,
-                                    end: 723,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "4",
-                                    start: 724,
-                                    end: 725,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 726,
-                                    end: 727,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 730,
-                                    end: 731,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 732,
-                                    end: 733,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 736,
-                                    end: 737,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "15",
-                                    start: 738,
-                                    end: 740,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 742,
-                                    end: 744,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 746,
-                                    end: 748,
+                                    str: "",
+                                    start: 743,
+                                    end: 743,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 746,
+                            end: 748,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 748,
-                    end: 749,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ J : 4|4@1+ (1,0) [0|15] \"\"  E1",
                     start: 750,
@@ -2021,118 +1466,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ J : 4|4@1+ (1,0) [0|15] \"\"  E1",
-                            start: 750,
-                            end: 784,
+                            str: "J",
+                            start: 754,
+                            end: 755,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "4",
+                            start: 758,
+                            end: 759,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "4",
+                            start: 760,
+                            end: 761,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 762,
+                            end: 763,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 766,
+                            end: 767,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 768,
+                            end: 769,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 772,
+                            end: 773,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "15",
+                            start: 774,
+                            end: 776,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 778,
+                            end: 780,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "J",
-                                    start: 754,
-                                    end: 755,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "4",
-                                    start: 758,
-                                    end: 759,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "4",
-                                    start: 760,
-                                    end: 761,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 762,
-                                    end: 763,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 766,
-                                    end: 767,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 768,
-                                    end: 769,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 772,
-                                    end: 773,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "15",
-                                    start: 774,
-                                    end: 776,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 778,
-                                    end: 780,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 782,
-                                    end: 784,
+                                    str: "",
+                                    start: 779,
+                                    end: 779,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 782,
+                            end: 784,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 784,
-                    end: 785,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ K : 8|4@1+ (1,0) [0|15] \"\"  E1",
                     start: 786,
@@ -2140,127 +1576,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ K : 8|4@1+ (1,0) [0|15] \"\"  E1",
-                            start: 786,
-                            end: 820,
+                            str: "K",
+                            start: 790,
+                            end: 791,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "8",
+                            start: 794,
+                            end: 795,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "4",
+                            start: 796,
+                            end: 797,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 798,
+                            end: 799,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 802,
+                            end: 803,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 804,
+                            end: 805,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 808,
+                            end: 809,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "15",
+                            start: 810,
+                            end: 812,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 814,
+                            end: 816,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "K",
-                                    start: 790,
-                                    end: 791,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "8",
-                                    start: 794,
-                                    end: 795,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "4",
-                                    start: 796,
-                                    end: 797,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 798,
-                                    end: 799,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 802,
-                                    end: 803,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 804,
-                                    end: 805,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 808,
-                                    end: 809,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "15",
-                                    start: 810,
-                                    end: 812,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 814,
-                                    end: 816,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 818,
-                                    end: 820,
+                                    str: "",
+                                    start: 815,
+                                    end: 815,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 818,
+                            end: 820,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 820,
-                    end: 821,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 821,
-                    end: 822,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: message,
                 span: Span {
                     str: "BO_ 4 MSG3: 8 E1",
                     start: 822,
@@ -2268,64 +1686,45 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message,
+                        rule: can_id,
                         span: Span {
-                            str: "BO_ 4 MSG3: 8 E1",
-                            start: 822,
+                            str: "4",
+                            start: 826,
+                            end: 827,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident_ext,
+                        span: Span {
+                            str: "MSG3",
+                            start: 828,
+                            end: 832,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "8",
+                            start: 834,
+                            end: 835,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 836,
                             end: 838,
                         },
-                        inner: [
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "4",
-                                    start: 826,
-                                    end: 827,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "MSG3",
-                                    start: 828,
-                                    end: 832,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "8",
-                                    start: 834,
-                                    end: 835,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 836,
-                                    end: 838,
-                                },
-                                inner: [],
-                            },
-                        ],
+                        inner: [],
                     },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 838,
-                    end: 839,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ L : 7|64@0+ (1,0) [0|18446744073709551615] \"\"  E1",
                     start: 840,
@@ -2333,127 +1732,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ L : 7|64@0+ (1,0) [0|18446744073709551615] \"\"  E1",
-                            start: 840,
-                            end: 893,
+                            str: "L",
+                            start: 844,
+                            end: 845,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "7",
+                            start: 848,
+                            end: 849,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "64",
+                            start: 850,
+                            end: 852,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "0",
+                            start: 853,
+                            end: 854,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 857,
+                            end: 858,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 859,
+                            end: 860,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 863,
+                            end: 864,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "18446744073709551615",
+                            start: 865,
+                            end: 885,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 887,
+                            end: 889,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "L",
-                                    start: 844,
-                                    end: 845,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "7",
-                                    start: 848,
-                                    end: 849,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "64",
-                                    start: 850,
-                                    end: 852,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "0",
-                                    start: 853,
-                                    end: 854,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 857,
-                                    end: 858,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 859,
-                                    end: 860,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 863,
-                                    end: 864,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "18446744073709551615",
-                                    start: 865,
-                                    end: 885,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 887,
-                                    end: 889,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 891,
-                                    end: 893,
+                                    str: "",
+                                    start: 888,
+                                    end: 888,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 891,
+                            end: 893,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 893,
-                    end: 894,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 894,
-                    end: 895,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: message,
                 span: Span {
                     str: "BO_ 5 MSG4: 8 E1",
                     start: 895,
@@ -2461,64 +1842,45 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message,
+                        rule: can_id,
                         span: Span {
-                            str: "BO_ 5 MSG4: 8 E1",
-                            start: 895,
+                            str: "5",
+                            start: 899,
+                            end: 900,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident_ext,
+                        span: Span {
+                            str: "MSG4",
+                            start: 901,
+                            end: 905,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "8",
+                            start: 907,
+                            end: 908,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 909,
                             end: 911,
                         },
-                        inner: [
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "5",
-                                    start: 899,
-                                    end: 900,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "MSG4",
-                                    start: 901,
-                                    end: 905,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "8",
-                                    start: 907,
-                                    end: 908,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 909,
-                                    end: 911,
-                                },
-                                inner: [],
-                            },
-                        ],
+                        inner: [],
                     },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 911,
-                    end: 912,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ M : 0|64@1+ (1,0) [0|18446744073709551615] \"\"  E1",
                     start: 913,
@@ -2526,151 +1888,106 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ M : 0|64@1+ (1,0) [0|18446744073709551615] \"\"  E1",
-                            start: 913,
-                            end: 966,
+                            str: "M",
+                            start: 917,
+                            end: 918,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "0",
+                            start: 921,
+                            end: 922,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "64",
+                            start: 923,
+                            end: 925,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 926,
+                            end: 927,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 930,
+                            end: 931,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 932,
+                            end: 933,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 936,
+                            end: 937,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "18446744073709551615",
+                            start: 938,
+                            end: 958,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 960,
+                            end: 962,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "M",
-                                    start: 917,
-                                    end: 918,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "0",
-                                    start: 921,
-                                    end: 922,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "64",
-                                    start: 923,
-                                    end: 925,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 926,
-                                    end: 927,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 930,
-                                    end: 931,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 932,
-                                    end: 933,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 936,
-                                    end: 937,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "18446744073709551615",
-                                    start: 938,
-                                    end: 958,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 960,
-                                    end: 962,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "E1",
-                                    start: 964,
-                                    end: 966,
+                                    str: "",
+                                    start: 961,
+                                    end: 961,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "E1",
+                            start: 964,
+                            end: 966,
+                        },
+                        inner: [],
+                    },
                 ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 966,
-                    end: 967,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 967,
-                    end: 968,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 968,
-                    end: 969,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 969,
-                    end: 970,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 970,
-                    end: 971,
-                },
-                inner: [],
             },
             Pair {
                 rule: EOI,

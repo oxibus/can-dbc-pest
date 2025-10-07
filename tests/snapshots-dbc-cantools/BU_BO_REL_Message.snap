@@ -11,27 +11,27 @@ source: tests/snapshots.rs
         },
         inner: [
             Pair {
-                rule: line,
+                rule: version,
                 span: Span {
-                    str: "VERSION \"\"",
+                    str: "VERSION \"\"\n",
                     start: 0,
-                    end: 10,
+                    end: 11,
                 },
                 inner: [
                     Pair {
-                        rule: version,
+                        rule: string,
                         span: Span {
-                            str: "VERSION \"\"",
-                            start: 0,
+                            str: "\"\"",
+                            start: 8,
                             end: 10,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"\"",
-                                    start: 8,
-                                    end: 10,
+                                    str: "",
+                                    start: 9,
+                                    end: 9,
                                 },
                                 inner: [],
                             },
@@ -40,70 +40,15 @@ source: tests/snapshots.rs
                 ],
             },
             Pair {
-                rule: line,
+                rule: new_symbols,
                 span: Span {
-                    str: "\n",
-                    start: 10,
-                    end: 11,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 11,
-                    end: 12,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 12,
-                    end: 13,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "NS_ : ",
+                    str: "NS_ : \n\tNS_DESC_\n\tCM_\n\tBA_DEF_\n\tBA_\n\tVAL_\n\tCAT_DEF_\n\tCAT_\n\tFILTER\n\tBA_DEF_DEF_\n\tEV_DATA_\n\tENVVAR_DATA_\n\tSGTYPE_\n\tSGTYPE_VAL_\n\tBA_DEF_SGTYPE_\n\tBA_SGTYPE_\n\tSIG_TYPE_REF_\n\tVAL_TABLE_\n\tSIG_GROUP_\n\tSIG_VALTYPE_\n\tSIGTYPE_VALTYPE_\n\tBO_TX_BU_\n\tBA_DEF_REL_\n\tBA_REL_\n\tBA_DEF_DEF_REL_\n\tBU_SG_REL_\n\tBU_EV_REL_\n\tBU_BO_REL_\n\tSG_MUL_VAL_\n\n",
                     start: 13,
-                    end: 19,
+                    end: 337,
                 },
                 inner: [
                     Pair {
-                        rule: new_symbols,
-                        span: Span {
-                            str: "NS_ : ",
-                            start: 13,
-                            end: 19,
-                        },
-                        inner: [],
-                    },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 19,
-                    end: 20,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "NS_DESC_\n",
-                    start: 21,
-                    end: 30,
-                },
-                inner: [
-                    Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "NS_DESC_",
                             start: 21,
@@ -111,18 +56,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "CM_\n",
-                    start: 31,
-                    end: 35,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "CM_",
                             start: 31,
@@ -130,18 +65,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_DEF_\n",
-                    start: 36,
-                    end: 44,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_DEF_",
                             start: 36,
@@ -149,18 +74,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_\n",
-                    start: 45,
-                    end: 49,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_",
                             start: 45,
@@ -168,18 +83,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "VAL_\n",
-                    start: 50,
-                    end: 55,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "VAL_",
                             start: 50,
@@ -187,18 +92,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "CAT_DEF_\n",
-                    start: 56,
-                    end: 65,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "CAT_DEF_",
                             start: 56,
@@ -206,18 +101,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "CAT_\n",
-                    start: 66,
-                    end: 71,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "CAT_",
                             start: 66,
@@ -225,18 +110,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "FILTER\n",
-                    start: 72,
-                    end: 79,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "FILTER",
                             start: 72,
@@ -244,18 +119,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_DEF_DEF_\n",
-                    start: 80,
-                    end: 92,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_DEF_DEF_",
                             start: 80,
@@ -263,18 +128,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "EV_DATA_\n",
-                    start: 93,
-                    end: 102,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "EV_DATA_",
                             start: 93,
@@ -282,18 +137,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "ENVVAR_DATA_\n",
-                    start: 103,
-                    end: 116,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "ENVVAR_DATA_",
                             start: 103,
@@ -301,18 +146,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SGTYPE_\n",
-                    start: 117,
-                    end: 125,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SGTYPE_",
                             start: 117,
@@ -320,18 +155,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SGTYPE_VAL_\n",
-                    start: 126,
-                    end: 138,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SGTYPE_VAL_",
                             start: 126,
@@ -339,18 +164,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_DEF_SGTYPE_\n",
-                    start: 139,
-                    end: 154,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_DEF_SGTYPE_",
                             start: 139,
@@ -358,18 +173,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_SGTYPE_\n",
-                    start: 155,
-                    end: 166,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_SGTYPE_",
                             start: 155,
@@ -377,18 +182,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SIG_TYPE_REF_\n",
-                    start: 167,
-                    end: 181,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SIG_TYPE_REF_",
                             start: 167,
@@ -396,18 +191,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "VAL_TABLE_\n",
-                    start: 182,
-                    end: 193,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "VAL_TABLE_",
                             start: 182,
@@ -415,18 +200,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SIG_GROUP_\n",
-                    start: 194,
-                    end: 205,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SIG_GROUP_",
                             start: 194,
@@ -434,18 +209,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SIG_VALTYPE_\n",
-                    start: 206,
-                    end: 219,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SIG_VALTYPE_",
                             start: 206,
@@ -453,18 +218,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SIGTYPE_VALTYPE_\n",
-                    start: 220,
-                    end: 237,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SIGTYPE_VALTYPE_",
                             start: 220,
@@ -472,18 +227,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BO_TX_BU_\n",
-                    start: 238,
-                    end: 248,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BO_TX_BU_",
                             start: 238,
@@ -491,18 +236,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_DEF_REL_\n",
-                    start: 249,
-                    end: 261,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_DEF_REL_",
                             start: 249,
@@ -510,18 +245,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_REL_\n",
-                    start: 262,
-                    end: 270,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_REL_",
                             start: 262,
@@ -529,18 +254,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BA_DEF_DEF_REL_\n",
-                    start: 271,
-                    end: 287,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BA_DEF_DEF_REL_",
                             start: 271,
@@ -548,18 +263,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BU_SG_REL_\n",
-                    start: 288,
-                    end: 299,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BU_SG_REL_",
                             start: 288,
@@ -567,18 +272,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BU_EV_REL_\n",
-                    start: 300,
-                    end: 311,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BU_EV_REL_",
                             start: 300,
@@ -586,18 +281,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BU_BO_REL_\n",
-                    start: 312,
-                    end: 323,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "BU_BO_REL_",
                             start: 312,
@@ -605,18 +290,8 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "SG_MUL_VAL_\n",
-                    start: 324,
-                    end: 336,
-                },
-                inner: [
                     Pair {
-                        rule: extended_identifier,
+                        rule: ident,
                         span: Span {
                             str: "SG_MUL_VAL_",
                             start: 324,
@@ -627,118 +302,44 @@ source: tests/snapshots.rs
                 ],
             },
             Pair {
-                rule: line,
+                rule: bit_timing,
                 span: Span {
-                    str: "\n",
-                    start: 336,
-                    end: 337,
+                    str: "BS_:\n",
+                    start: 337,
+                    end: 342,
                 },
                 inner: [],
             },
             Pair {
-                rule: line,
+                rule: nodes,
                 span: Span {
-                    str: "BS_:",
-                    start: 337,
-                    end: 341,
+                    str: "BU_: ECU1 ECU2\n\n\n",
+                    start: 343,
+                    end: 360,
                 },
                 inner: [
                     Pair {
-                        rule: bit_timing,
+                        rule: ident,
                         span: Span {
-                            str: "BS_:",
-                            start: 337,
-                            end: 341,
+                            str: "ECU1",
+                            start: 348,
+                            end: 352,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "ECU2",
+                            start: 353,
+                            end: 357,
                         },
                         inner: [],
                     },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 341,
-                    end: 342,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 342,
-                    end: 343,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "BU_: ECU1 ECU2",
-                    start: 343,
-                    end: 357,
-                },
-                inner: [
-                    Pair {
-                        rule: nodes,
-                        span: Span {
-                            str: "BU_: ECU1 ECU2",
-                            start: 343,
-                            end: 357,
-                        },
-                        inner: [
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "ECU1",
-                                    start: 348,
-                                    end: 352,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "ECU2",
-                                    start: 353,
-                                    end: 357,
-                                },
-                                inner: [],
-                            },
-                        ],
-                    },
-                ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 357,
-                    end: 358,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 358,
-                    end: 359,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 359,
-                    end: 360,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: message,
                 span: Span {
                     str: "BO_ 1 message_1: 7 ECU1",
                     start: 360,
@@ -746,64 +347,45 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message,
+                        rule: can_id,
                         span: Span {
-                            str: "BO_ 1 message_1: 7 ECU1",
-                            start: 360,
+                            str: "1",
+                            start: 364,
+                            end: 365,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident_ext,
+                        span: Span {
+                            str: "message_1",
+                            start: 366,
+                            end: 375,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "7",
+                            start: 377,
+                            end: 378,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "ECU1",
+                            start: 379,
                             end: 383,
                         },
-                        inner: [
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 364,
-                                    end: 365,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "message_1",
-                                    start: 366,
-                                    end: 375,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "7",
-                                    start: 377,
-                                    end: 378,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "ECU1",
-                                    start: 379,
-                                    end: 383,
-                                },
-                                inner: [],
-                            },
-                        ],
+                        inner: [],
                     },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 383,
-                    end: 384,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: signal,
                 span: Span {
                     str: "SG_ signal_1 : 0|8@1+ (1,0) [0|100] \"\"  ECU2",
                     start: 385,
@@ -811,163 +393,109 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: signal,
+                        rule: ident_ext,
                         span: Span {
-                            str: "SG_ signal_1 : 0|8@1+ (1,0) [0|100] \"\"  ECU2",
-                            start: 385,
-                            end: 429,
+                            str: "signal_1",
+                            start: 389,
+                            end: 397,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "0",
+                            start: 400,
+                            end: 401,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "8",
+                            start: 402,
+                            end: 403,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 404,
+                            end: 405,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "1",
+                            start: 408,
+                            end: 409,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 410,
+                            end: 411,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 414,
+                            end: 415,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "100",
+                            start: 416,
+                            end: 419,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"\"",
+                            start: 421,
+                            end: 423,
                         },
                         inner: [
                             Pair {
-                                rule: identifier,
+                                rule: str,
                                 span: Span {
-                                    str: "signal_1",
-                                    start: 389,
-                                    end: 397,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "0",
-                                    start: 400,
-                                    end: 401,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "8",
-                                    start: 402,
-                                    end: 403,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 404,
-                                    end: 405,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "1",
-                                    start: 408,
-                                    end: 409,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 410,
-                                    end: 411,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 414,
-                                    end: 415,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "100",
-                                    start: 416,
-                                    end: 419,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"\"",
-                                    start: 421,
-                                    end: 423,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "ECU2",
-                                    start: 425,
-                                    end: 429,
+                                    str: "",
+                                    start: 422,
+                                    end: 422,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "ECU2",
+                            start: 425,
+                            end: 429,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 429,
-                    end: 430,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 430,
-                    end: 431,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 431,
-                    end: 432,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 432,
-                    end: 433,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 433,
-                    end: 434,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 434,
-                    end: 435,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: attr_def,
                 span: Span {
                     str: "BA_DEF_ BO_  \"GenMsgCycleTime\" INT 0 65535;",
                     start: 435,
@@ -975,55 +503,46 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: attr_def,
+                        rule: string,
                         span: Span {
-                            str: "BA_DEF_ BO_  \"GenMsgCycleTime\" INT 0 65535;",
-                            start: 435,
-                            end: 478,
+                            str: "\"GenMsgCycleTime\"",
+                            start: 448,
+                            end: 465,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"GenMsgCycleTime\"",
-                                    start: 448,
-                                    end: 465,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 470,
-                                    end: 471,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "65535",
-                                    start: 472,
-                                    end: 477,
+                                    str: "GenMsgCycleTime",
+                                    start: 449,
+                                    end: 464,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 470,
+                            end: 471,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "65535",
+                            start: 472,
+                            end: 477,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 478,
-                    end: 479,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: ba_def_rel,
                 span: Span {
                     str: "BA_DEF_REL_ BU_BO_REL_  \"MsgProject\" ENUM  \"A\",\"B\",\"C\";",
                     start: 479,
@@ -1031,46 +550,76 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ba_def_rel,
+                        rule: string,
                         span: Span {
-                            str: "BA_DEF_REL_ BU_BO_REL_  \"MsgProject\" ENUM  \"A\",\"B\",\"C\";",
-                            start: 479,
-                            end: 534,
+                            str: "\"MsgProject\"",
+                            start: 503,
+                            end: 515,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"MsgProject\"",
-                                    start: 503,
-                                    end: 515,
+                                    str: "MsgProject",
+                                    start: 504,
+                                    end: 514,
                                 },
                                 inner: [],
                             },
+                        ],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"A\"",
+                            start: 522,
+                            end: 525,
+                        },
+                        inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"A\"",
-                                    start: 522,
-                                    end: 525,
+                                    str: "A",
+                                    start: 523,
+                                    end: 524,
                                 },
                                 inner: [],
                             },
+                        ],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"B\"",
+                            start: 526,
+                            end: 529,
+                        },
+                        inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"B\"",
-                                    start: 526,
-                                    end: 529,
+                                    str: "B",
+                                    start: 527,
+                                    end: 528,
                                 },
                                 inner: [],
                             },
+                        ],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"C\"",
+                            start: 530,
+                            end: 533,
+                        },
+                        inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"C\"",
-                                    start: 530,
-                                    end: 533,
+                                    str: "C",
+                                    start: 531,
+                                    end: 532,
                                 },
                                 inner: [],
                             },
@@ -1079,16 +628,7 @@ source: tests/snapshots.rs
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 534,
-                    end: 535,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: ba_def_def,
                 span: Span {
                     str: "BA_DEF_DEF_  \"GenMsgCycleTime\" 0;",
                     start: 535,
@@ -1096,46 +636,37 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ba_def_def,
+                        rule: string,
                         span: Span {
-                            str: "BA_DEF_DEF_  \"GenMsgCycleTime\" 0;",
-                            start: 535,
-                            end: 568,
+                            str: "\"GenMsgCycleTime\"",
+                            start: 548,
+                            end: 565,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"GenMsgCycleTime\"",
-                                    start: 548,
-                                    end: 565,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "0",
-                                    start: 566,
-                                    end: 567,
+                                    str: "GenMsgCycleTime",
+                                    start: 549,
+                                    end: 564,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "0",
+                            start: 566,
+                            end: 567,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 568,
-                    end: 569,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: ba_def_def_rel,
                 span: Span {
                     str: "BA_DEF_DEF_REL_ \"MsgProject\" \"A\";",
                     start: 569,
@@ -1143,28 +674,38 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ba_def_def_rel,
+                        rule: string,
                         span: Span {
-                            str: "BA_DEF_DEF_REL_ \"MsgProject\" \"A\";",
-                            start: 569,
-                            end: 602,
+                            str: "\"MsgProject\"",
+                            start: 585,
+                            end: 597,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"MsgProject\"",
-                                    start: 585,
-                                    end: 597,
+                                    str: "MsgProject",
+                                    start: 586,
+                                    end: 596,
                                 },
                                 inner: [],
                             },
+                        ],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"A\"",
+                            start: 598,
+                            end: 601,
+                        },
+                        inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"A\"",
-                                    start: 598,
-                                    end: 601,
+                                    str: "A",
+                                    start: 599,
+                                    end: 600,
                                 },
                                 inner: [],
                             },
@@ -1173,25 +714,7 @@ source: tests/snapshots.rs
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 602,
-                    end: 603,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 603,
-                    end: 604,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: ba_rel,
                 span: Span {
                     str: "BA_REL_ \"MsgProject\" BU_BO_REL_ ECU1 1 2;",
                     start: 604,
@@ -1199,64 +722,55 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ba_rel,
+                        rule: string,
                         span: Span {
-                            str: "BA_REL_ \"MsgProject\" BU_BO_REL_ ECU1 1 2;",
-                            start: 604,
-                            end: 645,
+                            str: "\"MsgProject\"",
+                            start: 612,
+                            end: 624,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: str,
                                 span: Span {
-                                    str: "\"MsgProject\"",
-                                    start: 612,
-                                    end: 624,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "ECU1",
-                                    start: 636,
-                                    end: 640,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "1",
-                                    start: 641,
-                                    end: 642,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "2",
-                                    start: 643,
-                                    end: 644,
+                                    str: "MsgProject",
+                                    start: 613,
+                                    end: 623,
                                 },
                                 inner: [],
                             },
                         ],
                     },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "ECU1",
+                            start: 636,
+                            end: 640,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "1",
+                            start: 641,
+                            end: 642,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: number,
+                        span: Span {
+                            str: "2",
+                            start: 643,
+                            end: 644,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 645,
-                    end: 646,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
+                rule: value_table_def,
                 span: Span {
                     str: "VAL_ 1 signal_1 255 \"Invalid\" ;",
                     start: 646,
@@ -1264,88 +778,52 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: value_table_def,
+                        rule: can_id,
                         span: Span {
-                            str: "VAL_ 1 signal_1 255 \"Invalid\" ;",
-                            start: 646,
-                            end: 677,
+                            str: "1",
+                            start: 651,
+                            end: 652,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "signal_1",
+                            start: 653,
+                            end: 661,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: int,
+                        span: Span {
+                            str: "255",
+                            start: 662,
+                            end: 665,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: string,
+                        span: Span {
+                            str: "\"Invalid\"",
+                            start: 666,
+                            end: 675,
                         },
                         inner: [
                             Pair {
-                                rule: integer,
+                                rule: str,
                                 span: Span {
-                                    str: "1",
-                                    start: 651,
-                                    end: 652,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: identifier,
-                                span: Span {
-                                    str: "signal_1",
-                                    start: 653,
-                                    end: 661,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: integer,
-                                span: Span {
-                                    str: "255",
-                                    start: 662,
-                                    end: 665,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "\"Invalid\"",
-                                    start: 666,
-                                    end: 675,
+                                    str: "Invalid",
+                                    start: 667,
+                                    end: 674,
                                 },
                                 inner: [],
                             },
                         ],
                     },
                 ],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 677,
-                    end: 678,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 678,
-                    end: 679,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 679,
-                    end: 680,
-                },
-                inner: [],
-            },
-            Pair {
-                rule: line,
-                span: Span {
-                    str: "\n",
-                    start: 680,
-                    end: 681,
-                },
-                inner: [],
             },
             Pair {
                 rule: EOI,
