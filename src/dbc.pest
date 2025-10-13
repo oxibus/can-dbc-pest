@@ -59,7 +59,7 @@ uint = @{ ASCII_DIGIT+ }
 can_id = @{ ASCII_DIGIT+ }
 
 /// A number which can be integer or floating point
-number = @{ ("+" | "-")? ~ ASCII_DIGIT+ ~ ("." ~ ASCII_DIGIT+)? ~ (("e" | "E") ~ ("+" | "-")? ~ ASCII_DIGIT+)? }
+number = @{ ("+" | "-")? ~ (ASCII_DIGIT+ ~ ("." ~ ASCII_DIGIT+)? | "." ~ ASCII_DIGIT+) ~ (("e" | "E") ~ ("+" | "-")? ~ ASCII_DIGIT+)? }
 
 /// String literals in double quotes
 string = ${ "\"" ~ str ~ "\"" }
@@ -167,7 +167,7 @@ signal = {
 /// ```
 comment = {
     "CM_" ~ (
-        ("SG_" ~ can_id ~ ident_ext ~ string) |
+        ("SG_" ~ can_id ~ ident_ext? ~ string) |
         ("BO_" ~ can_id ~ string) |
         ("BU_" ~ ident_ext ~ string) |
         ("EV_" ~ ident_ext ~ string) |
