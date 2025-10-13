@@ -31,8 +31,10 @@ static TEST_DIRS: &[TestConfig] = &[
     },
 ];
 
-test_each_path! { in "./tests/fixtures/opendbc/opendbc/dbc" as dbc => parse_one_file }
-test_each_path! { in "./tests/fixtures/shared-test-files" as shared => parse_one_file }
+test_each_path! { for ["dbc"] in "./tests/fixtures/opendbc/opendbc/dbc" as dbc => parse_one_file }
+test_each_path! { for ["dbc"] in "./tests/fixtures/shared-test-files" as shared => parse_one_file }
+// upper case extension
+test_each_path! { for ["DBC"] in "./tests/fixtures/shared-test-files" as shared2 => parse_one_file }
 
 /// Get `test root`, `snapshot name suffix`, `use cp1251`, `create snapshot` for the given path
 fn get_test_info(path: &Path) -> Option<(PathBuf, &'static TestConfig)> {
@@ -84,8 +86,7 @@ Make sure git submodules are up to date by running
 }
 
 /// Parse a single DBC file and assert a snapshot of the result.
-fn parse_one_file(path: impl AsRef<Path>) {
-    let path = path.as_ref();
+fn parse_one_file([path]: [&Path; 1]) {
     let Some((
         snapshot_path,
         &TestConfig {
