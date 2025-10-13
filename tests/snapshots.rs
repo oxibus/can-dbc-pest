@@ -118,7 +118,7 @@ fn parse_one_file(path: impl AsRef<Path>) {
                 with_settings! {
                     {
                         omit_expression => true,
-                        snapshot_path => snapshot_path ,
+                        snapshot_path => snapshot_path,
                         prepend_module_to_snapshot => false
                     },
                     {
