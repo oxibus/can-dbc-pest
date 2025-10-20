@@ -328,7 +328,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "256",
                             start: 354,
@@ -337,7 +337,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident_ext,
+                        rule: message_name,
                         span: Span {
                             str: "MuxedFrame",
                             start: 358,
@@ -346,7 +346,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: message_size,
                         span: Span {
                             str: "8",
                             start: 370,
@@ -355,7 +355,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: transmitter,
                         span: Span {
                             str: "Vector__XXX",
                             start: 372,
@@ -374,7 +374,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "UnmultiplexedSig",
                             start: 389,
@@ -383,7 +383,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "16",
                             start: 408,
@@ -392,7 +392,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "8",
                             start: 411,
@@ -401,7 +401,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 413,
@@ -410,7 +410,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: signed_type,
+                        span: Span {
+                            str: "-",
+                            start: 414,
+                            end: 415,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 417,
@@ -419,7 +428,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 419,
@@ -428,25 +437,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 423,
-                            end: 424,
+                            str: "[0|0]",
+                            start: 422,
+                            end: 427,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 423,
+                                    end: 424,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "0",
+                                    start: 425,
+                                    end: 426,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "0",
-                            start: 425,
-                            end: 426,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 428,
@@ -465,7 +484,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "Vector__XXX",
                             start: 431,
@@ -484,7 +503,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "MultiplexedSig",
                             start: 448,
@@ -493,7 +512,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident_ext,
+                        rule: multiplexer_indicator,
                         span: Span {
                             str: "m42",
                             start: 463,
@@ -502,7 +521,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "8",
                             start: 469,
@@ -511,7 +530,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "8",
                             start: 471,
@@ -520,7 +539,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 473,
@@ -529,7 +548,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: signed_type,
+                        span: Span {
+                            str: "-",
+                            start: 474,
+                            end: 475,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 477,
@@ -538,7 +566,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 479,
@@ -547,25 +575,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 483,
-                            end: 484,
+                            str: "[0|0]",
+                            start: 482,
+                            end: 487,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 483,
+                                    end: 484,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "0",
+                                    start: 485,
+                                    end: 486,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "0",
-                            start: 485,
-                            end: 486,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 488,
@@ -584,7 +622,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "Vector__XXX",
                             start: 491,
@@ -603,7 +641,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "MultiplexorSig",
                             start: 508,
@@ -612,7 +650,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident_ext,
+                        rule: multiplexer_indicator,
                         span: Span {
                             str: "M",
                             start: 523,
@@ -621,7 +659,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "0",
                             start: 527,
@@ -630,7 +668,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "8",
                             start: 529,
@@ -639,7 +677,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 531,
@@ -648,7 +686,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: unsigned_type,
+                        span: Span {
+                            str: "+",
+                            start: 532,
+                            end: 533,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 535,
@@ -657,7 +704,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 537,
@@ -666,25 +713,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 541,
-                            end: 542,
+                            str: "[0|0]",
+                            start: 540,
+                            end: 545,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 541,
+                                    end: 542,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "0",
+                                    start: 543,
+                                    end: 544,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "0",
-                            start: 543,
-                            end: 544,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 546,
@@ -703,7 +760,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "Vector__XXX",
                             start: 549,
@@ -722,7 +779,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"BusType\"",
                             start: 573,
@@ -740,6 +797,15 @@ source: tests/snapshots.rs
                             },
                         ],
                     },
+                    Pair {
+                        rule: attribute_type_string,
+                        span: Span {
+                            str: "STRING",
+                            start: 583,
+                            end: 589,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
@@ -751,7 +817,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"BusType\"",
                             start: 605,

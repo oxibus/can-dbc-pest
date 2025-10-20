@@ -347,7 +347,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "83",
                             start: 364,
@@ -356,7 +356,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident_ext,
+                        rule: message_name,
                         span: Span {
                             str: "Message_2",
                             start: 367,
@@ -365,7 +365,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: message_size,
                         span: Span {
                             str: "8",
                             start: 378,
@@ -374,7 +374,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: transmitter,
                         span: Span {
                             str: "ECU2",
                             start: 380,
@@ -393,7 +393,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "signal_2",
                             start: 390,
@@ -402,7 +402,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "0",
                             start: 401,
@@ -411,7 +411,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "8",
                             start: 403,
@@ -420,7 +420,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 405,
@@ -429,7 +429,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: signed_type,
+                        span: Span {
+                            str: "-",
+                            start: 406,
+                            end: 407,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 409,
@@ -438,7 +447,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 411,
@@ -447,25 +456,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 415,
-                            end: 416,
+                            str: "[0|0]",
+                            start: 414,
+                            end: 419,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 415,
+                                    end: 416,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "0",
+                                    start: 417,
+                                    end: 418,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "0",
-                            start: 417,
-                            end: 418,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 420,
@@ -484,7 +503,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "ECU1",
                             start: 424,
@@ -503,7 +522,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "82",
                             start: 434,
@@ -512,7 +531,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident_ext,
+                        rule: message_name,
                         span: Span {
                             str: "Message_1",
                             start: 437,
@@ -521,7 +540,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: message_size,
                         span: Span {
                             str: "8",
                             start: 448,
@@ -530,7 +549,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: transmitter,
                         span: Span {
                             str: "ECU1",
                             start: 450,
@@ -549,7 +568,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "signal_1",
                             start: 460,
@@ -558,7 +577,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "0",
                             start: 471,
@@ -567,7 +586,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "8",
                             start: 473,
@@ -576,7 +595,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 475,
@@ -585,7 +604,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: signed_type,
+                        span: Span {
+                            str: "-",
+                            start: 476,
+                            end: 477,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 479,
@@ -594,7 +622,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 481,
@@ -603,25 +631,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 485,
-                            end: 486,
+                            str: "[0|0]",
+                            start: 484,
+                            end: 489,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 485,
+                                    end: 486,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "0",
+                                    start: 487,
+                                    end: 488,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "0",
-                            start: 487,
-                            end: 488,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 490,
@@ -640,7 +678,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "ECU2",
                             start: 494,
@@ -659,7 +697,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: node_name,
                         span: Span {
                             str: "ECU1",
                             start: 511,
@@ -697,7 +735,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"GenSigInactiveValue\"",
                             start: 542,
@@ -716,22 +754,32 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: number,
+                        rule: attribute_type_int,
                         span: Span {
-                            str: "0",
-                            start: 568,
-                            end: 569,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "65535",
-                            start: 570,
+                            str: "INT 0 65535",
+                            start: 564,
                             end: 575,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 568,
+                                    end: 569,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "65535",
+                                    start: 570,
+                                    end: 575,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                 ],
             },
@@ -744,7 +792,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"MsgProject\"",
                             start: 590,
@@ -763,59 +811,69 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: attribute_type_enum,
                         span: Span {
-                            str: "\"A\"",
-                            start: 609,
-                            end: 612,
-                        },
-                        inner: [
-                            Pair {
-                                rule: str,
-                                span: Span {
-                                    str: "A",
-                                    start: 610,
-                                    end: 611,
-                                },
-                                inner: [],
-                            },
-                        ],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"B\"",
-                            start: 613,
-                            end: 616,
-                        },
-                        inner: [
-                            Pair {
-                                rule: str,
-                                span: Span {
-                                    str: "B",
-                                    start: 614,
-                                    end: 615,
-                                },
-                                inner: [],
-                            },
-                        ],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"C\"",
-                            start: 617,
+                            str: "ENUM  \"A\",\"B\",\"C\"",
+                            start: 603,
                             end: 620,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
-                                    str: "C",
-                                    start: 618,
-                                    end: 619,
+                                    str: "\"A\"",
+                                    start: 609,
+                                    end: 612,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "A",
+                                            start: 610,
+                                            end: 611,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: string,
+                                span: Span {
+                                    str: "\"B\"",
+                                    start: 613,
+                                    end: 616,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "B",
+                                            start: 614,
+                                            end: 615,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: string,
+                                span: Span {
+                                    str: "\"C\"",
+                                    start: 617,
+                                    end: 620,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "C",
+                                            start: 618,
+                                            end: 619,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -830,7 +888,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"BusType\"",
                             start: 631,
@@ -848,6 +906,15 @@ source: tests/snapshots.rs
                             },
                         ],
                     },
+                    Pair {
+                        rule: attribute_type_string,
+                        span: Span {
+                            str: "STRING",
+                            start: 641,
+                            end: 647,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
@@ -859,7 +926,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"GenMsgCycleTime\"",
                             start: 663,
@@ -878,22 +945,32 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: number,
+                        rule: attribute_type_int,
                         span: Span {
-                            str: "0",
-                            start: 685,
-                            end: 686,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "65535",
-                            start: 687,
+                            str: "INT 0 65535",
+                            start: 681,
                             end: 692,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 685,
+                                    end: 686,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "65535",
+                                    start: 687,
+                                    end: 692,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                 ],
             },
@@ -906,7 +983,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"SigFirstTimeoutTime\"",
                             start: 718,
@@ -925,22 +1002,32 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: attribute_type_int,
                         span: Span {
-                            str: "0",
-                            start: 744,
-                            end: 745,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: int,
-                        span: Span {
-                            str: "65535",
-                            start: 746,
+                            str: "INT 0 65535",
+                            start: 740,
                             end: 751,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 744,
+                                    end: 745,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "65535",
+                                    start: 746,
+                                    end: 751,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                 ],
             },
@@ -953,7 +1040,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"SigTimeoutTime\"",
                             start: 777,
@@ -972,22 +1059,32 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: attribute_type_int,
                         span: Span {
-                            str: "0",
-                            start: 798,
-                            end: 799,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: int,
-                        span: Span {
-                            str: "65535",
-                            start: 800,
+                            str: "INT 0 65535",
+                            start: 794,
                             end: 805,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 798,
+                                    end: 799,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "65535",
+                                    start: 800,
+                                    end: 805,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                 ],
             },
@@ -1000,7 +1097,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"GenSigInactiveValue\"",
                             start: 820,
@@ -1038,7 +1135,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"MsgProject\"",
                             start: 858,
@@ -1086,7 +1183,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"BusType\"",
                             start: 889,
@@ -1134,7 +1231,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"GenMsgCycleTime\"",
                             start: 916,
@@ -1172,7 +1269,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"SigFirstTimeoutTime\"",
                             start: 953,
@@ -1210,7 +1307,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"SigTimeoutTime\"",
                             start: 994,
@@ -1248,7 +1345,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"BusType\"",
                             start: 1018,
@@ -1296,7 +1393,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"GenMsgCycleTime\"",
                             start: 1039,
@@ -1315,7 +1412,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "83",
                             start: 1061,
@@ -1343,7 +1440,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"SigTimeoutTime\"",
                             start: 1076,
@@ -1408,7 +1505,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"SigFirstTimeoutTime\"",
                             start: 1139,

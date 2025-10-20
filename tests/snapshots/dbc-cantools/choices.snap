@@ -319,7 +319,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: table_name,
                         span: Span {
                             str: "Bar",
                             start: 346,
@@ -328,226 +328,306 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "6",
+                            str: "6 \"reserved\"",
                             start: 350,
-                            end: 351,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"reserved\"",
-                            start: 352,
                             end: 362,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "reserved",
-                                    start: 353,
-                                    end: 361,
+                                    str: "6",
+                                    start: 350,
+                                    end: 351,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"reserved\"",
+                                    start: 352,
+                                    end: 362,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "reserved",
+                                            start: 353,
+                                            end: 361,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "5",
+                            str: "5 \"reserved\"",
                             start: 363,
-                            end: 364,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"reserved\"",
-                            start: 365,
                             end: 375,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "reserved",
-                                    start: 366,
-                                    end: 374,
+                                    str: "5",
+                                    start: 363,
+                                    end: 364,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"reserved\"",
+                                    start: 365,
+                                    end: 375,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "reserved",
+                                            start: 366,
+                                            end: 374,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "4",
+                            str: "4 \"unused 2\"",
                             start: 376,
-                            end: 377,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"unused 2\"",
-                            start: 378,
                             end: 388,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "unused 2",
-                                    start: 379,
-                                    end: 387,
+                                    str: "4",
+                                    start: 376,
+                                    end: 377,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"unused 2\"",
+                                    start: 378,
+                                    end: 388,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "unused 2",
+                                            start: 379,
+                                            end: 387,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "3",
+                            str: "3 \"unused\"",
                             start: 389,
-                            end: 390,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"unused\"",
-                            start: 391,
                             end: 399,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "unused",
-                                    start: 392,
-                                    end: 398,
+                                    str: "3",
+                                    start: 389,
+                                    end: 390,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"unused\"",
+                                    start: 391,
+                                    end: 399,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "unused",
+                                            start: 392,
+                                            end: 398,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "2",
+                            str: "2 \"unused\"",
                             start: 400,
-                            end: 401,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"unused\"",
-                            start: 402,
                             end: 410,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "unused",
-                                    start: 403,
-                                    end: 409,
+                                    str: "2",
+                                    start: 400,
+                                    end: 401,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"unused\"",
+                                    start: 402,
+                                    end: 410,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "unused",
+                                            start: 403,
+                                            end: 409,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "1",
+                            str: "1 \"#%=*ä'\"",
                             start: 411,
-                            end: 412,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"#%=*ä'\"",
-                            start: 413,
                             end: 422,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "#%=*ä'",
-                                    start: 414,
-                                    end: 421,
+                                    str: "1",
+                                    start: 411,
+                                    end: 412,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"#%=*ä'\"",
+                                    start: 413,
+                                    end: 422,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "#%=*ä'",
+                                            start: 414,
+                                            end: 421,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "0",
+                            str: "0 \"With space\"",
                             start: 423,
-                            end: 424,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"With space\"",
-                            start: 425,
                             end: 437,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "With space",
-                                    start: 426,
-                                    end: 436,
+                                    str: "0",
+                                    start: 423,
+                                    end: 424,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"With space\"",
+                                    start: 425,
+                                    end: 437,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "With space",
+                                            start: 426,
+                                            end: 436,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "-5",
+                            str: "-5 \"A negative value\"",
                             start: 438,
-                            end: 440,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"A negative value\"",
-                            start: 441,
                             end: 459,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "A negative value",
-                                    start: 442,
-                                    end: 458,
+                                    str: "-5",
+                                    start: 438,
+                                    end: 440,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"A negative value\"",
+                                    start: 441,
+                                    end: 459,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "A negative value",
+                                            start: 442,
+                                            end: 458,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -562,7 +642,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "0",
                             start: 468,
@@ -571,7 +651,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident_ext,
+                        rule: message_name,
                         span: Span {
                             str: "Foo",
                             start: 470,
@@ -580,7 +660,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: message_size,
                         span: Span {
                             str: "8",
                             start: 475,
@@ -589,7 +669,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: transmitter,
                         span: Span {
                             str: "Vector__XXX",
                             start: 477,
@@ -608,7 +688,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "Foo",
                             start: 494,
@@ -617,7 +697,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "0",
                             start: 500,
@@ -626,7 +706,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "8",
                             start: 502,
@@ -635,7 +715,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 504,
@@ -644,7 +724,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: signed_type,
+                        span: Span {
+                            str: "-",
+                            start: 505,
+                            end: 506,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 508,
@@ -653,7 +742,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 510,
@@ -662,25 +751,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "-128",
-                            start: 514,
-                            end: 518,
+                            str: "[-128|127]",
+                            start: 513,
+                            end: 523,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "-128",
+                                    start: 514,
+                                    end: 518,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "127",
+                                    start: 519,
+                                    end: 522,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "127",
-                            start: 519,
-                            end: 522,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 524,
@@ -699,7 +798,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "Vector__XXX",
                             start: 527,
@@ -718,7 +817,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"BusType\"",
                             start: 551,
@@ -736,6 +835,15 @@ source: tests/snapshots.rs
                             },
                         ],
                     },
+                    Pair {
+                        rule: attribute_type_string,
+                        span: Span {
+                            str: "STRING",
+                            start: 561,
+                            end: 567,
+                        },
+                        inner: [],
+                    },
                 ],
             },
             Pair {
@@ -747,7 +855,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"BusType\"",
                             start: 583,
@@ -795,7 +903,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "0",
                             start: 602,
@@ -804,7 +912,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: signal_name,
                         span: Span {
                             str: "Foo",
                             start: 604,
@@ -813,226 +921,306 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "6",
+                            str: "6 \"reserved\"",
                             start: 608,
-                            end: 609,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"reserved\"",
-                            start: 610,
                             end: 620,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "reserved",
-                                    start: 611,
-                                    end: 619,
+                                    str: "6",
+                                    start: 608,
+                                    end: 609,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"reserved\"",
+                                    start: 610,
+                                    end: 620,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "reserved",
+                                            start: 611,
+                                            end: 619,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "5",
+                            str: "5 \"reserved\"",
                             start: 621,
-                            end: 622,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"reserved\"",
-                            start: 623,
                             end: 633,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "reserved",
-                                    start: 624,
-                                    end: 632,
+                                    str: "5",
+                                    start: 621,
+                                    end: 622,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"reserved\"",
+                                    start: 623,
+                                    end: 633,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "reserved",
+                                            start: 624,
+                                            end: 632,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "4",
+                            str: "4 \"unused 2\"",
                             start: 634,
-                            end: 635,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"unused 2\"",
-                            start: 636,
                             end: 646,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "unused 2",
-                                    start: 637,
-                                    end: 645,
+                                    str: "4",
+                                    start: 634,
+                                    end: 635,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"unused 2\"",
+                                    start: 636,
+                                    end: 646,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "unused 2",
+                                            start: 637,
+                                            end: 645,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "3",
+                            str: "3 \"unused\"",
                             start: 647,
-                            end: 648,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"unused\"",
-                            start: 649,
                             end: 657,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "unused",
-                                    start: 650,
-                                    end: 656,
+                                    str: "3",
+                                    start: 647,
+                                    end: 648,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"unused\"",
+                                    start: 649,
+                                    end: 657,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "unused",
+                                            start: 650,
+                                            end: 656,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "2",
+                            str: "2 \"unused\"",
                             start: 658,
-                            end: 659,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"unused\"",
-                            start: 660,
                             end: 668,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "unused",
-                                    start: 661,
-                                    end: 667,
+                                    str: "2",
+                                    start: 658,
+                                    end: 659,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"unused\"",
+                                    start: 660,
+                                    end: 668,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "unused",
+                                            start: 661,
+                                            end: 667,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "1",
+                            str: "1 \"#%=*ä'\"",
                             start: 669,
-                            end: 670,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"#%=*ä'\"",
-                            start: 671,
                             end: 680,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "#%=*ä'",
-                                    start: 672,
-                                    end: 679,
+                                    str: "1",
+                                    start: 669,
+                                    end: 670,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"#%=*ä'\"",
+                                    start: 671,
+                                    end: 680,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "#%=*ä'",
+                                            start: 672,
+                                            end: 679,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "0",
+                            str: "0 \"With space\"",
                             start: 681,
-                            end: 682,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"With space\"",
-                            start: 683,
                             end: 695,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "With space",
-                                    start: 684,
-                                    end: 694,
+                                    str: "0",
+                                    start: 681,
+                                    end: 682,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"With space\"",
+                                    start: 683,
+                                    end: 695,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "With space",
+                                            start: 684,
+                                            end: 694,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "-5",
+                            str: "-5 \"A negative value\"",
                             start: 696,
-                            end: 698,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"A negative value\"",
-                            start: 699,
                             end: 717,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "A negative value",
-                                    start: 700,
-                                    end: 716,
+                                    str: "-5",
+                                    start: 696,
+                                    end: 698,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"A negative value\"",
+                                    start: 699,
+                                    end: 717,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "A negative value",
+                                            start: 700,
+                                            end: 716,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },

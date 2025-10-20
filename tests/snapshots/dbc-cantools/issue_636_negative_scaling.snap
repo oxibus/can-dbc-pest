@@ -347,7 +347,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: table_name,
                         span: Span {
                             str: "TempValueTable",
                             start: 371,
@@ -356,58 +356,78 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "4095",
+                            str: "4095 \"Error\"",
                             start: 386,
-                            end: 390,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"Error\"",
-                            start: 391,
                             end: 398,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "Error",
-                                    start: 392,
-                                    end: 397,
+                                    str: "4095",
+                                    start: 386,
+                                    end: 390,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"Error\"",
+                                    start: 391,
+                                    end: 398,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "Error",
+                                            start: 392,
+                                            end: 397,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "4094",
+                            str: "4094 \"Init\"",
                             start: 399,
-                            end: 403,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"Init\"",
-                            start: 404,
                             end: 410,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "Init",
-                                    start: 405,
-                                    end: 409,
+                                    str: "4094",
+                                    start: 399,
+                                    end: 403,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"Init\"",
+                                    start: 404,
+                                    end: 410,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "Init",
+                                            start: 405,
+                                            end: 409,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -422,7 +442,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "496",
                             start: 419,
@@ -431,7 +451,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident_ext,
+                        rule: message_name,
                         span: Span {
                             str: "ExampleMessage",
                             start: 423,
@@ -440,7 +460,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: message_size,
                         span: Span {
                             str: "2",
                             start: 439,
@@ -449,7 +469,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: transmitter,
                         span: Span {
                             str: "PCM1",
                             start: 441,
@@ -468,7 +488,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "Temperature",
                             start: 451,
@@ -477,7 +497,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "3",
                             start: 465,
@@ -486,7 +506,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "12",
                             start: 467,
@@ -495,7 +515,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: big_endian,
                         span: Span {
                             str: "0",
                             start: 470,
@@ -504,7 +524,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: unsigned_type,
+                        span: Span {
+                            str: "+",
+                            start: 471,
+                            end: 472,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "-0.01",
                             start: 474,
@@ -513,7 +542,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "4100",
                             start: 480,
@@ -522,25 +551,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "4070",
-                            start: 487,
-                            end: 491,
+                            str: "[4070|4100]",
+                            start: 486,
+                            end: 497,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "4070",
+                                    start: 487,
+                                    end: 491,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "4100",
+                                    start: 492,
+                                    end: 496,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "4100",
-                            start: 492,
-                            end: 496,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"degK\"",
                             start: 498,
@@ -559,7 +598,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "PCM1",
                             start: 506,
@@ -568,7 +607,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "FOO",
                             start: 511,
@@ -587,7 +626,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "496",
                             start: 526,
@@ -625,7 +664,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"GenSigStartValue\"",
                             start: 562,
@@ -644,22 +683,32 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: number,
+                        rule: attribute_type_int,
                         span: Span {
-                            str: "-2147483648",
-                            start: 585,
-                            end: 596,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "2147483647",
-                            start: 597,
+                            str: "INT -2147483648 2147483647",
+                            start: 581,
                             end: 607,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "-2147483648",
+                                    start: 585,
+                                    end: 596,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "2147483647",
+                                    start: 597,
+                                    end: 607,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                 ],
             },
@@ -672,7 +721,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"GenMsgCycleTime\"",
                             start: 622,
@@ -691,22 +740,32 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: number,
+                        rule: attribute_type_int,
                         span: Span {
-                            str: "0",
-                            start: 644,
-                            end: 645,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "65535",
-                            start: 646,
+                            str: "INT 0 65535",
+                            start: 640,
                             end: 651,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 644,
+                                    end: 645,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "65535",
+                                    start: 646,
+                                    end: 651,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                 ],
             },
@@ -719,7 +778,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"GenSigStartValue\"",
                             start: 666,
@@ -757,7 +816,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"GenMsgCycleTime\"",
                             start: 701,
@@ -795,7 +854,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: attribute_name,
                         span: Span {
                             str: "\"GenSigStartValue\"",
                             start: 726,
@@ -814,7 +873,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "496",
                             start: 749,
@@ -851,7 +910,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "496",
                             start: 776,
@@ -860,7 +919,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: signal_name,
                         span: Span {
                             str: "Temperature",
                             start: 780,
@@ -869,58 +928,78 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "4095",
+                            str: "4095 \"Error\"",
                             start: 792,
-                            end: 796,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"Error\"",
-                            start: 797,
                             end: 804,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "Error",
-                                    start: 798,
-                                    end: 803,
+                                    str: "4095",
+                                    start: 792,
+                                    end: 796,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"Error\"",
+                                    start: 797,
+                                    end: 804,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "Error",
+                                            start: 798,
+                                            end: 803,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
                     Pair {
-                        rule: int,
+                        rule: table_value_description,
                         span: Span {
-                            str: "4094",
+                            str: "4094 \"Init\"",
                             start: 805,
-                            end: 809,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
-                        span: Span {
-                            str: "\"Init\"",
-                            start: 810,
                             end: 816,
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: table_value,
                                 span: Span {
-                                    str: "Init",
-                                    start: 811,
-                                    end: 815,
+                                    str: "4094",
+                                    start: 805,
+                                    end: 809,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: table_desc,
+                                span: Span {
+                                    str: "\"Init\"",
+                                    start: 810,
+                                    end: 816,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: str,
+                                        span: Span {
+                                            str: "Init",
+                                            start: 811,
+                                            end: 815,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
