@@ -338,7 +338,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: can_id,
+                        rule: message_id,
                         span: Span {
                             str: "546",
                             start: 436,
@@ -347,7 +347,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident_ext,
+                        rule: message_name,
                         span: Span {
                             str: "EMV_Stati",
                             start: 440,
@@ -356,7 +356,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: message_size,
                         span: Span {
                             str: "8",
                             start: 451,
@@ -365,7 +365,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: transmitter,
                         span: Span {
                             str: "EMV_Statusmeldungen",
                             start: 453,
@@ -384,7 +384,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "EMV_Aktion_Status_5",
                             start: 478,
@@ -393,7 +393,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "4",
                             start: 500,
@@ -402,7 +402,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "1",
                             start: 502,
@@ -411,7 +411,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 504,
@@ -420,7 +420,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: unsigned_type,
+                        span: Span {
+                            str: "+",
+                            start: 505,
+                            end: 506,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 508,
@@ -429,7 +438,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 510,
@@ -438,25 +447,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 514,
-                            end: 515,
+                            str: "[0|1]",
+                            start: 513,
+                            end: 518,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 514,
+                                    end: 515,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 516,
+                                    end: 517,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 516,
-                            end: 517,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 519,
@@ -475,7 +494,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "Vector__XXX",
                             start: 522,
@@ -494,7 +513,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "EMV_Aktion_Status_4",
                             start: 539,
@@ -503,7 +522,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "3",
                             start: 561,
@@ -512,7 +531,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "1",
                             start: 563,
@@ -521,7 +540,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 565,
@@ -530,7 +549,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: unsigned_type,
+                        span: Span {
+                            str: "+",
+                            start: 566,
+                            end: 567,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 569,
@@ -539,7 +567,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 571,
@@ -548,25 +576,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 575,
-                            end: 576,
+                            str: "[0|1]",
+                            start: 574,
+                            end: 579,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 575,
+                                    end: 576,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 577,
+                                    end: 578,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 577,
-                            end: 578,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 580,
@@ -585,7 +623,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "Vector__XXX",
                             start: 583,
@@ -604,7 +642,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "EMV_Aktion_Status_3",
                             start: 600,
@@ -613,7 +651,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "2",
                             start: 622,
@@ -622,7 +660,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "1",
                             start: 624,
@@ -631,7 +669,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 626,
@@ -640,7 +678,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: unsigned_type,
+                        span: Span {
+                            str: "+",
+                            start: 627,
+                            end: 628,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 630,
@@ -649,7 +696,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 632,
@@ -658,25 +705,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 636,
-                            end: 637,
+                            str: "[0|1]",
+                            start: 635,
+                            end: 640,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 636,
+                                    end: 637,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 638,
+                                    end: 639,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 638,
-                            end: 639,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 641,
@@ -695,7 +752,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "EMV_Statusmeldungen",
                             start: 645,
@@ -714,7 +771,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "EMV_Aktion_Status_2",
                             start: 670,
@@ -723,7 +780,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "6",
                             start: 692,
@@ -732,7 +789,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "1",
                             start: 694,
@@ -741,7 +798,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 696,
@@ -750,7 +807,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: unsigned_type,
+                        span: Span {
+                            str: "+",
+                            start: 697,
+                            end: 698,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 700,
@@ -759,7 +825,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 702,
@@ -768,25 +834,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 706,
-                            end: 707,
+                            str: "[0|1]",
+                            start: 705,
+                            end: 710,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 706,
+                                    end: 707,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 708,
+                                    end: 709,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 708,
-                            end: 709,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 711,
@@ -805,7 +881,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "Vector__XXX",
                             start: 714,
@@ -824,7 +900,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: signal_name,
                         span: Span {
                             str: "EMV_Aktion_Status_1",
                             start: 731,
@@ -833,7 +909,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: start_bit,
                         span: Span {
                             str: "5",
                             start: 753,
@@ -842,7 +918,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: signal_size,
                         span: Span {
                             str: "1",
                             start: 755,
@@ -851,7 +927,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: little_endian,
                         span: Span {
                             str: "1",
                             start: 757,
@@ -860,7 +936,16 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: unsigned_type,
+                        span: Span {
+                            str: "+",
+                            start: 758,
+                            end: 759,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: factor,
                         span: Span {
                             str: "1",
                             start: 761,
@@ -869,7 +954,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: offset,
                         span: Span {
                             str: "0",
                             start: 763,
@@ -878,25 +963,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: number,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 767,
-                            end: 768,
+                            str: "[0|1]",
+                            start: 766,
+                            end: 771,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 767,
+                                    end: 768,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 769,
+                                    end: 770,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 769,
-                            end: 770,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 772,
@@ -915,7 +1010,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: receiver,
                         span: Span {
                             str: "Vector__XXX",
                             start: 775,
@@ -934,7 +1029,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_TrdPower",
                             start: 794,
@@ -943,7 +1038,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_float,
                         span: Span {
                             str: "1",
                             start: 808,
@@ -952,25 +1047,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 811,
-                            end: 812,
+                            str: "[0|20000]",
+                            start: 810,
+                            end: 819,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 811,
+                                    end: 812,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "20000",
+                                    start: 813,
+                                    end: 818,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "20000",
-                            start: 813,
-                            end: 818,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"W\"",
                             start: 820,
@@ -1007,7 +1112,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 828,
@@ -1016,7 +1121,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 847,
@@ -1035,7 +1140,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Modulation",
                             start: 865,
@@ -1044,7 +1149,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 881,
@@ -1053,25 +1158,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 884,
-                            end: 885,
+                            str: "[0|0]",
+                            start: 883,
+                            end: 888,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 884,
+                                    end: 885,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "0",
+                                    start: 886,
+                                    end: 887,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "0",
-                            start: 886,
-                            end: 887,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 889,
@@ -1108,7 +1223,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR8000",
                             start: 896,
@@ -1117,7 +1232,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 918,
@@ -1136,7 +1251,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_NoGoInfo",
                             start: 936,
@@ -1145,7 +1260,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 950,
@@ -1154,25 +1269,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 953,
-                            end: 954,
+                            str: "[0|0]",
+                            start: 952,
+                            end: 957,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 953,
+                                    end: 954,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "0",
+                                    start: 955,
+                                    end: 956,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "0",
-                            start: 955,
-                            end: 956,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 958,
@@ -1209,7 +1334,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR8000",
                             start: 965,
@@ -1218,7 +1343,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 987,
@@ -1237,7 +1362,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Test_Stop",
                             start: 1005,
@@ -1246,7 +1371,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1020,
@@ -1255,25 +1380,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1023,
-                            end: 1024,
+                            str: "[0|1]",
+                            start: 1022,
+                            end: 1027,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1023,
+                                    end: 1024,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 1025,
+                                    end: 1026,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 1025,
-                            end: 1026,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1028,
@@ -1310,7 +1445,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1035,
@@ -1319,7 +1454,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1054,
@@ -1338,7 +1473,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Test_Start",
                             start: 1072,
@@ -1347,7 +1482,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1088,
@@ -1356,25 +1491,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1091,
-                            end: 1092,
+                            str: "[0|1]",
+                            start: 1090,
+                            end: 1095,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1091,
+                                    end: 1092,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 1093,
+                                    end: 1094,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 1093,
-                            end: 1094,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1096,
@@ -1411,7 +1556,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1103,
@@ -1420,7 +1565,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1122,
@@ -1439,7 +1584,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Test_Clear",
                             start: 1140,
@@ -1448,7 +1593,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1156,
@@ -1457,25 +1602,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1159,
-                            end: 1160,
+                            str: "[0|1]",
+                            start: 1158,
+                            end: 1163,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1159,
+                                    end: 1160,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 1161,
+                                    end: 1162,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 1161,
-                            end: 1162,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1164,
@@ -1512,7 +1667,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1171,
@@ -1521,7 +1676,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1190,
@@ -1540,7 +1695,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Synchronisation",
                             start: 1208,
@@ -1549,7 +1704,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1229,
@@ -1558,25 +1713,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1232,
-                            end: 1233,
+                            str: "[0|1]",
+                            start: 1231,
+                            end: 1236,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1232,
+                                    end: 1233,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 1234,
+                                    end: 1235,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 1234,
-                            end: 1235,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1237,
@@ -1613,7 +1778,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1244,
@@ -1622,7 +1787,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1263,
@@ -1641,7 +1806,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Polarisation",
                             start: 1281,
@@ -1650,7 +1815,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1299,
@@ -1659,25 +1824,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1302,
-                            end: 1303,
+                            str: "[0|0]",
+                            start: 1301,
+                            end: 1306,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1302,
+                                    end: 1303,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1304,
+                                    end: 1305,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "0",
-                            start: 1304,
-                            end: 1305,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1307,
@@ -1714,7 +1889,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR8000",
                             start: 1314,
@@ -1723,7 +1898,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1336,
@@ -1742,7 +1917,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_NoGo",
                             start: 1354,
@@ -1751,7 +1926,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1364,
@@ -1760,25 +1935,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1367,
-                            end: 1368,
+                            str: "[0|1]",
+                            start: 1366,
+                            end: 1371,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1367,
+                                    end: 1368,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 1369,
+                                    end: 1370,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 1369,
-                            end: 1370,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1372,
@@ -1815,7 +2000,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1379,
@@ -1824,7 +2009,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1398,
@@ -1843,7 +2028,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Frequency",
                             start: 1416,
@@ -1852,7 +2037,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_float,
                         span: Span {
                             str: "1",
                             start: 1431,
@@ -1861,25 +2046,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1434,
-                            end: 1435,
+                            str: "[0|4000000000]",
+                            start: 1433,
+                            end: 1447,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1434,
+                                    end: 1435,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "4000000000",
+                                    start: 1436,
+                                    end: 1446,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "4000000000",
-                            start: 1436,
-                            end: 1446,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"Hz\"",
                             start: 1448,
@@ -1916,7 +2111,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1458,
@@ -1925,7 +2120,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1477,
@@ -1944,7 +2139,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_TestLevel",
                             start: 1495,
@@ -1953,7 +2148,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_float,
                         span: Span {
                             str: "1",
                             start: 1510,
@@ -1962,25 +2157,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1513,
-                            end: 1514,
+                            str: "[0|600]",
+                            start: 1512,
+                            end: 1519,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1513,
+                                    end: 1514,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "600",
+                                    start: 1515,
+                                    end: 1518,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "600",
-                            start: 1515,
-                            end: 1518,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"Level\"",
                             start: 1520,
@@ -2017,7 +2222,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1533,
@@ -2026,7 +2231,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1552,
@@ -2045,7 +2250,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Azimuth",
                             start: 1570,
@@ -2054,7 +2259,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_float,
                         span: Span {
                             str: "1",
                             start: 1583,
@@ -2063,25 +2268,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "-180",
-                            start: 1586,
-                            end: 1590,
+                            str: "[-180|400]",
+                            start: 1585,
+                            end: 1595,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "-180",
+                                    start: 1586,
+                                    end: 1590,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "400",
+                                    start: 1591,
+                                    end: 1594,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "400",
-                            start: 1591,
-                            end: 1594,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"deg\"",
                             start: 1596,
@@ -2118,7 +2333,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1607,
@@ -2127,7 +2342,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1626,
@@ -2146,7 +2361,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Action_5",
                             start: 1644,
@@ -2155,7 +2370,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1658,
@@ -2164,25 +2379,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1661,
-                            end: 1662,
+                            str: "[0|1]",
+                            start: 1660,
+                            end: 1665,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1661,
+                                    end: 1662,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 1663,
+                                    end: 1664,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 1663,
-                            end: 1664,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1666,
@@ -2219,7 +2444,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1674,
@@ -2228,7 +2453,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1693,
@@ -2247,7 +2472,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Action_4",
                             start: 1711,
@@ -2256,7 +2481,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1725,
@@ -2265,25 +2490,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1728,
-                            end: 1729,
+                            str: "[0|1]",
+                            start: 1727,
+                            end: 1732,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1728,
+                                    end: 1729,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 1730,
+                                    end: 1731,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 1730,
-                            end: 1731,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1733,
@@ -2320,7 +2555,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1741,
@@ -2329,7 +2564,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1760,
@@ -2348,7 +2583,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Action_3",
                             start: 1778,
@@ -2357,7 +2592,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1792,
@@ -2366,25 +2601,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1795,
-                            end: 1796,
+                            str: "[0|1]",
+                            start: 1794,
+                            end: 1799,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1795,
+                                    end: 1796,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 1797,
+                                    end: 1798,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 1797,
-                            end: 1798,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1800,
@@ -2421,7 +2666,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1808,
@@ -2430,7 +2675,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1827,
@@ -2449,7 +2694,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Action_2",
                             start: 1845,
@@ -2458,7 +2703,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1859,
@@ -2467,25 +2712,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1862,
-                            end: 1863,
+                            str: "[0|1]",
+                            start: 1861,
+                            end: 1866,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1862,
+                                    end: 1863,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 1864,
+                                    end: 1865,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 1864,
-                            end: 1865,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1867,
@@ -2522,7 +2777,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1875,
@@ -2531,7 +2786,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1894,
@@ -2550,7 +2805,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Action_1",
                             start: 1912,
@@ -2559,7 +2814,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: env_var_type_int,
                         span: Span {
                             str: "0",
                             start: 1926,
@@ -2568,25 +2823,35 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: min_max,
                         span: Span {
-                            str: "0",
-                            start: 1929,
-                            end: 1930,
+                            str: "[0|1]",
+                            start: 1928,
+                            end: 1933,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 1929,
+                                    end: 1930,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 1931,
+                                    end: 1932,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 1931,
-                            end: 1932,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: string,
+                        rule: unit,
                         span: Span {
                             str: "\"\"",
                             start: 1934,
@@ -2623,7 +2888,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR0",
                             start: 1942,
@@ -2632,7 +2897,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 1961,
@@ -2651,7 +2916,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: ident_ext,
+                        rule: env_var_name,
                         span: Span {
                             str: "EMC_Azimuth",
                             start: 1984,
