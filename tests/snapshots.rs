@@ -4,9 +4,8 @@ use std::borrow::Cow;
 use std::fs;
 use std::path::{Path, PathBuf};
 
-use can_dbc_pest::{decode_cp1252, DbcParser, Rule};
+use can_dbc_pest::{decode_cp1252, DbcParser, Parser as _, Rule};
 use insta::{assert_debug_snapshot, with_settings};
-use pest::Parser;
 use test_each_file::test_each_path;
 
 struct TestConfig {

@@ -1,5 +1,9 @@
+#![doc = include_str!("../README.md")]
+
+// Re-publish pest's Parser trait to avoid requiring users to depend on pest directly
 #[cfg(feature = "encoding")]
 pub use encoding_rs as encodings;
+pub use pest::Parser;
 
 #[cfg(feature = "encoding")]
 #[must_use]
