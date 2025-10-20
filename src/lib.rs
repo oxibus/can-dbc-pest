@@ -1,8 +1,10 @@
 #![doc = include_str!("../README.md")]
 
-// Re-publish pest's Parser trait to avoid requiring users to depend on pest directly
+// Re-publish types to avoid requiring users to depend on pest and encoding_rs directly
 #[cfg(feature = "encoding")]
 pub use encoding_rs as encodings;
+pub use pest::error::Error;
+pub use pest::iterators::Pair;
 pub use pest::Parser;
 
 #[cfg(feature = "encoding")]
