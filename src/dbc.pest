@@ -280,9 +280,7 @@ value_table_def = { "VAL_" ~ message_id? ~ signal_name ~ table_value_description
 value_table = { "VAL_TABLE_" ~ table_name ~ table_value_description* ~ ";" }
 
 table_name = @{ ident_ext }
-table_value_description = { table_value ~ table_desc }
-table_value = @{ int }
-table_desc = @{ quoted_str }
+table_value_description = { int ~ quoted_str }
 
 /// Signal group: SIG_GROUP_ message_id group_name multiplexer_id : signal1 signal2 ... ;
 signal_group = { "SIG_GROUP_" ~ message_id ~ group_name ~ multiplexer_id ~ ":" ~ signal_name* ~ ";" }
