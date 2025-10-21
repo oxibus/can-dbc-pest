@@ -588,6 +588,15 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
+                        rule: rel_object_type,
+                        span: Span {
+                            str: "BU_BO_REL_",
+                            start: 491,
+                            end: 501,
+                        },
+                        inner: [],
+                    },
+                    Pair {
                         rule: attribute_name,
                         span: Span {
                             str: "\"MsgProject\"",
@@ -809,39 +818,58 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: rel_object_type,
                         span: Span {
-                            str: "ECU1",
+                            str: "BU_BO_REL_",
+                            start: 625,
+                            end: 635,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: rel_object_data,
+                        span: Span {
+                            str: "ECU1 1 2",
                             start: 636,
-                            end: 640,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 641,
-                            end: 642,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: num_str_value,
-                        span: Span {
-                            str: "2",
-                            start: 643,
                             end: 644,
                         },
                         inner: [
                             Pair {
-                                rule: number,
+                                rule: ident,
+                                span: Span {
+                                    str: "ECU1",
+                                    start: 636,
+                                    end: 640,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1",
+                                    start: 641,
+                                    end: 642,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: num_str_value,
                                 span: Span {
                                     str: "2",
                                     start: 643,
                                     end: 644,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: number,
+                                        span: Span {
+                                            str: "2",
+                                            start: 643,
+                                            end: 644,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },

@@ -215,11 +215,7 @@ comment = {
 /// BA_DEF_ EV_  "RWEnvVar_wData_Val" INT 0 10;
 /// BA_DEF_ EV_  "GlobalEnvVar_Val" HEX 256 320;
 /// ```
-attr_def = {
-    "BA_DEF_" ~
-    (object_type ~ ident?)? ~
-    attribute_name ~ attribute_type ~ ";"
-}
+attr_def = { "BA_DEF_" ~ (object_type ~ ident?)? ~ attribute_name ~ attribute_type ~ ";" }
 
 object_type = { "BU_" | "BO_" | "SG_" | "EV_" }
 
@@ -258,9 +254,7 @@ attr_value_ev = { "EV_" ~ ident }
 /// ```text
 /// VAL_ RWEnvVar_wData 2 "Value2" 1 "Value1" 0 "Value0" ;
 /// ```
-value_table_def = {
-    "VAL_" ~ message_id? ~ signal_name ~ table_value_description* ~ ";"?
-}
+value_table_def = { "VAL_" ~ message_id? ~ signal_name ~ table_value_description* ~ ";"? }
 
 /// Value table: VAL_TABLE_ table_name value1 "description1" value2 "description2" ... ;
 ///
@@ -278,9 +272,7 @@ value_table_def = {
 /// Format: `VAL_TABLE_ <value_table_name> <value_description>;`
 ///
 /// `value_description`: List of `IntValue "StringValue"` Pairs, separated by whitespaces
-value_table = {
-    "VAL_TABLE_" ~ table_name ~ table_value_description* ~ ";"
-}
+value_table = { "VAL_TABLE_" ~ table_name ~ table_value_description* ~ ";" }
 
 table_name = @{ ident_ext }
 table_value_description = { table_value ~ table_desc }
@@ -288,21 +280,15 @@ table_value = @{ int }
 table_desc = @{ quoted_str }
 
 /// Signal group: SIG_GROUP_ message_id group_name multiplexer_id : signal1 signal2 ... ;
-signal_group = {
-    "SIG_GROUP_" ~ message_id ~ group_name ~ multiplexer_id ~ ":" ~ signal_name* ~ ";"
-}
+signal_group = { "SIG_GROUP_" ~ message_id ~ group_name ~ multiplexer_id ~ ":" ~ signal_name* ~ ";" }
 group_name = @{ ident }
 multiplexer_id = @{ int }
 
 /// Signal value type: SIG_VALTYPE_ message_id signal_name : value_type;
-signal_value_type = {
-    "SIG_VALTYPE_" ~ message_id ~ signal_name ~ ":" ~ int ~ ";"
-}
+signal_value_type = { "SIG_VALTYPE_" ~ message_id ~ signal_name ~ ":" ~ int ~ ";" }
 
 /// Message transmitter: BO_TX_BU_ message_id : transmitter1,transmitter2,... ;
-bo_tx_bu = {
-    "BO_TX_BU_" ~ message_id ~ ":" ~ (transmitter ~ ("," ~ transmitter)*)? ~ ";"
-}
+bo_tx_bu = { "BO_TX_BU_" ~ message_id ~ ":" ~ (transmitter ~ ("," ~ transmitter)*)? ~ ";" }
 
 /// Relative attribute definition: BA_DEF_REL_ object_type attribute_name attribute_type [min max];
 ///
@@ -332,36 +318,30 @@ bo_tx_bu = {
 /// BA_DEF_REL_ BU_BO_REL_  "attribute_name" STRING ;
 /// BA_DEF_REL_ BU_SG_REL_  "attribute_name" STRING ;
 /// ```
-ba_def_rel = {
-    "BA_DEF_REL_" ~
-    ("BU_SG_REL_" | "BU_BO_REL_" | "BU_EV_REL_") ~
-    attribute_name ~ attribute_type ~ ";"
-}
+ba_def_rel = { "BA_DEF_REL_" ~ rel_object_type ~ attribute_name ~ attribute_type ~ ";" }
 
 /// Relative attribute value: BA_REL_ attribute_name object_type object_name value;
-ba_rel = {
-    "BA_REL_" ~ attribute_name ~
-    (
-        ("BU_SG_REL_" ~ ident ~ "SG_" ~ int ~ ident ~ num_str_value) |
-        ("BU_BO_REL_" ~ ident ~ int ~ num_str_value) |
-        ("BU_EV_REL_" ~ ident ~ "EV_" ~ ident ~ num_str_value)
-    ) ~ ";"
+ba_rel = { "BA_REL_" ~ attribute_name ~ rel_object_type ~ rel_object_data ~ ";" }
+
+rel_object_type = { "BU_SG_REL_" | "BU_BO_REL_" | "BU_EV_REL_" }
+
+rel_object_data = {
+    (ident ~ sg_literal ~ message_id ~ ident ~ num_str_value)
+    | (ident ~ ev_literal ~ ident ~ num_str_value)
+    | (ident ~ message_id ~ num_str_value)
 }
+
+sg_literal = { "SG_" }
+ev_literal = { "EV_" }
 
 /// Relative attribute default: BA_DEF_DEF_REL_ attribute_name default_value;
-ba_def_def_rel = {
-    "BA_DEF_DEF_REL_" ~ attribute_name ~ num_str_value ~ ";"
-}
+ba_def_def_rel = { "BA_DEF_DEF_REL_" ~ attribute_name ~ num_str_value ~ ";" }
 
 /// Global attribute default: BA_DEF_DEF_ attribute_name default_value;
-ba_def_def = {
-    "BA_DEF_DEF_" ~ attribute_name ~ num_str_value ~ ";"
-}
+ba_def_def = { "BA_DEF_DEF_" ~ attribute_name ~ num_str_value ~ ";" }
 
 /// Multiplexed signal value definition: SG_MUL_VAL_ <message_id> <signal_name> <multiplexer_name> <value_pairs>;
-sg_mul_val = {
-    "SG_MUL_VAL_" ~ message_id ~ signal_name ~ multiplexer_name ~ value_pair ~ ("," ~ value_pair)* ~ ";"
-}
+sg_mul_val = { "SG_MUL_VAL_" ~ message_id ~ signal_name ~ multiplexer_name ~ value_pair ~ ("," ~ value_pair)* ~ ";" }
 value_pair = { int ~ "-" ~ int }
 multiplexer_name = @{ ident }
 
@@ -430,7 +410,5 @@ ev_id = @{ int }
 /// ```text
 /// ENVVAR_DATA_ RWEnvVar_wData: 10;
 /// ```
-envvar_data = {
-    "ENVVAR_DATA_" ~ env_var_name ~ ":" ~ data_size ~ ";"
-}
+envvar_data = { "ENVVAR_DATA_" ~ env_var_name ~ ":" ~ data_size ~ ";" }
 data_size = @{ uint }
