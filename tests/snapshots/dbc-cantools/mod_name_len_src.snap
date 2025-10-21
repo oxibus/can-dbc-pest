@@ -513,13 +513,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_name,
+                        rule: node_var,
                         span: Span {
-                            str: "Node_will_be_shortened_456789_12",
-                            start: 544,
+                            str: "BU_ Node_will_be_shortened_456789_12",
+                            start: 540,
                             end: 576,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: node_name,
+                                span: Span {
+                                    str: "Node_will_be_shortened_456789_12",
+                                    start: 544,
+                                    end: 576,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: quoted_str,

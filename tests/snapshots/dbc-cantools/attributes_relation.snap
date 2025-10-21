@@ -697,13 +697,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_name,
+                        rule: node_var,
                         span: Span {
-                            str: "ECU1",
-                            start: 511,
+                            str: "BU_ ECU1",
+                            start: 507,
                             end: 515,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: node_name,
+                                span: Span {
+                                    str: "ECU1",
+                                    start: 511,
+                                    end: 515,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: quoted_str,

@@ -1759,13 +1759,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_name,
+                        rule: node_var,
                         span: Span {
-                            str: "BAR",
-                            start: 981,
+                            str: "BU_ BAR",
+                            start: 977,
                             end: 984,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: node_name,
+                                span: Span {
+                                    str: "BAR",
+                                    start: 981,
+                                    end: 984,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: quoted_str,

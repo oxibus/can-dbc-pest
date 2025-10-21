@@ -87,6 +87,7 @@ num_str_value = { number | quoted_str }
 env_var = { env_literal ~ env_var_name }
 env_var_name = @{ ident }
 
+node_var = { node_literal ~ node_name }
 node_name = @{ ident_ext }
 
 env_literal = _{ "EV_" }
@@ -205,7 +206,7 @@ comment = {
     "CM_" ~ (
         (signal_literal ~ message_id ~ signal_name? ~ quoted_str) |
         (msg_literal ~ message_id ~ quoted_str) |
-        (node_literal ~ node_name ~ quoted_str) |
+        (node_var ~ quoted_str) |
         (env_var ~ quoted_str) |
         quoted_str |
         (message_id ~ quoted_str)  // message_id + string does not seem to have description above
