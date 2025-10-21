@@ -90,7 +90,6 @@ env_var_name = @{ ident }
 node_var = { node_literal ~ node_name }
 node_name = @{ ident_ext }
 
-attr_value_bu = { node_literal ~ ident }
 attr_value_bo = { msg_literal ~ message_id }
 attr_value_sg = { signal_literal ~ message_id ~ ident }
 attr_value_ev = { env_literal ~ ident }
@@ -256,7 +255,7 @@ attribute_type_enum = { "ENUM" ~ quoted_str ~ ("," ~ quoted_str)* }
 /// Attribute value: BA_ attribute_name [object_type] object_name value;
 attr_value = {
     "BA_" ~ attribute_name ~ (
-        attr_value_bu |
+        node_var |
         attr_value_bo |
         attr_value_sg |
         attr_value_ev
