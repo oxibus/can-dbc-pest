@@ -82,6 +82,7 @@ ident = @{ (ASCII_ALPHA | "_") ~ (ASCII_ALPHANUMERIC | "_")* }
 ident_ext = @{ (ASCII_ALPHANUMERIC | "_")+ }
 signal_name = @{ ident_ext }
 node_name = @{ ident_ext }
+num_str_value = _{ number | string }
 
 // ============================================================================
 // DBC FILE SECTIONS
@@ -109,8 +110,8 @@ bit_timing = { "BS_" ~ ":" ~ (uint ~ ":" ~ uint ~ "," ~ uint)? ~ NEWLINE }
 
 /// Node definition: BU_: node1 node2 node3 ...
 nodes = ${
-    "BU_" ~ WHITESPACE* ~ ":" ~ WHITESPACE* ~ (ident ~ WHITESPACE*)* ~ COMMENT* ~
-    (NEWLINE ~ (WHITESPACE+ ~ ident)* ~ WHITESPACE* ~ COMMENT*)* ~
+    "BU_" ~ WHITESPACE* ~ ":" ~ WHITESPACE* ~ (node_name ~ WHITESPACE*)* ~ COMMENT* ~
+    (NEWLINE ~ (WHITESPACE+ ~ node_name)* ~ WHITESPACE* ~ COMMENT*)* ~
     NEWLINE
 }
 
@@ -240,7 +241,7 @@ attr_value = {
         ("BO_" ~ message_id) |
         ("SG_" ~ message_id ~ ident) |
         ("EV_" ~ ident)
-    )? ~ (number | string) ~ ";"
+    )? ~ num_str_value ~ ";"
 }
 
 
@@ -333,20 +334,20 @@ ba_def_rel = {
 ba_rel = {
     "BA_REL_" ~ attribute_name ~
     (
-        ("BU_SG_REL_" ~ ident ~ "SG_" ~ int ~ ident ~ (number | string)) |
-        ("BU_BO_REL_" ~ ident ~ int ~ (number | string)) |
-        ("BU_EV_REL_" ~ ident ~ "EV_" ~ ident ~ (number | string))
+        ("BU_SG_REL_" ~ ident ~ "SG_" ~ int ~ ident ~ num_str_value) |
+        ("BU_BO_REL_" ~ ident ~ int ~ num_str_value) |
+        ("BU_EV_REL_" ~ ident ~ "EV_" ~ ident ~ num_str_value)
     ) ~ ";"
 }
 
 /// Relative attribute default: BA_DEF_DEF_REL_ attribute_name default_value;
 ba_def_def_rel = {
-    "BA_DEF_DEF_REL_" ~ attribute_name ~ (number | string) ~ ";"
+    "BA_DEF_DEF_REL_" ~ attribute_name ~ num_str_value ~ ";"
 }
 
 /// Global attribute default: BA_DEF_DEF_ attribute_name default_value;
 ba_def_def = {
-    "BA_DEF_DEF_" ~ attribute_name ~ (number | string) ~ ";"
+    "BA_DEF_DEF_" ~ attribute_name ~ num_str_value ~ ";"
 }
 
 /// Multiplexed signal value definition: SG_MUL_VAL_ <message_id> <signal_name> <multiplexer_name> <value_pairs>;
@@ -394,7 +395,7 @@ multiplexer_name = @{ ident }
 /// EV_ WriteOnlyEnvVar: 1 [0|1234] "" 60 3 DUMMY_NODE_VECTOR2  Node2;
 /// ```
 environment_variable = {
-    "EV_" ~ env_var_name ~ ":" ~ env_var_type ~ min_max ~ unit ~ int ~ int ~ node_name ~ node_name ~ ";"
+    "EV_" ~ env_var_name ~ ":" ~ env_var_type ~ min_max ~ unit ~ init_value ~ ev_id ~ node_name ~ node_name ~ ";"
 }
 env_var_name = @{ ident }
 env_var_type = _{
@@ -405,6 +406,8 @@ env_var_type = _{
 env_var_type_int = @{ "0" }
 env_var_type_float = @{ "1" }
 env_var_type_string = @{ "2" }
+init_value = @{ int }
+ev_id = @{ int }
 
 /// Environment variables data section
 ///
