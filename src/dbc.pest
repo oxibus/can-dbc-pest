@@ -174,7 +174,7 @@ signal = {
         ( signed_type | unsigned_type ) ~ // + | -
         "(" ~ factor ~ "," ~ offset ~ ")" ~
         min_max ~
-        unit ~ receiver ~ ("," ~ receiver)*
+        unit ~ node_name ~ ("," ~ node_name)*
     )
 }
 
@@ -187,7 +187,6 @@ signed_type = @{ "-" }
 unsigned_type = @{ "+" }
 factor = @{ number }
 offset = @{ number }
-receiver = @{ "Vector__XXX" | node_name }
 
 /// Comment definitions: CM_ [BU_|BO_|SG_|EV_] object_name "comment_text";
 ///
