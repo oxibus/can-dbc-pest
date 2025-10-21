@@ -130,9 +130,7 @@ nodes = ${
 }
 
 /// Message definition: BO_ message_id message_name: message_size transmitter
-message = {
-    msg_var ~ message_name ~ ":" ~ message_size ~ transmitter
-}
+message = { msg_var ~ message_name ~ ":" ~ message_size ~ transmitter }
 message_name = @{ ident_ext }
 message_size = @{ int }
 transmitter = @{ ident }
@@ -180,7 +178,7 @@ signal = {
     )
 }
 
-multiplexer_indicator = @{ ( "M" | ("m" ~ (multiplexer_id ~ "M"?)? ) ) }
+multiplexer_indicator = @{ "M" | ("m" ~ (multiplexer_id ~ "M"?)? ) }
 start_bit = @{ int }
 signal_size = @{ int }
 big_endian = @{ "0" }
