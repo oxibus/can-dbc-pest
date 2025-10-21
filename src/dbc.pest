@@ -67,13 +67,14 @@ minimum = @{ number }
 maximum = @{ number }
 
 /// String literals in double quotes
-string = @{ "\"" ~ str ~ "\"" }
-unit = @{ string }
-attribute_name = @{ string }
+quoted_str = @{ quote ~ string ~ quote }
+unit = @{ quoted_str }
+attribute_name = @{ quoted_str }
 
 /// String literal content, without the surrounding quotes
-str = ${ char* }
-char = _{ "\\\"" | !"\"" ~ ANY }
+string = ${ char* }
+char = _{ "\\\"" | !quote ~ ANY }
+quote = _{ "\"" }
 
 /// Identifiers (node names, message names, signal names, etc.)
 ident = @{ (ASCII_ALPHA | "_") ~ (ASCII_ALPHANUMERIC | "_")* }
@@ -82,7 +83,7 @@ ident = @{ (ASCII_ALPHA | "_") ~ (ASCII_ALPHANUMERIC | "_")* }
 ident_ext = @{ (ASCII_ALPHANUMERIC | "_")+ }
 signal_name = @{ ident_ext }
 node_name = @{ ident_ext }
-num_str_value = _{ number | string }
+num_str_value = { number | quoted_str }
 
 // ============================================================================
 // DBC FILE SECTIONS
@@ -91,7 +92,7 @@ num_str_value = _{ number | string }
 /// Version identifier of the DBC file.
 ///
 /// Format: `VERSION "string"`
-version = { "VERSION" ~ string ~ NEWLINE }
+version = { "VERSION" ~ quoted_str ~ NEWLINE }
 
 /// New Symbol section: NS_ : symbol1 symbol2 ...
 /// The spaces and comments are explicit because each symbol must be indented on new lines
@@ -193,12 +194,12 @@ receiver = @{ "Vector__XXX" | node_name }
 /// ```
 comment = {
     "CM_" ~ (
-        ("SG_" ~ message_id ~ signal_name? ~ string) |
-        ("BO_" ~ message_id ~ string) |
-        ("BU_" ~ node_name ~ string) |
-        ("EV_" ~ env_var_name ~ string) |
-        (message_id ~ string) |  // message_id + string does not seem to have description above
-        string
+        ("SG_" ~ message_id ~ signal_name? ~ quoted_str) |
+        ("BO_" ~ message_id ~ quoted_str) |
+        ("BU_" ~ node_name ~ quoted_str) |
+        ("EV_" ~ env_var_name ~ quoted_str) |
+        quoted_str |
+        (message_id ~ quoted_str)  // message_id + string does not seem to have description above
     ) ~ ";"?
 }
 
@@ -216,9 +217,11 @@ comment = {
 /// ```
 attr_def = {
     "BA_DEF_" ~
-    (("BU_" | "BO_" | "SG_" | "EV_") ~ ident?)? ~
+    (object_type ~ ident?)? ~
     attribute_name ~ attribute_type ~ ";"
 }
+
+object_type = { "BU_" | "BO_" | "SG_" | "EV_" }
 
 attribute_type = _{
     attribute_type_int |
@@ -231,18 +234,23 @@ attribute_type_int = { "INT" ~ minimum ~ maximum }
 attribute_type_hex = { "HEX" ~ minimum ~ maximum }
 attribute_type_float = { "FLOAT" ~ minimum ~ maximum }
 attribute_type_string = { "STRING" }
-attribute_type_enum = { "ENUM" ~ string ~ ("," ~ string)* }
+attribute_type_enum = { "ENUM" ~ quoted_str ~ ("," ~ quoted_str)* }
 
 
 /// Attribute value: BA_ attribute_name [object_type] object_name value;
 attr_value = {
     "BA_" ~ attribute_name ~ (
-        ("BU_" ~ ident) |
-        ("BO_" ~ message_id) |
-        ("SG_" ~ message_id ~ ident) |
-        ("EV_" ~ ident)
+        attr_value_bu |
+        attr_value_bo |
+        attr_value_sg |
+        attr_value_ev
     )? ~ num_str_value ~ ";"
 }
+
+attr_value_bu = { "BU_" ~ ident }
+attr_value_bo = { "BO_" ~ message_id }
+attr_value_sg = { "SG_" ~ message_id ~ ident }
+attr_value_ev = { "EV_" ~ ident }
 
 
 /// Value table definition: VAL_ message_id signal_name value1 "description1" value2 "description2" ... ;
@@ -277,7 +285,7 @@ value_table = {
 table_name = @{ ident_ext }
 table_value_description = { table_value ~ table_desc }
 table_value = @{ int }
-table_desc = @{ string }
+table_desc = @{ quoted_str }
 
 /// Signal group: SIG_GROUP_ message_id group_name multiplexer_id : signal1 signal2 ... ;
 signal_group = {
