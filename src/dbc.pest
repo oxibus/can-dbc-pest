@@ -90,6 +90,11 @@ env_var_name = @{ ident }
 node_var = { node_literal ~ node_name }
 node_name = @{ ident_ext }
 
+attr_value_bu = { node_literal ~ ident }
+attr_value_bo = { msg_literal ~ message_id }
+attr_value_sg = { signal_literal ~ message_id ~ ident }
+attr_value_ev = { env_literal ~ ident }
+
 env_literal = _{ "EV_" }
 msg_literal = _{ "BO_" }
 node_literal = _{ "BU_" }
@@ -225,9 +230,14 @@ comment = {
 /// BA_DEF_ EV_  "RWEnvVar_wData_Val" INT 0 10;
 /// BA_DEF_ EV_  "GlobalEnvVar_Val" HEX 256 320;
 /// ```
-attr_def = { "BA_DEF_" ~ (object_type ~ ident?)? ~ attribute_name ~ attribute_type ~ ";" }
+attr_def = { "BA_DEF_" ~ object_type? ~ attribute_name ~ attribute_type ~ ";" }
 
-object_type = { node_literal | msg_literal | signal_literal | env_literal }
+object_type = {
+      (node_literal ~ ident?)
+    | (msg_literal ~ ident?)
+    | (signal_literal ~ ident?)
+    | (env_literal ~ ident?)
+}
 
 attribute_type = _{
     attribute_type_int |
@@ -252,11 +262,6 @@ attr_value = {
         attr_value_ev
     )? ~ num_str_value ~ ";"
 }
-
-attr_value_bu = { node_literal ~ ident }
-attr_value_bo = { msg_literal ~ message_id }
-attr_value_sg = { signal_literal ~ message_id ~ ident }
-attr_value_ev = { env_literal ~ ident }
 
 
 /// Value table definition: VAL_ message_id signal_name value1 "description1" value2 "description2" ... ;
