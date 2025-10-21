@@ -90,7 +90,7 @@ env_var_name = @{ ident }
 node_var = { node_literal ~ node_name }
 node_name = @{ ident_ext }
 
-attr_value_bo = { msg_literal ~ message_id }
+msg_var = { msg_literal ~ message_id }
 attr_value_sg = { signal_literal ~ message_id ~ ident }
 
 env_literal = _{ "EV_" }
@@ -131,7 +131,7 @@ nodes = ${
 
 /// Message definition: BO_ message_id message_name: message_size transmitter
 message = {
-    msg_literal ~ message_id ~ message_name ~ ":" ~ message_size ~ transmitter
+    msg_var ~ message_name ~ ":" ~ message_size ~ transmitter
 }
 message_name = @{ ident_ext }
 message_size = @{ int }
@@ -208,7 +208,7 @@ receiver = @{ "Vector__XXX" | node_name }
 comment = {
     "CM_" ~ (
         (signal_literal ~ message_id ~ signal_name? ~ quoted_str) |
-        (msg_literal ~ message_id ~ quoted_str) |
+        (msg_var ~ quoted_str) |
         (node_var ~ quoted_str) |
         (env_var ~ quoted_str) |
         quoted_str |
@@ -255,7 +255,7 @@ attribute_type_enum = { "ENUM" ~ quoted_str ~ ("," ~ quoted_str)* }
 attr_value = {
     "BA_" ~ attribute_name ~ (
         node_var |
-        attr_value_bo |
+        msg_var |
         attr_value_sg |
         env_var
     )? ~ num_str_value ~ ";"

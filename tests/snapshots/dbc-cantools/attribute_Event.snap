@@ -338,13 +338,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "1234",
-                            start: 363,
+                            str: "BO_ 1234",
+                            start: 359,
                             end: 367,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1234",
+                                    start: 363,
+                                    end: 367,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: message_name,
@@ -645,7 +655,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: attr_value_bo,
+                        rule: msg_var,
                         span: Span {
                             str: "BO_ 1234",
                             start: 545,
@@ -722,7 +732,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: attr_value_bo,
+                        rule: msg_var,
                         span: Span {
                             str: "BO_ 1234",
                             start: 585,
