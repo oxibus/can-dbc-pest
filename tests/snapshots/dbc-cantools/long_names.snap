@@ -2502,13 +2502,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: env_var_name,
+                        rule: env_var,
                         span: Span {
-                            str: "E12345678901234567890123456_0000",
-                            start: 2069,
+                            str: "EV_ E12345678901234567890123456_0000",
+                            start: 2065,
                             end: 2101,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: env_var_name,
+                                span: Span {
+                                    str: "E12345678901234567890123456_0000",
+                                    start: 2069,
+                                    end: 2101,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: env_var_type_int,
@@ -2613,13 +2623,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: env_var_name,
+                        rule: env_var,
                         span: Span {
-                            str: "E1234567890123456789012345678901",
-                            start: 2155,
+                            str: "EV_ E1234567890123456789012345678901",
+                            start: 2151,
                             end: 2187,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: env_var_name,
+                                span: Span {
+                                    str: "E1234567890123456789012345678901",
+                                    start: 2155,
+                                    end: 2187,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: env_var_type_int,

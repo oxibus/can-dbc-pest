@@ -84,6 +84,9 @@ ident_ext = @{ (ASCII_ALPHANUMERIC | "_")+ }
 signal_name = @{ ident_ext }
 num_str_value = { number | quoted_str }
 
+env_var = { env_literal ~ env_var_name }
+env_var_name = @{ ident }
+
 node_name = @{ ident_ext }
 
 env_literal = _{ "EV_" }
@@ -203,7 +206,7 @@ comment = {
         (signal_literal ~ message_id ~ signal_name? ~ quoted_str) |
         (msg_literal ~ message_id ~ quoted_str) |
         (node_literal ~ node_name ~ quoted_str) |
-        (env_literal ~ env_var_name ~ quoted_str) |
+        (env_var ~ quoted_str) |
         quoted_str |
         (message_id ~ quoted_str)  // message_id + string does not seem to have description above
     ) ~ ";"?
@@ -386,9 +389,8 @@ multiplexer_name = @{ ident }
 /// EV_ WriteOnlyEnvVar: 1 [0|1234] "" 60 3 DUMMY_NODE_VECTOR2  Node2;
 /// ```
 environment_variable = {
-    env_literal ~ env_var_name ~ ":" ~ env_var_type ~ min_max ~ unit ~ init_value ~ ev_id ~ node_name ~ node_name ~ ";"
+    env_var ~ ":" ~ env_var_type ~ min_max ~ unit ~ init_value ~ ev_id ~ node_name ~ node_name ~ ";"
 }
-env_var_name = @{ ident }
 env_var_type = _{
     env_var_type_int |
     env_var_type_float |
