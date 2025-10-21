@@ -86,16 +86,16 @@ num_str_value = { number | quoted_str }
 
 env_var = { env_literal ~ env_var_name }
 env_var_name = @{ ident }
+env_literal = _{ "EV_" }
 
 node_var = { node_literal ~ node_name }
 node_name = @{ ident_ext }
+node_literal = _{ "BU_" }
 
 msg_var = { msg_literal ~ message_id }
-attr_value_sg = { signal_literal ~ message_id ~ ident }
-
-env_literal = _{ "EV_" }
 msg_literal = _{ "BO_" }
-node_literal = _{ "BU_" }
+
+signal_var = { signal_literal ~ message_id ~ ident }
 signal_literal = _{ "SG_" }
 
 // ============================================================================
@@ -256,7 +256,7 @@ attr_value = {
     "BA_" ~ attribute_name ~ (
         node_var |
         msg_var |
-        attr_value_sg |
+        signal_var |
         env_var
     )? ~ num_str_value ~ ";"
 }
@@ -339,7 +339,7 @@ ba_rel = { "BA_REL_" ~ attribute_name ~ rel_object_type ~ rel_object_data ~ ";" 
 rel_object_type = { "BU_SG_REL_" | "BU_BO_REL_" | "BU_EV_REL_" }
 
 rel_object_data = {
-    (ident ~ signal_literal ~ message_id ~ ident ~ num_str_value)
+    (ident ~ signal_var ~ num_str_value)
     | (ident ~ env_var ~ num_str_value)
     | (ident ~ message_id ~ num_str_value)
 }
