@@ -10,28 +10,28 @@ file = { SOI ~ (line)* ~ EOI }
 /// A single line in the DBC file - can be various types of statements or empty
 line = _{
     (
-        version |
-        new_symbols |
-        bit_timing |
-        nodes |
-        message |
-        signal |
-        comment |
-        attr_def |
-        attr_value |
-        value_table |
-        value_table_def |
-        signal_group |
-        signal_value_type |
-        bo_tx_bu |
-        ba_def_rel |
-        ba_rel |
-        ba_def_def_rel |
-        ba_def_def |
-        sg_mul_val |
-        environment_variable |
-        envvar_data |
-        NEWLINE
+        version
+        | new_symbols
+        | bit_timing
+        | nodes
+        | message
+        | signal
+        | comment
+        | attr_def
+        | attr_value
+        | value_table
+        | value_table_def
+        | signal_group
+        | signal_value_type
+        | bo_tx_bu
+        | ba_def_rel
+        | ba_rel
+        | ba_def_def_rel
+        | ba_def_def
+        | sg_mul_val
+        | environment_variable
+        | envvar_data
+        | NEWLINE
     )
 }
 
@@ -204,12 +204,12 @@ offset = @{ number }
 /// ```
 comment = {
     "CM_" ~ (
-        (signal_literal ~ message_id ~ signal_name? ~ quoted_str) |
-        (msg_var ~ quoted_str) |
-        (node_var ~ quoted_str) |
-        (env_var ~ quoted_str) |
-        quoted_str |
-        (message_id ~ quoted_str)  // message_id + string does not seem to have description above
+        (signal_literal ~ message_id ~ signal_name? ~ quoted_str)
+         | (msg_var ~ quoted_str)
+         | (node_var ~ quoted_str)
+         | (env_var ~ quoted_str)
+         | quoted_str
+         | (message_id ~ quoted_str)  // message_id + string does not seem to have description above
     ) ~ ";"?
 }
 
@@ -230,11 +230,11 @@ attr_def = { "BA_DEF_" ~ (object_type ~ ident?)? ~ attribute_name ~ attribute_ty
 object_type = { node_literal | msg_literal | signal_literal | env_literal }
 
 attribute_type = _{
-    attribute_type_int |
-    attribute_type_hex |
-    attribute_type_float |
-    attribute_type_string |
-    attribute_type_enum
+    attribute_type_int
+    | attribute_type_hex
+    | attribute_type_float
+    | attribute_type_string
+    | attribute_type_enum
 }
 attribute_type_int = { "INT" ~ minimum ~ maximum }
 attribute_type_hex = { "HEX" ~ minimum ~ maximum }
@@ -246,10 +246,10 @@ attribute_type_enum = { "ENUM" ~ quoted_str ~ ("," ~ quoted_str)* }
 /// Attribute value: BA_ attribute_name [object_type] object_name value;
 attr_value = {
     "BA_" ~ attribute_name ~ (
-        node_var |
-        msg_var |
-        signal_var |
-        env_var
+        node_var
+        | msg_var
+        | signal_var
+        | env_var
     )? ~ num_str_value ~ ";"
 }
 
@@ -386,9 +386,9 @@ environment_variable = {
     env_var ~ ":" ~ env_var_type ~ min_max ~ unit ~ init_value ~ ev_id ~ node_name ~ node_name ~ ";"
 }
 env_var_type = _{
-    env_var_type_int |
-    env_var_type_float |
-    env_var_type_string
+    env_var_type_int
+    | env_var_type_float
+    | env_var_type_string
 }
 env_var_type_int = @{ "0" }
 env_var_type_float = @{ "1" }
