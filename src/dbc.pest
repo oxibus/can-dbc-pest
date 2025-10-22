@@ -82,7 +82,7 @@ ident = @{ (ASCII_ALPHA | "_") ~ (ASCII_ALPHANUMERIC | "_")* }
 /// Extended Identifiers (same as ident, but also allowing leading digits)
 ident_ext = @{ (ASCII_ALPHANUMERIC | "_")+ }
 signal_name = @{ ident_ext }
-num_str_value = { number | quoted_str }
+num_str_value = _{ number | quoted_str }
 
 env_var = { env_literal ~ env_var_name }
 env_var_name = @{ ident }

@@ -4,7 +4,7 @@
 #[cfg(feature = "encodings")]
 pub use encoding_rs as encodings;
 pub use pest::error::Error;
-pub use pest::iterators::Pair;
+pub use pest::iterators::{Pair, Pairs};
 pub use pest::Parser;
 
 #[cfg(feature = "encodings")]
