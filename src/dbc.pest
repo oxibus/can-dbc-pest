@@ -108,7 +108,8 @@ signal_literal = _{ "SG_" }
 version = { "VERSION" ~ quoted_str ~ NEWLINE }
 
 /// New Symbol section: NS_ : symbol1 symbol2 ...
-/// The spaces and comments are explicit because each symbol must be indented on new lines
+/// The spaces and comments are explicit because each symbol must be indented on new lines.
+/// The indented lines are what tells us that they are part of the new_symbols section.
 new_symbols = ${
     "NS_" ~ WHITESPACE* ~ ":" ~ WHITESPACE* ~ (ident ~ WHITESPACE*)* ~ COMMENT* ~
     (NEWLINE ~ (WHITESPACE+ ~ ident)* ~ WHITESPACE* ~ COMMENT*)* ~
@@ -123,6 +124,8 @@ new_symbols = ${
 bit_timing = { "BS_" ~ ":" ~ (uint ~ ":" ~ uint ~ "," ~ uint)? ~ NEWLINE }
 
 /// Node definition: BU_: node1 node2 node3 ...
+/// Just like new_symbols, the spaces and comments are explicit because each node can be either on the same line or
+/// space-indented on new lines.
 nodes = ${
     node_literal ~ WHITESPACE* ~ ":" ~ WHITESPACE* ~ (node_name ~ WHITESPACE*)* ~ COMMENT* ~
     (NEWLINE ~ (WHITESPACE+ ~ node_name)* ~ WHITESPACE* ~ COMMENT*)* ~
