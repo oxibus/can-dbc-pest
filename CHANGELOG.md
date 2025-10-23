@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0](https://github.com/oxibus/can-dbc-pest/compare/v0.3.0...v0.4.0) - 2025-10-23
+
+### Other
+
+- [**breaking**] more structure cleanups ([#16](https://github.com/oxibus/can-dbc-pest/pull/16))
+
 ## [0.3.0](https://github.com/oxibus/can-dbc-pest/compare/v0.2.3...v0.3.0) - 2025-10-21
 
 ### Other
