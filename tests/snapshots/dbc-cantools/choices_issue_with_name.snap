@@ -19,7 +19,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 8,
@@ -27,7 +27,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 9,
@@ -345,7 +345,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "1",
                                     start: 367,
@@ -354,7 +354,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"SignalWithChoices_CmdRespOK\"",
                                     start: 369,
@@ -362,7 +362,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "SignalWithChoices_CmdRespOK",
                                             start: 370,
@@ -383,7 +383,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "0",
                                     start: 399,
@@ -392,7 +392,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"SignalWithChoices_CmdRespErr\"",
                                     start: 401,
@@ -400,7 +400,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "SignalWithChoices_CmdRespErr",
                                             start: 402,
@@ -423,13 +423,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "2148073472",
-                            start: 441,
+                            str: "BO_ 2148073472",
+                            start: 437,
                             end: 451,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "2148073472",
+                                    start: 441,
+                                    end: 451,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: message_name,
@@ -568,7 +578,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 524,
@@ -579,7 +589,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 526,
@@ -606,7 +616,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "BusType",
                                     start: 551,
@@ -644,7 +654,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "BusType",
                                     start: 583,
@@ -655,7 +665,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"CAN\"",
                             start: 592,
@@ -663,7 +673,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "CAN",
                                     start: 593,
@@ -710,7 +720,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "1",
                                     start: 633,
@@ -719,7 +729,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"SignalWithChoices_CmdRespOK\"",
                                     start: 635,
@@ -727,7 +737,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "SignalWithChoices_CmdRespOK",
                                             start: 636,
@@ -748,7 +758,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "0",
                                     start: 665,
@@ -757,7 +767,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"SignalWithChoices_CmdRespErr\"",
                                     start: 667,
@@ -765,7 +775,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "SignalWithChoices_CmdRespErr",
                                             start: 668,

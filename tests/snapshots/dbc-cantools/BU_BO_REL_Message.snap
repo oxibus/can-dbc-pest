@@ -19,7 +19,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 8,
@@ -27,7 +27,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 9,
@@ -347,13 +347,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "1",
-                            start: 364,
+                            str: "BO_ 1",
+                            start: 360,
                             end: 365,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1",
+                                    start: 364,
+                                    end: 365,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: message_name,
@@ -492,7 +502,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 422,
@@ -503,7 +513,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "ECU2",
                             start: 425,
@@ -522,6 +532,15 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
+                        rule: object_type,
+                        span: Span {
+                            str: "BO_",
+                            start: 443,
+                            end: 446,
+                        },
+                        inner: [],
+                    },
+                    Pair {
                         rule: attribute_name,
                         span: Span {
                             str: "\"GenMsgCycleTime\"",
@@ -530,7 +549,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "GenMsgCycleTime",
                                     start: 449,
@@ -579,6 +598,15 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
+                        rule: rel_object_type,
+                        span: Span {
+                            str: "BU_BO_REL_",
+                            start: 491,
+                            end: 501,
+                        },
+                        inner: [],
+                    },
+                    Pair {
                         rule: attribute_name,
                         span: Span {
                             str: "\"MsgProject\"",
@@ -587,7 +615,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "MsgProject",
                                     start: 504,
@@ -606,7 +634,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"A\"",
                                     start: 522,
@@ -614,7 +642,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "A",
                                             start: 523,
@@ -625,7 +653,7 @@ source: tests/snapshots.rs
                                 ],
                             },
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"B\"",
                                     start: 526,
@@ -633,7 +661,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "B",
                                             start: 527,
@@ -644,7 +672,7 @@ source: tests/snapshots.rs
                                 ],
                             },
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"C\"",
                                     start: 530,
@@ -652,7 +680,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "C",
                                             start: 531,
@@ -683,7 +711,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "GenMsgCycleTime",
                                     start: 549,
@@ -721,7 +749,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "MsgProject",
                                     start: 586,
@@ -732,7 +760,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"A\"",
                             start: 598,
@@ -740,7 +768,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "A",
                                     start: 599,
@@ -769,7 +797,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "MsgProject",
                                     start: 613,
@@ -780,31 +808,50 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: rel_object_type,
                         span: Span {
-                            str: "ECU1",
+                            str: "BU_BO_REL_",
+                            start: 625,
+                            end: 635,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: rel_object_data,
+                        span: Span {
+                            str: "ECU1 1 2",
                             start: 636,
-                            end: 640,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: int,
-                        span: Span {
-                            str: "1",
-                            start: 641,
-                            end: 642,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "2",
-                            start: 643,
                             end: 644,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: ident,
+                                span: Span {
+                                    str: "ECU1",
+                                    start: 636,
+                                    end: 640,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1",
+                                    start: 641,
+                                    end: 642,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "2",
+                                    start: 643,
+                                    end: 644,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                 ],
             },
@@ -843,7 +890,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "255",
                                     start: 662,
@@ -852,7 +899,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"Invalid\"",
                                     start: 666,
@@ -860,7 +907,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "Invalid",
                                             start: 667,

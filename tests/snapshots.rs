@@ -1,4 +1,4 @@
-#![cfg(feature = "encoding")]
+#![cfg(feature = "encodings")]
 
 use std::borrow::Cow;
 use std::fs;

@@ -19,7 +19,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"1.0\"",
                             start: 8,
@@ -27,7 +27,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "1.0",
                                     start: 9,
@@ -347,13 +347,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "496",
-                            start: 365,
+                            str: "BO_ 496",
+                            start: 361,
                             end: 368,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "496",
+                                    start: 365,
+                                    end: 368,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: message_name,
@@ -492,7 +502,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "degK",
                                     start: 447,
@@ -503,7 +513,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "PCM1",
                             start: 454,
@@ -512,7 +522,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "FOO",
                             start: 459,
@@ -630,7 +640,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "m",
                                     start: 506,
@@ -641,7 +651,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 509,
@@ -759,7 +769,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "-",
                                     start: 555,
@@ -770,7 +780,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 558,
@@ -789,16 +799,26 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "496",
-                            start: 582,
+                            str: "BO_ 496",
+                            start: 578,
                             end: 585,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "496",
+                                    start: 582,
+                                    end: 585,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"Example message used as template in MotoHawk models.\"",
                             start: 586,
@@ -806,7 +826,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "Example message used as template in MotoHawk models.",
                                     start: 587,
@@ -845,7 +865,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"Temperature with a really long and complicated comment that probably require many many lines in a decently wide terminal\"",
                             start: 666,
@@ -853,7 +873,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "Temperature with a really long and complicated comment that probably require many many lines in a decently wide terminal",
                                     start: 667,
@@ -892,7 +912,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"AverageRadius signal comment\"",
                             start: 816,
@@ -900,7 +920,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "AverageRadius signal comment",
                                     start: 817,
@@ -939,7 +959,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"Enable signal comment\"",
                             start: 867,
@@ -947,7 +967,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "Enable signal comment",
                                     start: 868,
@@ -994,7 +1014,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "0",
                                     start: 910,
@@ -1003,7 +1023,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"Disabled\"",
                                     start: 912,
@@ -1011,7 +1031,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "Disabled",
                                             start: 913,
@@ -1032,7 +1052,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "1",
                                     start: 923,
@@ -1041,7 +1061,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"Enabled\"",
                                     start: 925,
@@ -1049,7 +1069,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "Enabled",
                                             start: 926,

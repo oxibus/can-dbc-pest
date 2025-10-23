@@ -19,7 +19,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 8,
@@ -27,7 +27,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 9,
@@ -338,13 +338,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "1234",
-                            start: 363,
+                            str: "BO_ 1234",
+                            start: 359,
                             end: 367,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1234",
+                                    start: 363,
+                                    end: 367,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: message_name,
@@ -483,7 +493,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 427,
@@ -494,7 +504,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 429,
@@ -513,6 +523,15 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
+                        rule: object_type,
+                        span: Span {
+                            str: "BO_",
+                            start: 451,
+                            end: 454,
+                        },
+                        inner: [],
+                    },
+                    Pair {
                         rule: attribute_name,
                         span: Span {
                             str: "\"GenMsgSendType\"",
@@ -521,7 +540,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "GenMsgSendType",
                                     start: 457,
@@ -551,6 +570,15 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
+                        rule: object_type,
+                        span: Span {
+                            str: "BO_",
+                            start: 490,
+                            end: 493,
+                        },
+                        inner: [],
+                    },
+                    Pair {
                         rule: attribute_name,
                         span: Span {
                             str: "\"GenMsgCycleTime\"",
@@ -559,7 +587,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "GenMsgCycleTime",
                                     start: 496,
@@ -616,7 +644,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "GenMsgSendType",
                                     start: 529,
@@ -627,16 +655,26 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "1234",
-                            start: 549,
+                            str: "BO_ 1234",
+                            start: 545,
                             end: 553,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1234",
+                                    start: 549,
+                                    end: 553,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"Event\"",
                             start: 554,
@@ -644,7 +682,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "Event",
                                     start: 555,
@@ -673,7 +711,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "GenMsgCycleTime",
                                     start: 568,
@@ -684,13 +722,23 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "1234",
-                            start: 589,
+                            str: "BO_ 1234",
+                            start: 585,
                             end: 593,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1234",
+                                    start: 589,
+                                    end: 593,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: number,

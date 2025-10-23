@@ -19,7 +19,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 8,
@@ -27,7 +27,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 9,
@@ -355,7 +355,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "255",
                                     start: 382,
@@ -364,7 +364,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"Not available\"",
                                     start: 386,
@@ -372,7 +372,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "Not available",
                                             start: 387,
@@ -393,7 +393,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "254",
                                     start: 402,
@@ -402,7 +402,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"Error\"",
                                     start: 406,
@@ -410,7 +410,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "Error",
                                             start: 407,
@@ -433,13 +433,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "10",
-                            start: 422,
+                            str: "BO_ 10",
+                            start: 418,
                             end: 424,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "10",
+                                    start: 422,
+                                    end: 424,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: message_name,
@@ -578,7 +588,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 490,
@@ -589,7 +599,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 492,
@@ -707,7 +717,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 544,
@@ -718,7 +728,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 546,
@@ -836,7 +846,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 602,
@@ -847,7 +857,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 604,
@@ -874,7 +884,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "BusType",
                                     start: 629,
@@ -912,7 +922,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "BusType",
                                     start: 661,
@@ -923,7 +933,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"CAN\"",
                             start: 670,
@@ -931,7 +941,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "CAN",
                                     start: 671,
@@ -1006,7 +1016,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "255",
                                     start: 725,
@@ -1015,7 +1025,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"Not available\"",
                                     start: 729,
@@ -1023,7 +1033,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "Not available",
                                             start: 730,
@@ -1044,7 +1054,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: table_value,
+                                rule: int,
                                 span: Span {
                                     str: "254",
                                     start: 745,
@@ -1053,7 +1063,7 @@ source: tests/snapshots.rs
                                 inner: [],
                             },
                             Pair {
-                                rule: table_desc,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"Error\"",
                                     start: 749,
@@ -1061,7 +1071,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "Error",
                                             start: 750,

@@ -19,7 +19,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 8,
@@ -27,7 +27,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 9,
@@ -338,13 +338,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "1",
-                            start: 387,
+                            str: "BO_ 1",
+                            start: 383,
                             end: 388,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1",
+                                    start: 387,
+                                    end: 388,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: message_name,
@@ -483,7 +493,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 518,
@@ -494,7 +504,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
                             start: 520,
@@ -513,16 +523,26 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_name,
+                        rule: node_var,
                         span: Span {
-                            str: "Node_will_be_shortened_456789_12",
-                            start: 544,
+                            str: "BU_ Node_will_be_shortened_456789_12",
+                            start: 540,
                             end: 576,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: node_name,
+                                span: Span {
+                                    str: "Node_will_be_shortened_456789_12",
+                                    start: 544,
+                                    end: 576,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 577,
@@ -530,7 +550,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 578,
@@ -551,6 +571,15 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
+                        rule: object_type,
+                        span: Span {
+                            str: "BU_",
+                            start: 589,
+                            end: 592,
+                        },
+                        inner: [],
+                    },
+                    Pair {
                         rule: attribute_name,
                         span: Span {
                             str: "\"SystemNodeLongSymbol\"",
@@ -559,7 +588,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "SystemNodeLongSymbol",
                                     start: 595,
@@ -589,6 +618,15 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
+                        rule: object_type,
+                        span: Span {
+                            str: "BO_",
+                            start: 634,
+                            end: 637,
+                        },
+                        inner: [],
+                    },
+                    Pair {
                         rule: attribute_name,
                         span: Span {
                             str: "\"SystemMessageLongSymbol\"",
@@ -597,7 +635,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "SystemMessageLongSymbol",
                                     start: 640,
@@ -627,6 +665,15 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
+                        rule: object_type,
+                        span: Span {
+                            str: "SG_",
+                            start: 682,
+                            end: 685,
+                        },
+                        inner: [],
+                    },
+                    Pair {
                         rule: attribute_name,
                         span: Span {
                             str: "\"SystemSignalLongSymbol\"",
@@ -635,7 +682,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "SystemSignalLongSymbol",
                                     start: 688,
@@ -673,7 +720,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "SystemNodeLongSymbol",
                                     start: 735,
@@ -684,7 +731,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 757,
@@ -692,7 +739,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 758,
@@ -721,7 +768,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "SystemMessageLongSymbol",
                                     start: 775,
@@ -732,7 +779,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 800,
@@ -740,7 +787,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 801,
@@ -769,7 +816,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "SystemSignalLongSymbol",
                                     start: 818,
@@ -780,7 +827,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 842,
@@ -788,7 +835,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 843,
@@ -817,7 +864,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "SystemNodeLongSymbol",
                                     start: 851,
@@ -828,16 +875,26 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: ident,
+                        rule: node_var,
                         span: Span {
-                            str: "Node_will_be_shortened_456789_12",
-                            start: 877,
+                            str: "BU_ Node_will_be_shortened_456789_12",
+                            start: 873,
                             end: 909,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: node_name,
+                                span: Span {
+                                    str: "Node_will_be_shortened_456789_12",
+                                    start: 877,
+                                    end: 909,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"Node_will_be_shortened_456789_12ZZZZ\"",
                             start: 910,
@@ -845,7 +902,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "Node_will_be_shortened_456789_12ZZZZ",
                                     start: 911,
@@ -874,7 +931,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "SystemMessageLongSymbol",
                                     start: 955,
@@ -885,16 +942,26 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "1",
-                            start: 984,
+                            str: "BO_ 1",
+                            start: 980,
                             end: 985,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1",
+                                    start: 984,
+                                    end: 985,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"Msg_will_be_shortened_3456789_12YYYY\"",
                             start: 986,
@@ -902,7 +969,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "Msg_will_be_shortened_3456789_12YYYY",
                                     start: 987,
@@ -931,7 +998,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "SystemSignalLongSymbol",
                                     start: 1031,
@@ -942,25 +1009,35 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: message_id,
+                        rule: signal_var,
                         span: Span {
-                            str: "1",
-                            start: 1059,
-                            end: 1060,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: ident,
-                        span: Span {
-                            str: "Sig_will_be_shortened_3456789_12",
-                            start: 1061,
+                            str: "SG_ 1 Sig_will_be_shortened_3456789_12",
+                            start: 1055,
                             end: 1093,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1",
+                                    start: 1059,
+                                    end: 1060,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: ident,
+                                span: Span {
+                                    str: "Sig_will_be_shortened_3456789_12",
+                                    start: 1061,
+                                    end: 1093,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"Sig_will_be_shortened_3456789_12XXXX\"",
                             start: 1094,
@@ -968,7 +1045,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "Sig_will_be_shortened_3456789_12XXXX",
                                     start: 1095,

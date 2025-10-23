@@ -19,7 +19,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 8,
@@ -27,7 +27,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 9,
@@ -347,13 +347,23 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: msg_var,
                         span: Span {
-                            str: "1",
-                            start: 366,
+                            str: "BO_ 1",
+                            start: 362,
                             end: 367,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1",
+                                    start: 366,
+                                    end: 367,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: message_name,
@@ -492,7 +502,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 426,
@@ -503,7 +513,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: receiver,
+                        rule: node_name,
                         span: Span {
                             str: "Node2",
                             start: 429,
@@ -530,7 +540,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "MultiplexExtEnabled",
                                     start: 448,
@@ -549,7 +559,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"No\"",
                                     start: 475,
@@ -557,7 +567,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "No",
                                             start: 476,
@@ -568,7 +578,7 @@ source: tests/snapshots.rs
                                 ],
                             },
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
                                     str: "\"Yes\"",
                                     start: 480,
@@ -576,7 +586,7 @@ source: tests/snapshots.rs
                                 },
                                 inner: [
                                     Pair {
-                                        rule: str,
+                                        rule: string,
                                         span: Span {
                                             str: "Yes",
                                             start: 481,
@@ -607,7 +617,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "BusType",
                                     start: 497,
@@ -645,7 +655,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "DBName",
                                     start: 525,
@@ -675,6 +685,15 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
+                        rule: object_type,
+                        span: Span {
+                            str: "SG_",
+                            start: 550,
+                            end: 553,
+                        },
+                        inner: [],
+                    },
+                    Pair {
                         rule: attribute_name,
                         span: Span {
                             str: "\"GenSigStartValue\"",
@@ -683,7 +702,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "GenSigStartValue",
                                     start: 556,
@@ -740,7 +759,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "MultiplexExtEnabled",
                                     start: 616,
@@ -751,7 +770,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"No\"",
                             start: 637,
@@ -759,7 +778,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "No",
                                     start: 638,
@@ -788,7 +807,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "BusType",
                                     start: 657,
@@ -799,7 +818,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"CAN\"",
                             start: 666,
@@ -807,7 +826,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "CAN",
                                     start: 667,
@@ -836,7 +855,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "DBName",
                                     start: 687,
@@ -847,7 +866,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"\"",
                             start: 695,
@@ -855,7 +874,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "",
                                     start: 696,
@@ -884,7 +903,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "GenSigStartValue",
                                     start: 713,
@@ -922,7 +941,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "DBName",
                                     start: 749,
@@ -933,7 +952,7 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: string,
+                        rule: quoted_str,
                         span: Span {
                             str: "\"test\"",
                             start: 757,
@@ -941,7 +960,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "test",
                                     start: 758,
@@ -970,7 +989,7 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: str,
+                                rule: string,
                                 span: Span {
                                     str: "GenSigStartValue",
                                     start: 770,
@@ -981,22 +1000,32 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: message_id,
+                        rule: signal_var,
                         span: Span {
-                            str: "1",
-                            start: 792,
-                            end: 793,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: ident,
-                        span: Span {
-                            str: "Signal1",
-                            start: 794,
+                            str: "SG_ 1 Signal1",
+                            start: 788,
                             end: 801,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: message_id,
+                                span: Span {
+                                    str: "1",
+                                    start: 792,
+                                    end: 793,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: ident,
+                                span: Span {
+                                    str: "Signal1",
+                                    start: 794,
+                                    end: 801,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                     Pair {
                         rule: number,

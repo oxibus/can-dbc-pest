@@ -10,28 +10,28 @@ file = { SOI ~ (line)* ~ EOI }
 /// A single line in the DBC file - can be various types of statements or empty
 line = _{
     (
-        version |
-        new_symbols |
-        bit_timing |
-        nodes |
-        message |
-        signal |
-        comment |
-        attr_def |
-        attr_value |
-        value_table |
-        value_table_def |
-        signal_group |
-        signal_value_type |
-        bo_tx_bu |
-        ba_def_rel |
-        ba_rel |
-        ba_def_def_rel |
-        ba_def_def |
-        sg_mul_val |
-        environment_variable |
-        envvar_data |
-        NEWLINE
+        version
+        | new_symbols
+        | bit_timing
+        | nodes
+        | message
+        | signal
+        | comment
+        | attr_def
+        | attr_value
+        | value_table
+        | value_table_def
+        | signal_group
+        | signal_value_type
+        | bo_tx_bu
+        | ba_def_rel
+        | ba_rel
+        | ba_def_def_rel
+        | ba_def_def
+        | sg_mul_val
+        | environment_variable
+        | envvar_data
+        | NEWLINE
     )
 }
 
@@ -67,13 +67,14 @@ minimum = @{ number }
 maximum = @{ number }
 
 /// String literals in double quotes
-string = @{ "\"" ~ str ~ "\"" }
-unit = @{ string }
-attribute_name = @{ string }
+quoted_str = @{ quote ~ string ~ quote }
+unit = @{ quoted_str }
+attribute_name = @{ quoted_str }
 
 /// String literal content, without the surrounding quotes
-str = ${ char* }
-char = _{ "\\\"" | !"\"" ~ ANY }
+string = ${ char* }
+char = _{ "\\\"" | !quote ~ ANY }
+quote = _{ "\"" }
 
 /// Identifiers (node names, message names, signal names, etc.)
 ident = @{ (ASCII_ALPHA | "_") ~ (ASCII_ALPHANUMERIC | "_")* }
@@ -81,8 +82,21 @@ ident = @{ (ASCII_ALPHA | "_") ~ (ASCII_ALPHANUMERIC | "_")* }
 /// Extended Identifiers (same as ident, but also allowing leading digits)
 ident_ext = @{ (ASCII_ALPHANUMERIC | "_")+ }
 signal_name = @{ ident_ext }
+num_str_value = _{ number | quoted_str }
+
+env_var = { env_literal ~ env_var_name }
+env_var_name = @{ ident }
+env_literal = _{ "EV_" }
+
+node_var = { node_literal ~ node_name }
 node_name = @{ ident_ext }
-num_str_value = _{ number | string }
+node_literal = _{ "BU_" }
+
+msg_var = { msg_literal ~ message_id }
+msg_literal = _{ "BO_" }
+
+signal_var = { signal_literal ~ message_id ~ ident }
+signal_literal = _{ "SG_" }
 
 // ============================================================================
 // DBC FILE SECTIONS
@@ -91,10 +105,11 @@ num_str_value = _{ number | string }
 /// Version identifier of the DBC file.
 ///
 /// Format: `VERSION "string"`
-version = { "VERSION" ~ string ~ NEWLINE }
+version = { "VERSION" ~ quoted_str ~ NEWLINE }
 
 /// New Symbol section: NS_ : symbol1 symbol2 ...
-/// The spaces and comments are explicit because each symbol must be indented on new lines
+/// The spaces and comments are explicit because each symbol must be indented on new lines.
+/// The indented lines are what tells us that they are part of the new_symbols section.
 new_symbols = ${
     "NS_" ~ WHITESPACE* ~ ":" ~ WHITESPACE* ~ (ident ~ WHITESPACE*)* ~ COMMENT* ~
     (NEWLINE ~ (WHITESPACE+ ~ ident)* ~ WHITESPACE* ~ COMMENT*)* ~
@@ -109,16 +124,16 @@ new_symbols = ${
 bit_timing = { "BS_" ~ ":" ~ (uint ~ ":" ~ uint ~ "," ~ uint)? ~ NEWLINE }
 
 /// Node definition: BU_: node1 node2 node3 ...
+/// Just like new_symbols, the spaces and comments are explicit because each node can be either on the same line or
+/// space-indented on new lines.
 nodes = ${
-    "BU_" ~ WHITESPACE* ~ ":" ~ WHITESPACE* ~ (node_name ~ WHITESPACE*)* ~ COMMENT* ~
+    node_literal ~ WHITESPACE* ~ ":" ~ WHITESPACE* ~ (node_name ~ WHITESPACE*)* ~ COMMENT* ~
     (NEWLINE ~ (WHITESPACE+ ~ node_name)* ~ WHITESPACE* ~ COMMENT*)* ~
     NEWLINE
 }
 
 /// Message definition: BO_ message_id message_name: message_size transmitter
-message = {
-    "BO_" ~ message_id ~ message_name ~ ":" ~ message_size ~ transmitter
-}
+message = { msg_var ~ message_name ~ ":" ~ message_size ~ transmitter }
 message_name = @{ ident_ext }
 message_size = @{ int }
 transmitter = @{ ident }
@@ -155,18 +170,18 @@ transmitter = @{ ident }
 /// `MultiplexerIdentifier`: Signal definition is only used if the value of the multiplexer signal equals this value.
 
 signal = {
-    "SG_" ~ signal_name ~ multiplexer_indicator? ~ ":" ~
+    signal_literal ~ signal_name ~ multiplexer_indicator? ~ ":" ~
     (
         start_bit ~ ("|" ~ signal_size)? ~ "@" ~
         ( big_endian | little_endian ) ~  // 0 | 1
-        ( signed_type | unsigned_type ) ~ // + | -
+        ( signed_type | unsigned_type ) ~ // - | +
         "(" ~ factor ~ "," ~ offset ~ ")" ~
         min_max ~
-        unit ~ receiver ~ ("," ~ receiver)*
+        unit ~ node_name ~ ("," ~ node_name)*
     )
 }
 
-multiplexer_indicator = @{ ( "M" | ("m" ~ (multiplexer_id ~ "M"?)? ) ) }
+multiplexer_indicator = @{ "M" | ("m" ~ (multiplexer_id ~ "M"?)? ) }
 start_bit = @{ int }
 signal_size = @{ int }
 big_endian = @{ "0" }
@@ -175,7 +190,6 @@ signed_type = @{ "-" }
 unsigned_type = @{ "+" }
 factor = @{ number }
 offset = @{ number }
-receiver = @{ "Vector__XXX" | node_name }
 
 /// Comment definitions: CM_ [BU_|BO_|SG_|EV_] object_name "comment_text";
 ///
@@ -193,12 +207,12 @@ receiver = @{ "Vector__XXX" | node_name }
 /// ```
 comment = {
     "CM_" ~ (
-        ("SG_" ~ message_id ~ signal_name? ~ string) |
-        ("BO_" ~ message_id ~ string) |
-        ("BU_" ~ node_name ~ string) |
-        ("EV_" ~ env_var_name ~ string) |
-        (message_id ~ string) |  // message_id + string does not seem to have description above
-        string
+        (signal_literal ~ message_id ~ signal_name? ~ quoted_str)
+         | (msg_var ~ quoted_str)
+         | (node_var ~ quoted_str)
+         | (env_var ~ quoted_str)
+         | quoted_str
+         | (message_id ~ quoted_str)  // message_id + string does not seem to have description above
     ) ~ ";"?
 }
 
@@ -214,33 +228,31 @@ comment = {
 /// BA_DEF_ EV_  "RWEnvVar_wData_Val" INT 0 10;
 /// BA_DEF_ EV_  "GlobalEnvVar_Val" HEX 256 320;
 /// ```
-attr_def = {
-    "BA_DEF_" ~
-    (("BU_" | "BO_" | "SG_" | "EV_") ~ ident?)? ~
-    attribute_name ~ attribute_type ~ ";"
-}
+attr_def = { "BA_DEF_" ~ (object_type ~ ident?)? ~ attribute_name ~ attribute_type ~ ";" }
+
+object_type = { node_literal | msg_literal | signal_literal | env_literal }
 
 attribute_type = _{
-    attribute_type_int |
-    attribute_type_hex |
-    attribute_type_float |
-    attribute_type_string |
-    attribute_type_enum
+    attribute_type_int
+    | attribute_type_hex
+    | attribute_type_float
+    | attribute_type_string
+    | attribute_type_enum
 }
 attribute_type_int = { "INT" ~ minimum ~ maximum }
 attribute_type_hex = { "HEX" ~ minimum ~ maximum }
 attribute_type_float = { "FLOAT" ~ minimum ~ maximum }
 attribute_type_string = { "STRING" }
-attribute_type_enum = { "ENUM" ~ string ~ ("," ~ string)* }
+attribute_type_enum = { "ENUM" ~ quoted_str ~ ("," ~ quoted_str)* }
 
 
 /// Attribute value: BA_ attribute_name [object_type] object_name value;
 attr_value = {
     "BA_" ~ attribute_name ~ (
-        ("BU_" ~ ident) |
-        ("BO_" ~ message_id) |
-        ("SG_" ~ message_id ~ ident) |
-        ("EV_" ~ ident)
+        node_var
+        | msg_var
+        | signal_var
+        | env_var
     )? ~ num_str_value ~ ";"
 }
 
@@ -250,9 +262,7 @@ attr_value = {
 /// ```text
 /// VAL_ RWEnvVar_wData 2 "Value2" 1 "Value1" 0 "Value0" ;
 /// ```
-value_table_def = {
-    "VAL_" ~ message_id? ~ signal_name ~ table_value_description* ~ ";"?
-}
+value_table_def = { "VAL_" ~ message_id? ~ signal_name ~ table_value_description* ~ ";"? }
 
 /// Value table: VAL_TABLE_ table_name value1 "description1" value2 "description2" ... ;
 ///
@@ -270,31 +280,21 @@ value_table_def = {
 /// Format: `VAL_TABLE_ <value_table_name> <value_description>;`
 ///
 /// `value_description`: List of `IntValue "StringValue"` Pairs, separated by whitespaces
-value_table = {
-    "VAL_TABLE_" ~ table_name ~ table_value_description* ~ ";"
-}
+value_table = { "VAL_TABLE_" ~ table_name ~ table_value_description* ~ ";" }
 
 table_name = @{ ident_ext }
-table_value_description = { table_value ~ table_desc }
-table_value = @{ int }
-table_desc = @{ string }
+table_value_description = { int ~ quoted_str }
 
 /// Signal group: SIG_GROUP_ message_id group_name multiplexer_id : signal1 signal2 ... ;
-signal_group = {
-    "SIG_GROUP_" ~ message_id ~ group_name ~ multiplexer_id ~ ":" ~ signal_name* ~ ";"
-}
+signal_group = { "SIG_GROUP_" ~ message_id ~ group_name ~ multiplexer_id ~ ":" ~ signal_name* ~ ";" }
 group_name = @{ ident }
 multiplexer_id = @{ int }
 
 /// Signal value type: SIG_VALTYPE_ message_id signal_name : value_type;
-signal_value_type = {
-    "SIG_VALTYPE_" ~ message_id ~ signal_name ~ ":" ~ int ~ ";"
-}
+signal_value_type = { "SIG_VALTYPE_" ~ message_id ~ signal_name ~ ":" ~ int ~ ";" }
 
 /// Message transmitter: BO_TX_BU_ message_id : transmitter1,transmitter2,... ;
-bo_tx_bu = {
-    "BO_TX_BU_" ~ message_id ~ ":" ~ (transmitter ~ ("," ~ transmitter)*)? ~ ";"
-}
+bo_tx_bu = { "BO_TX_BU_" ~ message_id ~ ":" ~ (transmitter ~ ("," ~ transmitter)*)? ~ ";" }
 
 /// Relative attribute definition: BA_DEF_REL_ object_type attribute_name attribute_type [min max];
 ///
@@ -324,36 +324,27 @@ bo_tx_bu = {
 /// BA_DEF_REL_ BU_BO_REL_  "attribute_name" STRING ;
 /// BA_DEF_REL_ BU_SG_REL_  "attribute_name" STRING ;
 /// ```
-ba_def_rel = {
-    "BA_DEF_REL_" ~
-    ("BU_SG_REL_" | "BU_BO_REL_" | "BU_EV_REL_") ~
-    attribute_name ~ attribute_type ~ ";"
-}
+ba_def_rel = { "BA_DEF_REL_" ~ rel_object_type ~ attribute_name ~ attribute_type ~ ";" }
 
 /// Relative attribute value: BA_REL_ attribute_name object_type object_name value;
-ba_rel = {
-    "BA_REL_" ~ attribute_name ~
-    (
-        ("BU_SG_REL_" ~ ident ~ "SG_" ~ int ~ ident ~ num_str_value) |
-        ("BU_BO_REL_" ~ ident ~ int ~ num_str_value) |
-        ("BU_EV_REL_" ~ ident ~ "EV_" ~ ident ~ num_str_value)
-    ) ~ ";"
+ba_rel = { "BA_REL_" ~ attribute_name ~ rel_object_type ~ rel_object_data ~ ";" }
+
+rel_object_type = { "BU_SG_REL_" | "BU_BO_REL_" | "BU_EV_REL_" }
+
+rel_object_data = {
+    (ident ~ signal_var ~ num_str_value)
+    | (ident ~ env_var ~ num_str_value)
+    | (ident ~ message_id ~ num_str_value)
 }
 
 /// Relative attribute default: BA_DEF_DEF_REL_ attribute_name default_value;
-ba_def_def_rel = {
-    "BA_DEF_DEF_REL_" ~ attribute_name ~ num_str_value ~ ";"
-}
+ba_def_def_rel = { "BA_DEF_DEF_REL_" ~ attribute_name ~ num_str_value ~ ";" }
 
 /// Global attribute default: BA_DEF_DEF_ attribute_name default_value;
-ba_def_def = {
-    "BA_DEF_DEF_" ~ attribute_name ~ num_str_value ~ ";"
-}
+ba_def_def = { "BA_DEF_DEF_" ~ attribute_name ~ num_str_value ~ ";" }
 
 /// Multiplexed signal value definition: SG_MUL_VAL_ <message_id> <signal_name> <multiplexer_name> <value_pairs>;
-sg_mul_val = {
-    "SG_MUL_VAL_" ~ message_id ~ signal_name ~ multiplexer_name ~ value_pair ~ ("," ~ value_pair)* ~ ";"
-}
+sg_mul_val = { "SG_MUL_VAL_" ~ message_id ~ signal_name ~ multiplexer_name ~ value_pair ~ ("," ~ value_pair)* ~ ";" }
 value_pair = { int ~ "-" ~ int }
 multiplexer_name = @{ ident }
 
@@ -395,13 +386,12 @@ multiplexer_name = @{ ident }
 /// EV_ WriteOnlyEnvVar: 1 [0|1234] "" 60 3 DUMMY_NODE_VECTOR2  Node2;
 /// ```
 environment_variable = {
-    "EV_" ~ env_var_name ~ ":" ~ env_var_type ~ min_max ~ unit ~ init_value ~ ev_id ~ node_name ~ node_name ~ ";"
+    env_var ~ ":" ~ env_var_type ~ min_max ~ unit ~ init_value ~ ev_id ~ node_name ~ node_name ~ ";"
 }
-env_var_name = @{ ident }
 env_var_type = _{
-    env_var_type_int |
-    env_var_type_float |
-    env_var_type_string
+    env_var_type_int
+    | env_var_type_float
+    | env_var_type_string
 }
 env_var_type_int = @{ "0" }
 env_var_type_float = @{ "1" }
@@ -422,7 +412,5 @@ ev_id = @{ int }
 /// ```text
 /// ENVVAR_DATA_ RWEnvVar_wData: 10;
 /// ```
-envvar_data = {
-    "ENVVAR_DATA_" ~ env_var_name ~ ":" ~ data_size ~ ";"
-}
+envvar_data = { "ENVVAR_DATA_" ~ env_var_name ~ ":" ~ data_size ~ ";" }
 data_size = @{ uint }
