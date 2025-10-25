@@ -386,7 +386,7 @@ multiplexer_name = @{ ident }
 /// EV_ WriteOnlyEnvVar: 1 [0|1234] "" 60 3 DUMMY_NODE_VECTOR2  Node2;
 /// ```
 environment_variable = {
-    env_var ~ ":" ~ env_var_type ~ min_max ~ unit ~ init_value ~ ev_id ~ node_name ~ node_name ~ ";"
+    env_var ~ ":" ~ env_var_type ~ min_max ~ unit ~ init_value ~ ev_id ~ access_type ~ node_name ~ ";"
 }
 env_var_type = _{
     env_var_type_int
@@ -398,6 +398,7 @@ env_var_type_float = @{ "1" }
 env_var_type_string = @{ "2" }
 init_value = @{ int }
 ev_id = @{ int }
+access_type = ${ "DUMMY_NODE_VECTOR" ~ uint }
 
 /// Environment variables data section
 ///
