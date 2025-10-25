@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0](https://github.com/oxibus/can-dbc-pest/compare/v0.4.0...v0.5.0) - 2025-10-25
+
+### Other
+
+- [**breaking**] update access type in env variable definitions ([#18](https://github.com/oxibus/can-dbc-pest/pull/18))
+
 ## [0.4.0](https://github.com/oxibus/can-dbc-pest/compare/v0.3.0...v0.4.0) - 2025-10-23
 
 ### Other
