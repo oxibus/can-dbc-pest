@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.1](https://github.com/oxibus/can-dbc-pest/compare/v0.5.0...v0.5.1) - 2025-10-26
+
+### Other
+
+- change `value_pair` from `int` to `uint` in multiplex definitions
+
 ## [0.5.0](https://github.com/oxibus/can-dbc-pest/compare/v0.4.0...v0.5.0) - 2025-10-25
 
 ### Other
