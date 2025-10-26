@@ -345,7 +345,7 @@ ba_def_def = { "BA_DEF_DEF_" ~ attribute_name ~ num_str_value ~ ";" }
 
 /// Multiplexed signal value definition: SG_MUL_VAL_ <message_id> <signal_name> <multiplexer_name> <value_pairs>;
 sg_mul_val = { "SG_MUL_VAL_" ~ message_id ~ signal_name ~ multiplexer_name ~ value_pair ~ ("," ~ value_pair)* ~ ";" }
-value_pair = { int ~ "-" ~ int }
+value_pair = { uint ~ "-" ~ uint }
 multiplexer_name = @{ ident }
 
 /// Environment variable definition: EV_ variable_name : type [min|max] "unit" access_type access_node node_name1 node_name2;
