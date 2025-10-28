@@ -717,11 +717,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_var,
+                        rule: comment_node,
                         span: Span {
-                            str: "BU_ ECU1",
+                            str: "BU_ ECU1 \"First ECU\"",
                             start: 507,
-                            end: 515,
+                            end: 527,
                         },
                         inner: [
                             Pair {
@@ -733,24 +733,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"First ECU\"",
-                            start: 516,
-                            end: 527,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "First ECU",
-                                    start: 517,
-                                    end: 526,
+                                    str: "\"First ECU\"",
+                                    start: 516,
+                                    end: 527,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "First ECU",
+                                            start: 517,
+                                            end: 526,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -1487,11 +1487,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 83",
+                            str: "BO_ 83 50",
                             start: 1057,
-                            end: 1063,
+                            end: 1066,
                         },
                         inner: [
                             Pair {
@@ -1503,16 +1503,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "50",
+                                    start: 1064,
+                                    end: 1066,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "50",
-                            start: 1064,
-                            end: 1066,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -1572,9 +1572,9 @@ source: tests/snapshots.rs
                             Pair {
                                 rule: signal_var,
                                 span: Span {
-                                    str: "SG_ 82 signal_1",
+                                    str: "SG_ 82 signal_1 6000",
                                     start: 1109,
-                                    end: 1124,
+                                    end: 1129,
                                 },
                                 inner: [
                                     Pair {
@@ -1595,16 +1595,16 @@ source: tests/snapshots.rs
                                         },
                                         inner: [],
                                     },
+                                    Pair {
+                                        rule: number,
+                                        span: Span {
+                                            str: "6000",
+                                            start: 1125,
+                                            end: 1129,
+                                        },
+                                        inner: [],
+                                    },
                                 ],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "6000",
-                                    start: 1125,
-                                    end: 1129,
-                                },
-                                inner: [],
                             },
                         ],
                     },
@@ -1666,9 +1666,9 @@ source: tests/snapshots.rs
                             Pair {
                                 rule: signal_var,
                                 span: Span {
-                                    str: "SG_ 82 signal_1",
+                                    str: "SG_ 82 signal_1 24000",
                                     start: 1177,
-                                    end: 1192,
+                                    end: 1198,
                                 },
                                 inner: [
                                     Pair {
@@ -1689,16 +1689,16 @@ source: tests/snapshots.rs
                                         },
                                         inner: [],
                                     },
+                                    Pair {
+                                        rule: number,
+                                        span: Span {
+                                            str: "24000",
+                                            start: 1193,
+                                            end: 1198,
+                                        },
+                                        inner: [],
+                                    },
                                 ],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "24000",
-                                    start: 1193,
-                                    end: 1198,
-                                },
-                                inner: [],
                             },
                         ],
                     },

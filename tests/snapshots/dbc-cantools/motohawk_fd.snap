@@ -799,11 +799,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: msg_var,
+                        rule: comment_message,
                         span: Span {
-                            str: "BO_ 2147484144",
+                            str: "BO_ 2147484144 \"Example message used as template in MotoHawk models.\"",
                             start: 586,
-                            end: 600,
+                            end: 655,
                         },
                         inner: [
                             Pair {
@@ -815,24 +815,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Example message used as template in MotoHawk models.\"",
-                            start: 601,
-                            end: 655,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Example message used as template in MotoHawk models.",
-                                    start: 602,
-                                    end: 654,
+                                    str: "\"Example message used as template in MotoHawk models.\"",
+                                    start: 601,
+                                    end: 655,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Example message used as template in MotoHawk models.",
+                                            start: 602,
+                                            end: 654,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -1638,11 +1638,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2147484144",
+                            str: "BO_ 2147484144 15",
                             start: 1174,
-                            end: 1188,
+                            end: 1191,
                         },
                         inner: [
                             Pair {
@@ -1654,16 +1654,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "15",
+                                    start: 1189,
+                                    end: 1191,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "15",
-                            start: 1189,
-                            end: 1191,
-                        },
-                        inner: [],
                     },
                 ],
             },

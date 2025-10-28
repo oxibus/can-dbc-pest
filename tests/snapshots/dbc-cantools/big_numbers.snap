@@ -708,11 +708,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_var,
+                        rule: comment_node,
                         span: Span {
-                            str: "BU_ TheNode",
+                            str: "BU_ TheNode \"TheNodeComment\"",
                             start: 548,
-                            end: 559,
+                            end: 576,
                         },
                         inner: [
                             Pair {
@@ -724,24 +724,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"TheNodeComment\"",
-                            start: 560,
-                            end: 576,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "TheNodeComment",
-                                    start: 561,
-                                    end: 575,
+                                    str: "\"TheNodeComment\"",
+                                    start: 560,
+                                    end: 576,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "TheNodeComment",
+                                            start: 561,
+                                            end: 575,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3721,11 +3721,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: node_var,
+                        rule: node_var_val,
                         span: Span {
-                            str: "BU_ TheNode",
+                            str: "BU_ TheNode 99",
                             start: 2853,
-                            end: 2864,
+                            end: 2867,
                         },
                         inner: [
                             Pair {
@@ -3737,16 +3737,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "99",
+                                    start: 2865,
+                                    end: 2867,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "99",
-                            start: 2865,
-                            end: 2867,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3778,11 +3778,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2147483705",
+                            str: "BO_ 2147483705 58.7",
                             start: 2893,
-                            end: 2907,
+                            end: 2912,
                         },
                         inner: [
                             Pair {
@@ -3794,16 +3794,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "58.7",
+                                    start: 2908,
+                                    end: 2912,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "58.7",
-                            start: 2908,
-                            end: 2912,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3835,11 +3835,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2147483705",
+                            str: "BO_ 2147483705 5",
                             start: 2936,
-                            end: 2950,
+                            end: 2952,
                         },
                         inner: [
                             Pair {
@@ -3851,16 +3851,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "5",
+                                    start: 2951,
+                                    end: 2952,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "5",
-                            start: 2951,
-                            end: 2952,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3892,11 +3892,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2147483705",
+                            str: "BO_ 2147483705 0",
                             start: 2975,
-                            end: 2989,
+                            end: 2991,
                         },
                         inner: [
                             Pair {
@@ -3908,16 +3908,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "0",
+                                    start: 2990,
+                                    end: 2991,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "0",
-                            start: 2990,
-                            end: 2991,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3949,11 +3949,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2147483705",
+                            str: "BO_ 2147483705 1000",
                             start: 3015,
-                            end: 3029,
+                            end: 3034,
                         },
                         inner: [
                             Pair {
@@ -3965,16 +3965,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "1000",
+                                    start: 3030,
+                                    end: 3034,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1000",
-                            start: 3030,
-                            end: 3034,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -4008,9 +4008,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 2147483705 TheSignal",
+                            str: "SG_ 2147483705 TheSignal \"TestString\"",
                             start: 3067,
-                            end: 3091,
+                            end: 3104,
                         },
                         inner: [
                             Pair {
@@ -4031,24 +4031,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"TestString\"",
-                            start: 3092,
-                            end: 3104,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "TestString",
-                                    start: 3093,
-                                    end: 3103,
+                                    str: "\"TestString\"",
+                                    start: 3092,
+                                    end: 3104,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "TestString",
+                                            start: 3093,
+                                            end: 3103,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4084,9 +4084,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 2147483705 TheSignal",
+                            str: "SG_ 2147483705 TheSignal 1",
                             start: 3127,
-                            end: 3151,
+                            end: 3153,
                         },
                         inner: [
                             Pair {
@@ -4107,16 +4107,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "1",
+                                    start: 3152,
+                                    end: 3153,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 3152,
-                            end: 3153,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -4150,9 +4150,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 42 TheSignal",
+                            str: "SG_ 42 TheSignal 1",
                             start: 3176,
-                            end: 3192,
+                            end: 3194,
                         },
                         inner: [
                             Pair {
@@ -4173,16 +4173,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "1",
+                                    start: 3193,
+                                    end: 3194,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 3193,
-                            end: 3194,
-                        },
-                        inner: [],
                     },
                 ],
             },

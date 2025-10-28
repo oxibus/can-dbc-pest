@@ -1764,7 +1764,7 @@ source: tests/snapshots.rs
                 ],
             },
             Pair {
-                rule: bo_tx_bu,
+                rule: message_transmitter,
                 span: Span {
                     str: "BO_TX_BU_ 2147558194 : FOO,BAR;",
                     start: 939,
@@ -1809,11 +1809,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_var,
+                        rule: comment_node,
                         span: Span {
-                            str: "BU_ BAR",
+                            str: "BU_ BAR \"fam \\\"1\\\"\"",
                             start: 977,
-                            end: 984,
+                            end: 996,
                         },
                         inner: [
                             Pair {
@@ -1825,24 +1825,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"fam \\\"1\\\"\"",
-                            start: 985,
-                            end: 996,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "fam \\\"1\\\"",
-                                    start: 986,
-                                    end: 995,
+                                    str: "\"fam \\\"1\\\"\"",
+                                    start: 985,
+                                    end: 996,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "fam \\\"1\\\"",
+                                            start: 986,
+                                            end: 995,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -1857,11 +1857,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: msg_var,
+                        rule: comment_message,
                         span: Span {
-                            str: "BO_ 2147558192",
+                            str: "BO_ 2147558192 \"Foo.\"",
                             start: 1002,
-                            end: 1016,
+                            end: 1023,
                         },
                         inner: [
                             Pair {
@@ -1873,24 +1873,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Foo.\"",
-                            start: 1017,
-                            end: 1023,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Foo.",
-                                    start: 1018,
-                                    end: 1022,
+                                    str: "\"Foo.\"",
+                                    start: 1017,
+                                    end: 1023,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Foo.",
+                                            start: 1018,
+                                            end: 1022,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -1905,39 +1905,49 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: comment_signal,
                         span: Span {
-                            str: "2147558192",
-                            start: 1033,
-                            end: 1043,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: signal_name,
-                        span: Span {
-                            str: "Bar",
-                            start: 1044,
-                            end: 1047,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Bar.\"",
-                            start: 1048,
+                            str: "SG_ 2147558192 Bar \"Bar.\"",
+                            start: 1029,
                             end: 1054,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: message_id,
                                 span: Span {
-                                    str: "Bar.",
-                                    start: 1049,
-                                    end: 1053,
+                                    str: "2147558192",
+                                    start: 1033,
+                                    end: 1043,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: signal_name,
+                                span: Span {
+                                    str: "Bar",
+                                    start: 1044,
+                                    end: 1047,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: quoted_str,
+                                span: Span {
+                                    str: "\"Bar.\"",
+                                    start: 1048,
+                                    end: 1054,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Bar.",
+                                            start: 1049,
+                                            end: 1053,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3511,11 +3521,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: node_var,
+                        rule: node_var_val,
                         span: Span {
-                            str: "BU_ FIE",
+                            str: "BU_ FIE \"FUM\"",
                             start: 2098,
-                            end: 2105,
+                            end: 2111,
                         },
                         inner: [
                             Pair {
@@ -3527,24 +3537,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"FUM\"",
-                            start: 2106,
-                            end: 2111,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "FUM",
-                                    start: 2107,
-                                    end: 2110,
+                                    str: "\"FUM\"",
+                                    start: 2106,
+                                    end: 2111,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "FUM",
+                                            start: 2107,
+                                            end: 2110,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3578,11 +3588,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: node_var,
+                        rule: node_var_val,
                         span: Span {
-                            str: "BU_ FIE",
+                            str: "BU_ FIE 1",
                             start: 2123,
-                            end: 2130,
+                            end: 2132,
                         },
                         inner: [
                             Pair {
@@ -3594,16 +3604,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "1",
+                                    start: 2131,
+                                    end: 2132,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 2131,
-                            end: 2132,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3635,11 +3645,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2147558192",
+                            str: "BO_ 2147558192 1",
                             start: 2153,
-                            end: 2167,
+                            end: 2169,
                         },
                         inner: [
                             Pair {
@@ -3651,16 +3661,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "1",
+                                    start: 2168,
+                                    end: 2169,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 2168,
-                            end: 2169,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3692,11 +3702,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2147558193",
+                            str: "BO_ 2147558193 1",
                             start: 2190,
-                            end: 2204,
+                            end: 2206,
                         },
                         inner: [
                             Pair {
@@ -3708,16 +3718,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "1",
+                                    start: 2205,
+                                    end: 2206,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 2205,
-                            end: 2206,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3749,11 +3759,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2147558193",
+                            str: "BO_ 2147558193 1",
                             start: 2230,
-                            end: 2244,
+                            end: 2246,
                         },
                         inner: [
                             Pair {
@@ -3765,16 +3775,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "1",
+                                    start: 2245,
+                                    end: 2246,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 2245,
-                            end: 2246,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3806,11 +3816,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2147558194",
+                            str: "BO_ 2147558194 1",
                             start: 2267,
-                            end: 2281,
+                            end: 2283,
                         },
                         inner: [
                             Pair {
@@ -3822,16 +3832,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "1",
+                                    start: 2282,
+                                    end: 2283,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1",
-                            start: 2282,
-                            end: 2283,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3863,11 +3873,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2147558195",
+                            str: "BO_ 2147558195 15",
                             start: 2304,
-                            end: 2318,
+                            end: 2321,
                         },
                         inner: [
                             Pair {
@@ -3879,16 +3889,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "15",
+                                    start: 2319,
+                                    end: 2321,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "15",
-                            start: 2319,
-                            end: 2321,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3920,11 +3930,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 780",
+                            str: "BO_ 780 0",
                             start: 2342,
-                            end: 2349,
+                            end: 2351,
                         },
                         inner: [
                             Pair {
@@ -3936,16 +3946,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "0",
+                                    start: 2350,
+                                    end: 2351,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "0",
-                            start: 2350,
-                            end: 2351,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -4005,9 +4015,9 @@ source: tests/snapshots.rs
                             Pair {
                                 rule: signal_var,
                                 span: Span {
-                                    str: "SG_ 2147558192 Bar",
+                                    str: "SG_ 2147558192 Bar 200",
                                     start: 2396,
-                                    end: 2414,
+                                    end: 2418,
                                 },
                                 inner: [
                                     Pair {
@@ -4028,16 +4038,16 @@ source: tests/snapshots.rs
                                         },
                                         inner: [],
                                     },
+                                    Pair {
+                                        rule: number,
+                                        span: Span {
+                                            str: "200",
+                                            start: 2415,
+                                            end: 2418,
+                                        },
+                                        inner: [],
+                                    },
                                 ],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "200",
-                                    start: 2415,
-                                    end: 2418,
-                                },
-                                inner: [],
                             },
                         ],
                     },
@@ -4099,9 +4109,9 @@ source: tests/snapshots.rs
                             Pair {
                                 rule: signal_var,
                                 span: Span {
-                                    str: "SG_ 2147558192 Bar",
+                                    str: "SG_ 2147558192 Bar 500",
                                     start: 2453,
-                                    end: 2471,
+                                    end: 2475,
                                 },
                                 inner: [
                                     Pair {
@@ -4122,16 +4132,16 @@ source: tests/snapshots.rs
                                         },
                                         inner: [],
                                     },
+                                    Pair {
+                                        rule: number,
+                                        span: Span {
+                                            str: "500",
+                                            start: 2472,
+                                            end: 2475,
+                                        },
+                                        inner: [],
+                                    },
                                 ],
-                            },
-                            Pair {
-                                rule: number,
-                                span: Span {
-                                    str: "500",
-                                    start: 2472,
-                                    end: 2475,
-                                },
-                                inner: [],
                             },
                         ],
                     },
@@ -4323,7 +4333,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: sig_val_IEEE_float_32Bit,
                         span: Span {
                             str: "1",
                             start: 2602,
@@ -4360,7 +4370,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: sig_val_IEEE_float_32Bit,
                         span: Span {
                             str: "1",
                             start: 2640,

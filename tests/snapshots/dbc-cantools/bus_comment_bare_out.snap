@@ -328,7 +328,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: quoted_str,
+                        rule: comment_plain,
                         span: Span {
                             str: "\"Comment1Comment2\"",
                             start: 360,
@@ -336,13 +336,23 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Comment1Comment2",
-                                    start: 361,
-                                    end: 377,
+                                    str: "\"Comment1Comment2\"",
+                                    start: 360,
+                                    end: 378,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Comment1Comment2",
+                                            start: 361,
+                                            end: 377,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },

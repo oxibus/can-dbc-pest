@@ -3267,11 +3267,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_var,
+                        rule: comment_node,
                         span: Span {
-                            str: "BU_ DRIVER",
+                            str: "BU_ DRIVER \"// The driver controller driving the car //\"",
                             start: 1733,
-                            end: 1743,
+                            end: 1789,
                         },
                         inner: [
                             Pair {
@@ -3283,24 +3283,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"// The driver controller driving the car //\"",
-                            start: 1744,
-                            end: 1789,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "// The driver controller driving the car //",
-                                    start: 1745,
-                                    end: 1788,
+                                    str: "\"// The driver controller driving the car //\"",
+                                    start: 1744,
+                                    end: 1789,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "// The driver controller driving the car //",
+                                            start: 1745,
+                                            end: 1788,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3315,11 +3315,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_var,
+                        rule: comment_node,
                         span: Span {
-                            str: "BU_ MOTOR",
+                            str: "BU_ MOTOR \"The motor controller of the car\"",
                             start: 1795,
-                            end: 1804,
+                            end: 1838,
                         },
                         inner: [
                             Pair {
@@ -3331,24 +3331,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"The motor controller of the car\"",
-                            start: 1805,
-                            end: 1838,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "The motor controller of the car",
-                                    start: 1806,
-                                    end: 1837,
+                                    str: "\"The motor controller of the car\"",
+                                    start: 1805,
+                                    end: 1838,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "The motor controller of the car",
+                                            start: 1806,
+                                            end: 1837,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3363,11 +3363,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_var,
+                        rule: comment_node,
                         span: Span {
-                            str: "BU_ SENSOR",
+                            str: "BU_ SENSOR \"The sensor controller of the car\"",
                             start: 1844,
-                            end: 1854,
+                            end: 1889,
                         },
                         inner: [
                             Pair {
@@ -3379,24 +3379,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"The sensor controller of the car\"",
-                            start: 1855,
-                            end: 1889,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "The sensor controller of the car",
-                                    start: 1856,
-                                    end: 1888,
+                                    str: "\"The sensor controller of the car\"",
+                                    start: 1855,
+                                    end: 1889,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "The sensor controller of the car",
+                                            start: 1856,
+                                            end: 1888,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3411,11 +3411,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: msg_var,
+                        rule: comment_message,
                         span: Span {
-                            str: "BO_ 100",
+                            str: "BO_ 100 \"Sync message used to synchronize the controllers\"",
                             start: 1895,
-                            end: 1902,
+                            end: 1953,
                         },
                         inner: [
                             Pair {
@@ -3427,24 +3427,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Sync message used to synchronize the controllers\"",
-                            start: 1903,
-                            end: 1953,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Sync message used to synchronize the controllers",
-                                    start: 1904,
-                                    end: 1952,
+                                    str: "\"Sync message used to synchronize the controllers\"",
+                                    start: 1903,
+                                    end: 1953,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Sync message used to synchronize the controllers",
+                                            start: 1904,
+                                            end: 1952,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3763,11 +3763,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 100",
+                            str: "BO_ 100 1000",
                             start: 2172,
-                            end: 2179,
+                            end: 2184,
                         },
                         inner: [
                             Pair {
@@ -3779,16 +3779,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "1000",
+                                    start: 2180,
+                                    end: 2184,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "1000",
-                            start: 2180,
-                            end: 2184,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3822,9 +3822,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 100 DRIVER_HEARTBEAT_cmd",
+                            str: "SG_ 100 DRIVER_HEARTBEAT_cmd \"DRIVER_HEARTBEAT_cmd\"",
                             start: 2202,
-                            end: 2230,
+                            end: 2253,
                         },
                         inner: [
                             Pair {
@@ -3845,24 +3845,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"DRIVER_HEARTBEAT_cmd\"",
-                            start: 2231,
-                            end: 2253,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "DRIVER_HEARTBEAT_cmd",
-                                    start: 2232,
-                                    end: 2252,
+                                    str: "\"DRIVER_HEARTBEAT_cmd\"",
+                                    start: 2231,
+                                    end: 2253,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "DRIVER_HEARTBEAT_cmd",
+                                            start: 2232,
+                                            end: 2252,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3896,11 +3896,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 500",
+                            str: "BO_ 500 100",
                             start: 2277,
-                            end: 2284,
+                            end: 2288,
                         },
                         inner: [
                             Pair {
@@ -3912,16 +3912,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "100",
+                                    start: 2285,
+                                    end: 2288,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "100",
-                            start: 2285,
-                            end: 2288,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -3955,9 +3955,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 500 IO_DEBUG_test_enum",
+                            str: "SG_ 500 IO_DEBUG_test_enum \"IO_DEBUG_test_enum\"",
                             start: 2306,
-                            end: 2332,
+                            end: 2353,
                         },
                         inner: [
                             Pair {
@@ -3978,24 +3978,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"IO_DEBUG_test_enum\"",
-                            start: 2333,
-                            end: 2353,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "IO_DEBUG_test_enum",
-                                    start: 2334,
-                                    end: 2352,
+                                    str: "\"IO_DEBUG_test_enum\"",
+                                    start: 2333,
+                                    end: 2353,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "IO_DEBUG_test_enum",
+                                            start: 2334,
+                                            end: 2352,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4029,11 +4029,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 101",
+                            str: "BO_ 101 100",
                             start: 2377,
-                            end: 2384,
+                            end: 2388,
                         },
                         inner: [
                             Pair {
@@ -4045,16 +4045,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "100",
+                                    start: 2385,
+                                    end: 2388,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "100",
-                            start: 2385,
-                            end: 2388,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -4086,11 +4086,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 400",
+                            str: "BO_ 400 100",
                             start: 2412,
-                            end: 2419,
+                            end: 2423,
                         },
                         inner: [
                             Pair {
@@ -4102,16 +4102,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "100",
+                                    start: 2420,
+                                    end: 2423,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "100",
-                            start: 2420,
-                            end: 2423,
-                        },
-                        inner: [],
                     },
                 ],
             },
@@ -4143,11 +4143,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 200",
+                            str: "BO_ 200 100",
                             start: 2447,
-                            end: 2454,
+                            end: 2458,
                         },
                         inner: [
                             Pair {
@@ -4159,16 +4159,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "100",
+                                    start: 2455,
+                                    end: 2458,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "100",
-                            start: 2455,
-                            end: 2458,
-                        },
-                        inner: [],
                     },
                 ],
             },

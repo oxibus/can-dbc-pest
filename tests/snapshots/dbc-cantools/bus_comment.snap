@@ -2040,7 +2040,7 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: quoted_str,
+                        rule: comment_plain,
                         span: Span {
                             str: "\"SpecialRelease\"",
                             start: 1021,
@@ -2048,13 +2048,23 @@ source: tests/snapshots.rs
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "SpecialRelease",
-                                    start: 1022,
-                                    end: 1036,
+                                    str: "\"SpecialRelease\"",
+                                    start: 1021,
+                                    end: 1037,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "SpecialRelease",
+                                            start: 1022,
+                                            end: 1036,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -2069,39 +2079,49 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: comment_signal,
                         span: Span {
-                            str: "2148676694",
-                            start: 1047,
-                            end: 1057,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: signal_name,
-                        span: Span {
-                            str: "Multiplexor",
-                            start: 1058,
-                            end: 1069,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Defines data content for response messages.\"",
-                            start: 1070,
+                            str: "SG_ 2148676694 Multiplexor \"Defines data content for response messages.\"",
+                            start: 1043,
                             end: 1115,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: message_id,
                                 span: Span {
-                                    str: "Defines data content for response messages.",
-                                    start: 1071,
-                                    end: 1114,
+                                    str: "2148676694",
+                                    start: 1047,
+                                    end: 1057,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: signal_name,
+                                span: Span {
+                                    str: "Multiplexor",
+                                    start: 1058,
+                                    end: 1069,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: quoted_str,
+                                span: Span {
+                                    str: "\"Defines data content for response messages.\"",
+                                    start: 1070,
+                                    end: 1115,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Defines data content for response messages.",
+                                            start: 1071,
+                                            end: 1114,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -3402,11 +3422,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 2148676694",
+                            str: "BO_ 2148676694 3",
                             start: 2041,
-                            end: 2055,
+                            end: 2057,
                         },
                         inner: [
                             Pair {
@@ -3418,16 +3438,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "3",
+                                    start: 2056,
+                                    end: 2057,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "3",
-                            start: 2056,
-                            end: 2057,
-                        },
-                        inner: [],
                     },
                 ],
             },

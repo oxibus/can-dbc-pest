@@ -655,11 +655,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 1234",
+                            str: "BO_ 1234 \"Event\"",
                             start: 545,
-                            end: 553,
+                            end: 561,
                         },
                         inner: [
                             Pair {
@@ -671,24 +671,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Event\"",
-                            start: 554,
-                            end: 561,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Event",
-                                    start: 555,
-                                    end: 560,
+                                    str: "\"Event\"",
+                                    start: 554,
+                                    end: 561,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Event",
+                                            start: 555,
+                                            end: 560,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -722,11 +722,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 1234",
+                            str: "BO_ 1234 0",
                             start: 585,
-                            end: 593,
+                            end: 595,
                         },
                         inner: [
                             Pair {
@@ -738,16 +738,16 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
+                            Pair {
+                                rule: number,
+                                span: Span {
+                                    str: "0",
+                                    start: 594,
+                                    end: 595,
+                                },
+                                inner: [],
+                            },
                         ],
-                    },
-                    Pair {
-                        rule: number,
-                        span: Span {
-                            str: "0",
-                            start: 594,
-                            end: 595,
-                        },
-                        inner: [],
                     },
                 ],
             },
