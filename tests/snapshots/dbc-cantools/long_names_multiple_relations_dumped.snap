@@ -2766,7 +2766,7 @@ source: tests/snapshots.rs
                 ],
             },
             Pair {
-                rule: bo_tx_bu,
+                rule: message_transmitter,
                 span: Span {
                     str: "BO_TX_BU_ 6 : Node_6789_123456789_123456789_12,Sender_2_aaaaaaaaaaaaaaaaaaaaaaa;",
                     start: 2141,
@@ -4162,11 +4162,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: node_var,
+                        rule: node_var_val,
                         span: Span {
-                            str: "BU_ Sender_2_aaaaaaaaaaaaaaaaaaaaaaa",
+                            str: "BU_ Sender_2_aaaaaaaaaaaaaaaaaaaaaaa \"Sender_2_aaaaaaaaaaaaaaaaaaaaaaaAAAAAA\"",
                             start: 3298,
-                            end: 3334,
+                            end: 3375,
                         },
                         inner: [
                             Pair {
@@ -4178,24 +4178,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Sender_2_aaaaaaaaaaaaaaaaaaaaaaaAAAAAA\"",
-                            start: 3335,
-                            end: 3375,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Sender_2_aaaaaaaaaaaaaaaaaaaaaaaAAAAAA",
-                                    start: 3336,
-                                    end: 3374,
+                                    str: "\"Sender_2_aaaaaaaaaaaaaaaaaaaaaaaAAAAAA\"",
+                                    start: 3335,
+                                    end: 3375,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Sender_2_aaaaaaaaaaaaaaaaaaaaaaaAAAAAA",
+                                            start: 3336,
+                                            end: 3374,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4229,11 +4229,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: node_var,
+                        rule: node_var_val,
                         span: Span {
-                            str: "BU_ Receiver_2_zzzzzzzzzzzzzzzzzzzzz",
+                            str: "BU_ Receiver_2_zzzzzzzzzzzzzzzzzzzzz \"Receiver_2_zzzzzzzzzzzzzzzzzzzzzZZZ\"",
                             start: 3404,
-                            end: 3440,
+                            end: 3478,
                         },
                         inner: [
                             Pair {
@@ -4245,24 +4245,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Receiver_2_zzzzzzzzzzzzzzzzzzzzzZZZ\"",
-                            start: 3441,
-                            end: 3478,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Receiver_2_zzzzzzzzzzzzzzzzzzzzzZZZ",
-                                    start: 3442,
-                                    end: 3477,
+                                    str: "\"Receiver_2_zzzzzzzzzzzzzzzzzzzzzZZZ\"",
+                                    start: 3441,
+                                    end: 3478,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Receiver_2_zzzzzzzzzzzzzzzzzzzzzZZZ",
+                                            start: 3442,
+                                            end: 3477,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4296,11 +4296,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: node_var,
+                        rule: node_var_val,
                         span: Span {
-                            str: "BU_ Node_6789_123456789_123456789_12",
+                            str: "BU_ Node_6789_123456789_123456789_12 \"Node_6789_123456789_123456789_123456789\"",
                             start: 3507,
-                            end: 3543,
+                            end: 3585,
                         },
                         inner: [
                             Pair {
@@ -4312,24 +4312,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Node_6789_123456789_123456789_123456789\"",
-                            start: 3544,
-                            end: 3585,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Node_6789_123456789_123456789_123456789",
-                                    start: 3545,
-                                    end: 3584,
+                                    str: "\"Node_6789_123456789_123456789_123456789\"",
+                                    start: 3544,
+                                    end: 3585,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Node_6789_123456789_123456789_123456789",
+                                            start: 3545,
+                                            end: 3584,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4363,11 +4363,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 85",
+                            str: "BO_ 85 \"Msg_Long_Name_56789_123456789_123456789_Copy_2\"",
                             start: 3617,
-                            end: 3623,
+                            end: 3672,
                         },
                         inner: [
                             Pair {
@@ -4379,24 +4379,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Msg_Long_Name_56789_123456789_123456789_Copy_2\"",
-                            start: 3624,
-                            end: 3672,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Msg_Long_Name_56789_123456789_123456789_Copy_2",
-                                    start: 3625,
-                                    end: 3671,
+                                    str: "\"Msg_Long_Name_56789_123456789_123456789_Copy_2\"",
+                                    start: 3624,
+                                    end: 3672,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Msg_Long_Name_56789_123456789_123456789_Copy_2",
+                                            start: 3625,
+                                            end: 3671,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4432,9 +4432,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 85 Sig_used_twice_efgh_abcdefghi_ab",
+                            str: "SG_ 85 Sig_used_twice_efgh_abcdefghi_ab \"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
                             start: 3703,
-                            end: 3742,
+                            end: 3794,
                         },
                         inner: [
                             Pair {
@@ -4455,24 +4455,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
-                            start: 3743,
-                            end: 3794,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi",
-                                    start: 3744,
-                                    end: 3793,
+                                    str: "\"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
+                                    start: 3743,
+                                    end: 3794,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi",
+                                            start: 3744,
+                                            end: 3793,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4508,9 +4508,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 6 rx_twice_long_yyyyyyyyyyyyyyyyyy",
+                            str: "SG_ 6 rx_twice_long_yyyyyyyyyyyyyyyyyy \"rx_twice_long_yyyyyyyyyyyyyyyyyyYYY\"",
                             start: 3825,
-                            end: 3863,
+                            end: 3901,
                         },
                         inner: [
                             Pair {
@@ -4531,24 +4531,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"rx_twice_long_yyyyyyyyyyyyyyyyyyYYY\"",
-                            start: 3864,
-                            end: 3901,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "rx_twice_long_yyyyyyyyyyyyyyyyyyYYY",
-                                    start: 3865,
-                                    end: 3900,
+                                    str: "\"rx_twice_long_yyyyyyyyyyyyyyyyyyYYY\"",
+                                    start: 3864,
+                                    end: 3901,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "rx_twice_long_yyyyyyyyyyyyyyyyyyYYY",
+                                            start: 3865,
+                                            end: 3900,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4584,9 +4584,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 5 Sig_used_twice_efgh_abcdefg_0000",
+                            str: "SG_ 5 Sig_used_twice_efgh_abcdefg_0000 \"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
                             start: 3932,
-                            end: 3970,
+                            end: 4022,
                         },
                         inner: [
                             Pair {
@@ -4607,24 +4607,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
-                            start: 3971,
-                            end: 4022,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi",
-                                    start: 3972,
-                                    end: 4021,
+                                    str: "\"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
+                                    start: 3971,
+                                    end: 4022,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi",
+                                            start: 3972,
+                                            end: 4021,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4658,11 +4658,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 1",
+                            str: "BO_ 1 \"Msg_Long_Name_56789_123456789_123456789_Copy_1\"",
                             start: 4054,
-                            end: 4059,
+                            end: 4108,
                         },
                         inner: [
                             Pair {
@@ -4674,24 +4674,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Msg_Long_Name_56789_123456789_123456789_Copy_1\"",
-                            start: 4060,
-                            end: 4108,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Msg_Long_Name_56789_123456789_123456789_Copy_1",
-                                    start: 4061,
-                                    end: 4107,
+                                    str: "\"Msg_Long_Name_56789_123456789_123456789_Copy_1\"",
+                                    start: 4060,
+                                    end: 4108,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Msg_Long_Name_56789_123456789_123456789_Copy_1",
+                                            start: 4061,
+                                            end: 4107,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4727,9 +4727,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 1 Sig_used_twice_efgh_abcdefg_0001",
+                            str: "SG_ 1 Sig_used_twice_efgh_abcdefg_0001 \"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
                             start: 4139,
-                            end: 4177,
+                            end: 4229,
                         },
                         inner: [
                             Pair {
@@ -4750,24 +4750,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
-                            start: 4178,
-                            end: 4229,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi",
-                                    start: 4179,
-                                    end: 4228,
+                                    str: "\"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
+                                    start: 4178,
+                                    end: 4229,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi",
+                                            start: 4179,
+                                            end: 4228,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4801,11 +4801,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 0",
+                            str: "BO_ 0 \"Msg_Long_Name_56789_123456789_123456789\"",
                             start: 4261,
-                            end: 4266,
+                            end: 4308,
                         },
                         inner: [
                             Pair {
@@ -4817,24 +4817,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Msg_Long_Name_56789_123456789_123456789\"",
-                            start: 4267,
-                            end: 4308,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Msg_Long_Name_56789_123456789_123456789",
-                                    start: 4268,
-                                    end: 4307,
+                                    str: "\"Msg_Long_Name_56789_123456789_123456789\"",
+                                    start: 4267,
+                                    end: 4308,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Msg_Long_Name_56789_123456789_123456789",
+                                            start: 4268,
+                                            end: 4307,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -4870,9 +4870,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 0 Sig_used_twice_efgh_abcdefg_0002",
+                            str: "SG_ 0 Sig_used_twice_efgh_abcdefg_0002 \"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
                             start: 4339,
-                            end: 4377,
+                            end: 4429,
                         },
                         inner: [
                             Pair {
@@ -4893,24 +4893,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
-                            start: 4378,
-                            end: 4429,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi",
-                                    start: 4379,
-                                    end: 4428,
+                                    str: "\"Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi\"",
+                                    start: 4378,
+                                    end: 4429,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Sig_used_twice_efgh_abcdefghi_abcdefghi_abcdefghi",
+                                            start: 4379,
+                                            end: 4428,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },

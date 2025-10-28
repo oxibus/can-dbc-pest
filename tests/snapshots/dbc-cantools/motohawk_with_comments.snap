@@ -799,11 +799,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: msg_var,
+                        rule: comment_message,
                         span: Span {
-                            str: "BO_ 496",
+                            str: "BO_ 496 \"Example message used as template in MotoHawk models.\"",
                             start: 578,
-                            end: 585,
+                            end: 640,
                         },
                         inner: [
                             Pair {
@@ -815,24 +815,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Example message used as template in MotoHawk models.\"",
-                            start: 586,
-                            end: 640,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Example message used as template in MotoHawk models.",
-                                    start: 587,
-                                    end: 639,
+                                    str: "\"Example message used as template in MotoHawk models.\"",
+                                    start: 586,
+                                    end: 640,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Example message used as template in MotoHawk models.",
+                                            start: 587,
+                                            end: 639,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -847,39 +847,49 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: comment_signal,
                         span: Span {
-                            str: "496",
-                            start: 650,
-                            end: 653,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: signal_name,
-                        span: Span {
-                            str: "Temperature",
-                            start: 654,
-                            end: 665,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Temperature with a really long and complicated comment that probably require many many lines in a decently wide terminal\"",
-                            start: 666,
+                            str: "SG_ 496 Temperature \"Temperature with a really long and complicated comment that probably require many many lines in a decently wide terminal\"",
+                            start: 646,
                             end: 788,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: message_id,
                                 span: Span {
-                                    str: "Temperature with a really long and complicated comment that probably require many many lines in a decently wide terminal",
-                                    start: 667,
-                                    end: 787,
+                                    str: "496",
+                                    start: 650,
+                                    end: 653,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: signal_name,
+                                span: Span {
+                                    str: "Temperature",
+                                    start: 654,
+                                    end: 665,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: quoted_str,
+                                span: Span {
+                                    str: "\"Temperature with a really long and complicated comment that probably require many many lines in a decently wide terminal\"",
+                                    start: 666,
+                                    end: 788,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Temperature with a really long and complicated comment that probably require many many lines in a decently wide terminal",
+                                            start: 667,
+                                            end: 787,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -894,39 +904,49 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: comment_signal,
                         span: Span {
-                            str: "496",
-                            start: 798,
-                            end: 801,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: signal_name,
-                        span: Span {
-                            str: "AverageRadius",
-                            start: 802,
-                            end: 815,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"AverageRadius signal comment\"",
-                            start: 816,
+                            str: "SG_ 496 AverageRadius \"AverageRadius signal comment\"",
+                            start: 794,
                             end: 846,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: message_id,
                                 span: Span {
-                                    str: "AverageRadius signal comment",
-                                    start: 817,
-                                    end: 845,
+                                    str: "496",
+                                    start: 798,
+                                    end: 801,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: signal_name,
+                                span: Span {
+                                    str: "AverageRadius",
+                                    start: 802,
+                                    end: 815,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: quoted_str,
+                                span: Span {
+                                    str: "\"AverageRadius signal comment\"",
+                                    start: 816,
+                                    end: 846,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "AverageRadius signal comment",
+                                            start: 817,
+                                            end: 845,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -941,39 +961,49 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: message_id,
+                        rule: comment_signal,
                         span: Span {
-                            str: "496",
-                            start: 856,
-                            end: 859,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: signal_name,
-                        span: Span {
-                            str: "Enable",
-                            start: 860,
-                            end: 866,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Enable signal comment\"",
-                            start: 867,
+                            str: "SG_ 496 Enable \"Enable signal comment\"",
+                            start: 852,
                             end: 890,
                         },
                         inner: [
                             Pair {
-                                rule: string,
+                                rule: message_id,
                                 span: Span {
-                                    str: "Enable signal comment",
-                                    start: 868,
-                                    end: 889,
+                                    str: "496",
+                                    start: 856,
+                                    end: 859,
                                 },
                                 inner: [],
+                            },
+                            Pair {
+                                rule: signal_name,
+                                span: Span {
+                                    str: "Enable",
+                                    start: 860,
+                                    end: 866,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: quoted_str,
+                                span: Span {
+                                    str: "\"Enable signal comment\"",
+                                    start: 867,
+                                    end: 890,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Enable signal comment",
+                                            start: 868,
+                                            end: 889,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },

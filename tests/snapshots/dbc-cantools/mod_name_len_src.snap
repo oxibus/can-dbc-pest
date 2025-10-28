@@ -523,11 +523,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_var,
+                        rule: comment_node,
                         span: Span {
-                            str: "BU_ Node_will_be_shortened_456789_12",
+                            str: "BU_ Node_will_be_shortened_456789_12 \"\"",
                             start: 540,
-                            end: 576,
+                            end: 579,
                         },
                         inner: [
                             Pair {
@@ -539,24 +539,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"\"",
-                            start: 577,
-                            end: 579,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "",
-                                    start: 578,
-                                    end: 578,
+                                    str: "\"\"",
+                                    start: 577,
+                                    end: 579,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "",
+                                            start: 578,
+                                            end: 578,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -875,11 +875,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: node_var,
+                        rule: node_var_val,
                         span: Span {
-                            str: "BU_ Node_will_be_shortened_456789_12",
+                            str: "BU_ Node_will_be_shortened_456789_12 \"Node_will_be_shortened_456789_12ZZZZ\"",
                             start: 873,
-                            end: 909,
+                            end: 948,
                         },
                         inner: [
                             Pair {
@@ -891,24 +891,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Node_will_be_shortened_456789_12ZZZZ\"",
-                            start: 910,
-                            end: 948,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Node_will_be_shortened_456789_12ZZZZ",
-                                    start: 911,
-                                    end: 947,
+                                    str: "\"Node_will_be_shortened_456789_12ZZZZ\"",
+                                    start: 910,
+                                    end: 948,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Node_will_be_shortened_456789_12ZZZZ",
+                                            start: 911,
+                                            end: 947,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -942,11 +942,11 @@ source: tests/snapshots.rs
                         ],
                     },
                     Pair {
-                        rule: msg_var,
+                        rule: msg_var_val,
                         span: Span {
-                            str: "BO_ 1",
+                            str: "BO_ 1 \"Msg_will_be_shortened_3456789_12YYYY\"",
                             start: 980,
-                            end: 985,
+                            end: 1024,
                         },
                         inner: [
                             Pair {
@@ -958,24 +958,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Msg_will_be_shortened_3456789_12YYYY\"",
-                            start: 986,
-                            end: 1024,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Msg_will_be_shortened_3456789_12YYYY",
-                                    start: 987,
-                                    end: 1023,
+                                    str: "\"Msg_will_be_shortened_3456789_12YYYY\"",
+                                    start: 986,
+                                    end: 1024,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Msg_will_be_shortened_3456789_12YYYY",
+                                            start: 987,
+                                            end: 1023,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -1011,9 +1011,9 @@ source: tests/snapshots.rs
                     Pair {
                         rule: signal_var,
                         span: Span {
-                            str: "SG_ 1 Sig_will_be_shortened_3456789_12",
+                            str: "SG_ 1 Sig_will_be_shortened_3456789_12 \"Sig_will_be_shortened_3456789_12XXXX\"",
                             start: 1055,
-                            end: 1093,
+                            end: 1132,
                         },
                         inner: [
                             Pair {
@@ -1034,24 +1034,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Sig_will_be_shortened_3456789_12XXXX\"",
-                            start: 1094,
-                            end: 1132,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Sig_will_be_shortened_3456789_12XXXX",
-                                    start: 1095,
-                                    end: 1131,
+                                    str: "\"Sig_will_be_shortened_3456789_12XXXX\"",
+                                    start: 1094,
+                                    end: 1132,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Sig_will_be_shortened_3456789_12XXXX",
+                                            start: 1095,
+                                            end: 1131,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },

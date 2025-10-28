@@ -23,14 +23,14 @@ line = _{
         | value_table_def
         | signal_group
         | signal_value_type
-        | bo_tx_bu
+        | message_transmitter
         | ba_def_rel
         | ba_rel
         | ba_def_def_rel
         | ba_def_def
         | sg_mul_val
         | environment_variable
-        | envvar_data
+        | env_var_data
         | NEWLINE
     )
 }
@@ -85,17 +85,22 @@ signal_name = @{ ident_ext }
 num_str_value = _{ number | quoted_str }
 
 env_var = { env_literal ~ env_var_name }
+env_var_str = { env_literal ~ env_var_name ~ quoted_str }
+env_var_val = { env_literal ~ env_var_name ~ num_str_value }
 env_var_name = @{ ident }
 env_literal = _{ "EV_" }
 
-node_var = { node_literal ~ node_name }
+node_var_str = { node_literal ~ node_name ~ quoted_str }
+node_var_val = { node_literal ~ node_name ~ num_str_value }
 node_name = @{ ident_ext }
 node_literal = _{ "BU_" }
 
 msg_var = { msg_literal ~ message_id }
+msg_var_str = { msg_literal ~ message_id ~ quoted_str }
+msg_var_val = { msg_literal ~ message_id ~ num_str_value }
 msg_literal = _{ "BO_" }
 
-signal_var = { signal_literal ~ message_id ~ ident }
+signal_var = { signal_literal ~ message_id ~ ident ~ num_str_value }
 signal_literal = _{ "SG_" }
 
 // ============================================================================
@@ -205,16 +210,40 @@ offset = @{ number }
 /// 'EV_' env_var_name char_string)
 /// ';' ;
 /// ```
+///
+/// Note: The grammar supports both explicit type prefixes (SG_, BO_, BU_, EV_) and
+/// implicit forms. The ordering of alternatives is important in PEG parsing:
+/// more specific patterns must come before less specific ones.
+/// Message comments can be either "CM_ BO_ <id> ..." or just "CM_ <id> ...".
 comment = {
     "CM_" ~ (
-        (signal_literal ~ message_id ~ signal_name? ~ quoted_str)
-         | (msg_var ~ quoted_str)
-         | (node_var ~ quoted_str)
-         | (env_var ~ quoted_str)
-         | quoted_str
-         | (message_id ~ quoted_str)  // message_id + string does not seem to have description above
+        comment_signal
+        | comment_message
+        | comment_node
+        | comment_env_var
+        | comment_message_implicit
+        | comment_plain
     ) ~ ";"?
 }
+
+/// Signal comment: CM_ SG_ <message_id> [<signal_name>] "comment";
+/// Note: signal_name is optional. When omitted, this is treated as a message comment.
+comment_signal = { signal_literal ~ message_id ~ signal_name? ~ quoted_str }
+
+/// Message comment (explicit): CM_ BO_ <message_id> "comment";
+comment_message = { msg_literal ~ message_id ~ quoted_str }
+
+/// Node comment: CM_ BU_ <node_name> "comment";
+comment_node = { node_literal ~ node_name ~ quoted_str }
+
+/// Environment variable comment: CM_ EV_ <env_var_name> "comment";
+comment_env_var = { env_literal ~ env_var_name ~ quoted_str }
+
+/// Message comment (implicit, without BO_ prefix): CM_ <message_id> "comment";
+comment_message_implicit = { message_id ~ quoted_str }
+
+/// Plain comment (bus-level): CM_ "comment";
+comment_plain = { quoted_str }
 
 /// Attribute definition: BA_DEF_ [object_type] attribute_name attribute_type [min max];
 ///
@@ -249,13 +278,13 @@ attribute_type_enum = { "ENUM" ~ quoted_str ~ ("," ~ quoted_str)* }
 /// Attribute value: BA_ attribute_name [object_type] object_name value;
 attr_value = {
     "BA_" ~ attribute_name ~ (
-        node_var
-        | msg_var
+        node_var_val
+        | msg_var_val
         | signal_var
-        | env_var
-    )? ~ num_str_value ~ ";"
+        | env_var_val
+        | num_str_value
+    ) ~ ";"
 }
-
 
 /// Value table definition: VAL_ message_id signal_name value1 "description1" value2 "description2" ... ;
 ///
@@ -291,10 +320,18 @@ group_name = @{ ident }
 multiplexer_id = @{ int }
 
 /// Signal value type: SIG_VALTYPE_ message_id signal_name : value_type;
-signal_value_type = { "SIG_VALTYPE_" ~ message_id ~ signal_name ~ ":" ~ int ~ ";" }
+signal_value_type = { "SIG_VALTYPE_" ~ message_id ~ signal_name ~ ":" ~ signal_value_type_value ~ ";" }
+signal_value_type_value = _{
+    sig_val_integer
+    | sig_val_IEEE_float_32Bit
+    | sig_val_IEEE_float_64Bit
+}
+sig_val_integer = @{ "0" }
+sig_val_IEEE_float_32Bit = @{ "1" }
+sig_val_IEEE_float_64Bit = @{ "2" }
 
 /// Message transmitter: BO_TX_BU_ message_id : transmitter1,transmitter2,... ;
-bo_tx_bu = { "BO_TX_BU_" ~ message_id ~ ":" ~ (transmitter ~ ("," ~ transmitter)*)? ~ ";" }
+message_transmitter = { "BO_TX_BU_" ~ message_id ~ ":" ~ (transmitter ~ ("," ~ transmitter)*)? ~ ";" }
 
 /// Relative attribute definition: BA_DEF_REL_ object_type attribute_name attribute_type [min max];
 ///
@@ -332,8 +369,8 @@ ba_rel = { "BA_REL_" ~ attribute_name ~ rel_object_type ~ rel_object_data ~ ";" 
 rel_object_type = { "BU_SG_REL_" | "BU_BO_REL_" | "BU_EV_REL_" }
 
 rel_object_data = {
-    (ident ~ signal_var ~ num_str_value)
-    | (ident ~ env_var ~ num_str_value)
+    (ident ~ signal_var)
+    | (ident ~ env_var_val)
     | (ident ~ message_id ~ num_str_value)
 }
 
@@ -413,5 +450,5 @@ access_type = ${ "DUMMY_NODE_VECTOR" ~ uint }
 /// ```text
 /// ENVVAR_DATA_ RWEnvVar_wData: 10;
 /// ```
-envvar_data = { "ENVVAR_DATA_" ~ env_var_name ~ ":" ~ data_size ~ ";" }
+env_var_data = { "ENVVAR_DATA_" ~ env_var_name ~ ":" ~ data_size ~ ";" }
 data_size = @{ uint }

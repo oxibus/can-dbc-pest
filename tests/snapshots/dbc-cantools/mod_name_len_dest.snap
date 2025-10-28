@@ -523,11 +523,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_var,
+                        rule: comment_node,
                         span: Span {
-                            str: "BU_ node_now_short",
+                            str: "BU_ node_now_short \"\"",
                             start: 466,
-                            end: 484,
+                            end: 487,
                         },
                         inner: [
                             Pair {
@@ -539,24 +539,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"\"",
-                            start: 485,
-                            end: 487,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "",
-                                    start: 486,
-                                    end: 486,
+                                    str: "\"\"",
+                                    start: 485,
+                                    end: 487,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "",
+                                            start: 486,
+                                            end: 486,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },

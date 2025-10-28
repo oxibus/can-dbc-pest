@@ -3266,11 +3266,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: env_var,
+                        rule: comment_env_var,
                         span: Span {
-                            str: "EV_ EMC_Azimuth",
+                            str: "EV_ EMC_Azimuth \"Elevation Head\"",
                             start: 1980,
-                            end: 1995,
+                            end: 2012,
                         },
                         inner: [
                             Pair {
@@ -3282,24 +3282,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"Elevation Head\"",
-                            start: 1996,
-                            end: 2012,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "Elevation Head",
-                                    start: 1997,
-                                    end: 2011,
+                                    str: "\"Elevation Head\"",
+                                    start: 1996,
+                                    end: 2012,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "Elevation Head",
+                                            start: 1997,
+                                            end: 2011,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },

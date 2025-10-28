@@ -837,11 +837,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: node_var,
+                        rule: comment_node,
                         span: Span {
-                            str: "BU_ TestNode",
+                            str: "BU_ TestNode \"\"",
                             start: 641,
-                            end: 653,
+                            end: 656,
                         },
                         inner: [
                             Pair {
@@ -853,24 +853,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"\"",
-                            start: 654,
-                            end: 656,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "",
-                                    start: 655,
-                                    end: 655,
+                                    str: "\"\"",
+                                    start: 654,
+                                    end: 656,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "",
+                                            start: 655,
+                                            end: 655,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -1007,7 +1007,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: sig_val_IEEE_float_64Bit,
                         span: Span {
                             str: "2",
                             start: 766,
@@ -1044,7 +1044,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: sig_val_IEEE_float_32Bit,
                         span: Span {
                             str: "1",
                             start: 797,
@@ -1081,7 +1081,7 @@ source: tests/snapshots.rs
                         inner: [],
                     },
                     Pair {
-                        rule: int,
+                        rule: sig_val_IEEE_float_32Bit,
                         span: Span {
                             str: "1",
                             start: 828,

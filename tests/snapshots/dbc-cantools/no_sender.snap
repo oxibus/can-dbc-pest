@@ -513,11 +513,11 @@ source: tests/snapshots.rs
                 },
                 inner: [
                     Pair {
-                        rule: msg_var,
+                        rule: comment_message,
                         span: Span {
-                            str: "BO_ 472",
+                            str: "BO_ 472 \"No sender message.\"",
                             start: 447,
-                            end: 454,
+                            end: 475,
                         },
                         inner: [
                             Pair {
@@ -529,24 +529,24 @@ source: tests/snapshots.rs
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: quoted_str,
-                        span: Span {
-                            str: "\"No sender message.\"",
-                            start: 455,
-                            end: 475,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
+                                rule: quoted_str,
                                 span: Span {
-                                    str: "No sender message.",
-                                    start: 456,
-                                    end: 474,
+                                    str: "\"No sender message.\"",
+                                    start: 455,
+                                    end: 475,
                                 },
-                                inner: [],
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "No sender message.",
+                                            start: 456,
+                                            end: 474,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
                             },
                         ],
                     },
