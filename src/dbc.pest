@@ -257,7 +257,7 @@ comment_plain = { quoted_str }
 /// BA_DEF_ EV_  "RWEnvVar_wData_Val" INT 0 10;
 /// BA_DEF_ EV_  "GlobalEnvVar_Val" HEX 256 320;
 /// ```
-attr_def = { "BA_DEF_" ~ (object_type ~ ident?)? ~ attribute_name ~ attribute_type ~ ";" }
+attr_def = { "BA_DEF_" ~ object_type? ~ attribute_name ~ attribute_type ~ ";" }
 
 object_type = { node_literal | msg_literal | signal_literal | env_literal }
 
