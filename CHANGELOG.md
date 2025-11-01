@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.1](https://github.com/oxibus/can-dbc-pest/compare/v0.6.0...v0.6.1) - 2025-11-01
+
+### Fixed
+
+- remove unused ident from attr_def ([#23](https://github.com/oxibus/can-dbc-pest/pull/23))
+
 ## [0.6.0](https://github.com/oxibus/can-dbc-pest/compare/v0.5.1...v0.6.0) - 2025-10-28
 
 ### Other
