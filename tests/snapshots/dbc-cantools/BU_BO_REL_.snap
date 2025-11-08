@@ -332,9 +332,9 @@ source: tests/snapshots.rs
             Pair {
                 rule: message,
                 span: Span {
-                    str: "BO_ 1 CONTROL: 7 COM",
+                    str: "BO_ 1 CONTROL: 7 COM\n SG_ state : 0|8@1+ (1,0) [0|100] \"%\" Vector__XXX",
                     start: 354,
-                    end: 374,
+                    end: 424,
                 },
                 inner: [
                     Pair {
@@ -383,134 +383,143 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: signal,
-                span: Span {
-                    str: "SG_ state : 0|8@1+ (1,0) [0|100] \"%\" Vector__XXX",
-                    start: 376,
-                    end: 424,
-                },
-                inner: [
                     Pair {
-                        rule: signal_name,
+                        rule: signal,
                         span: Span {
-                            str: "state",
-                            start: 380,
-                            end: 385,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: start_bit,
-                        span: Span {
-                            str: "0",
-                            start: 388,
-                            end: 389,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: signal_size,
-                        span: Span {
-                            str: "8",
-                            start: 390,
-                            end: 391,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: little_endian,
-                        span: Span {
-                            str: "1",
-                            start: 392,
-                            end: 393,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: unsigned_type,
-                        span: Span {
-                            str: "+",
-                            start: 393,
-                            end: 394,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: factor,
-                        span: Span {
-                            str: "1",
-                            start: 396,
-                            end: 397,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: offset,
-                        span: Span {
-                            str: "0",
-                            start: 398,
-                            end: 399,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: min_max,
-                        span: Span {
-                            str: "[0|100]",
-                            start: 401,
-                            end: 408,
-                        },
-                        inner: [
-                            Pair {
-                                rule: minimum,
-                                span: Span {
-                                    str: "0",
-                                    start: 402,
-                                    end: 403,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: maximum,
-                                span: Span {
-                                    str: "100",
-                                    start: 404,
-                                    end: 407,
-                                },
-                                inner: [],
-                            },
-                        ],
-                    },
-                    Pair {
-                        rule: unit,
-                        span: Span {
-                            str: "\"%\"",
-                            start: 409,
-                            end: 412,
-                        },
-                        inner: [
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "%",
-                                    start: 410,
-                                    end: 411,
-                                },
-                                inner: [],
-                            },
-                        ],
-                    },
-                    Pair {
-                        rule: node_name,
-                        span: Span {
-                            str: "Vector__XXX",
-                            start: 413,
+                            str: "\n SG_ state : 0|8@1+ (1,0) [0|100] \"%\" Vector__XXX",
+                            start: 374,
                             end: 424,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: signal_nl_ident,
+                                span: Span {
+                                    str: "\n ",
+                                    start: 374,
+                                    end: 376,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: signal_name,
+                                span: Span {
+                                    str: "state",
+                                    start: 380,
+                                    end: 385,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: start_bit,
+                                span: Span {
+                                    str: "0",
+                                    start: 388,
+                                    end: 389,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: signal_size,
+                                span: Span {
+                                    str: "8",
+                                    start: 390,
+                                    end: 391,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: little_endian,
+                                span: Span {
+                                    str: "1",
+                                    start: 392,
+                                    end: 393,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: unsigned_type,
+                                span: Span {
+                                    str: "+",
+                                    start: 393,
+                                    end: 394,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: factor,
+                                span: Span {
+                                    str: "1",
+                                    start: 396,
+                                    end: 397,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: offset,
+                                span: Span {
+                                    str: "0",
+                                    start: 398,
+                                    end: 399,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: min_max,
+                                span: Span {
+                                    str: "[0|100]",
+                                    start: 401,
+                                    end: 408,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: minimum,
+                                        span: Span {
+                                            str: "0",
+                                            start: 402,
+                                            end: 403,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: maximum,
+                                        span: Span {
+                                            str: "100",
+                                            start: 404,
+                                            end: 407,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: unit,
+                                span: Span {
+                                    str: "\"%\"",
+                                    start: 409,
+                                    end: 412,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "%",
+                                            start: 410,
+                                            end: 411,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: node_name,
+                                span: Span {
+                                    str: "Vector__XXX",
+                                    start: 413,
+                                    end: 424,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                 ],
             },

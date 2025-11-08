@@ -341,9 +341,9 @@ source: tests/snapshots.rs
             Pair {
                 rule: message,
                 span: Span {
-                    str: "BO_ 496 ExampleMessage: 8 PCM1",
+                    str: "BO_ 496 ExampleMessage: 8 PCM1\n SG_ Temperature : 0|12@0- (0.01,250) [229.52|270.47] \"degK\"  PCM1,FOO\n SG_ AverageRadius : 6|6@0+ (0.1,0) [0|5] \"m\" Vector__XXX\n SG_ Enable : 7|1@0+ (1,0) [0|0] \"-\" Vector__XXX",
                     start: 361,
-                    end: 391,
+                    end: 569,
                 },
                 inner: [
                     Pair {
@@ -392,401 +392,428 @@ source: tests/snapshots.rs
                         },
                         inner: [],
                     },
-                ],
-            },
-            Pair {
-                rule: signal,
-                span: Span {
-                    str: "SG_ Temperature : 0|12@0- (0.01,250) [229.52|270.47] \"degK\"  PCM1,FOO",
-                    start: 393,
-                    end: 462,
-                },
-                inner: [
                     Pair {
-                        rule: signal_name,
+                        rule: signal,
                         span: Span {
-                            str: "Temperature",
-                            start: 397,
-                            end: 408,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: start_bit,
-                        span: Span {
-                            str: "0",
-                            start: 411,
-                            end: 412,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: signal_size,
-                        span: Span {
-                            str: "12",
-                            start: 413,
-                            end: 415,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: big_endian,
-                        span: Span {
-                            str: "0",
-                            start: 416,
-                            end: 417,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: signed_type,
-                        span: Span {
-                            str: "-",
-                            start: 417,
-                            end: 418,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: factor,
-                        span: Span {
-                            str: "0.01",
-                            start: 420,
-                            end: 424,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: offset,
-                        span: Span {
-                            str: "250",
-                            start: 425,
-                            end: 428,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: min_max,
-                        span: Span {
-                            str: "[229.52|270.47]",
-                            start: 430,
-                            end: 445,
-                        },
-                        inner: [
-                            Pair {
-                                rule: minimum,
-                                span: Span {
-                                    str: "229.52",
-                                    start: 431,
-                                    end: 437,
-                                },
-                                inner: [],
-                            },
-                            Pair {
-                                rule: maximum,
-                                span: Span {
-                                    str: "270.47",
-                                    start: 438,
-                                    end: 444,
-                                },
-                                inner: [],
-                            },
-                        ],
-                    },
-                    Pair {
-                        rule: unit,
-                        span: Span {
-                            str: "\"degK\"",
-                            start: 446,
-                            end: 452,
-                        },
-                        inner: [
-                            Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "degK",
-                                    start: 447,
-                                    end: 451,
-                                },
-                                inner: [],
-                            },
-                        ],
-                    },
-                    Pair {
-                        rule: node_name,
-                        span: Span {
-                            str: "PCM1",
-                            start: 454,
-                            end: 458,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: node_name,
-                        span: Span {
-                            str: "FOO",
-                            start: 459,
+                            str: "\n SG_ Temperature : 0|12@0- (0.01,250) [229.52|270.47] \"degK\"  PCM1,FOO",
+                            start: 391,
                             end: 462,
                         },
-                        inner: [],
-                    },
-                ],
-            },
-            Pair {
-                rule: signal,
-                span: Span {
-                    str: "SG_ AverageRadius : 6|6@0+ (0.1,0) [0|5] \"m\" Vector__XXX",
-                    start: 464,
-                    end: 520,
-                },
-                inner: [
-                    Pair {
-                        rule: signal_name,
-                        span: Span {
-                            str: "AverageRadius",
-                            start: 468,
-                            end: 481,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: start_bit,
-                        span: Span {
-                            str: "6",
-                            start: 484,
-                            end: 485,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: signal_size,
-                        span: Span {
-                            str: "6",
-                            start: 486,
-                            end: 487,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: big_endian,
-                        span: Span {
-                            str: "0",
-                            start: 488,
-                            end: 489,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: unsigned_type,
-                        span: Span {
-                            str: "+",
-                            start: 489,
-                            end: 490,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: factor,
-                        span: Span {
-                            str: "0.1",
-                            start: 492,
-                            end: 495,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: offset,
-                        span: Span {
-                            str: "0",
-                            start: 496,
-                            end: 497,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: min_max,
-                        span: Span {
-                            str: "[0|5]",
-                            start: 499,
-                            end: 504,
-                        },
                         inner: [
                             Pair {
-                                rule: minimum,
+                                rule: signal_nl_ident,
+                                span: Span {
+                                    str: "\n ",
+                                    start: 391,
+                                    end: 393,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: signal_name,
+                                span: Span {
+                                    str: "Temperature",
+                                    start: 397,
+                                    end: 408,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: start_bit,
                                 span: Span {
                                     str: "0",
-                                    start: 500,
-                                    end: 501,
+                                    start: 411,
+                                    end: 412,
                                 },
                                 inner: [],
                             },
                             Pair {
-                                rule: maximum,
+                                rule: signal_size,
                                 span: Span {
-                                    str: "5",
-                                    start: 502,
-                                    end: 503,
+                                    str: "12",
+                                    start: 413,
+                                    end: 415,
                                 },
                                 inner: [],
                             },
-                        ],
-                    },
-                    Pair {
-                        rule: unit,
-                        span: Span {
-                            str: "\"m\"",
-                            start: 505,
-                            end: 508,
-                        },
-                        inner: [
                             Pair {
-                                rule: string,
-                                span: Span {
-                                    str: "m",
-                                    start: 506,
-                                    end: 507,
-                                },
-                                inner: [],
-                            },
-                        ],
-                    },
-                    Pair {
-                        rule: node_name,
-                        span: Span {
-                            str: "Vector__XXX",
-                            start: 509,
-                            end: 520,
-                        },
-                        inner: [],
-                    },
-                ],
-            },
-            Pair {
-                rule: signal,
-                span: Span {
-                    str: "SG_ Enable : 7|1@0+ (1,0) [0|0] \"-\" Vector__XXX",
-                    start: 522,
-                    end: 569,
-                },
-                inner: [
-                    Pair {
-                        rule: signal_name,
-                        span: Span {
-                            str: "Enable",
-                            start: 526,
-                            end: 532,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: start_bit,
-                        span: Span {
-                            str: "7",
-                            start: 535,
-                            end: 536,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: signal_size,
-                        span: Span {
-                            str: "1",
-                            start: 537,
-                            end: 538,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: big_endian,
-                        span: Span {
-                            str: "0",
-                            start: 539,
-                            end: 540,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: unsigned_type,
-                        span: Span {
-                            str: "+",
-                            start: 540,
-                            end: 541,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: factor,
-                        span: Span {
-                            str: "1",
-                            start: 543,
-                            end: 544,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: offset,
-                        span: Span {
-                            str: "0",
-                            start: 545,
-                            end: 546,
-                        },
-                        inner: [],
-                    },
-                    Pair {
-                        rule: min_max,
-                        span: Span {
-                            str: "[0|0]",
-                            start: 548,
-                            end: 553,
-                        },
-                        inner: [
-                            Pair {
-                                rule: minimum,
+                                rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 549,
-                                    end: 550,
+                                    start: 416,
+                                    end: 417,
                                 },
                                 inner: [],
                             },
                             Pair {
-                                rule: maximum,
-                                span: Span {
-                                    str: "0",
-                                    start: 551,
-                                    end: 552,
-                                },
-                                inner: [],
-                            },
-                        ],
-                    },
-                    Pair {
-                        rule: unit,
-                        span: Span {
-                            str: "\"-\"",
-                            start: 554,
-                            end: 557,
-                        },
-                        inner: [
-                            Pair {
-                                rule: string,
+                                rule: signed_type,
                                 span: Span {
                                     str: "-",
-                                    start: 555,
-                                    end: 556,
+                                    start: 417,
+                                    end: 418,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: factor,
+                                span: Span {
+                                    str: "0.01",
+                                    start: 420,
+                                    end: 424,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: offset,
+                                span: Span {
+                                    str: "250",
+                                    start: 425,
+                                    end: 428,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: min_max,
+                                span: Span {
+                                    str: "[229.52|270.47]",
+                                    start: 430,
+                                    end: 445,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: minimum,
+                                        span: Span {
+                                            str: "229.52",
+                                            start: 431,
+                                            end: 437,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: maximum,
+                                        span: Span {
+                                            str: "270.47",
+                                            start: 438,
+                                            end: 444,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: unit,
+                                span: Span {
+                                    str: "\"degK\"",
+                                    start: 446,
+                                    end: 452,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "degK",
+                                            start: 447,
+                                            end: 451,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: node_name,
+                                span: Span {
+                                    str: "PCM1",
+                                    start: 454,
+                                    end: 458,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: node_name,
+                                span: Span {
+                                    str: "FOO",
+                                    start: 459,
+                                    end: 462,
                                 },
                                 inner: [],
                             },
                         ],
                     },
                     Pair {
-                        rule: node_name,
+                        rule: signal,
                         span: Span {
-                            str: "Vector__XXX",
-                            start: 558,
+                            str: "\n SG_ AverageRadius : 6|6@0+ (0.1,0) [0|5] \"m\" Vector__XXX",
+                            start: 462,
+                            end: 520,
+                        },
+                        inner: [
+                            Pair {
+                                rule: signal_nl_ident,
+                                span: Span {
+                                    str: "\n ",
+                                    start: 462,
+                                    end: 464,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: signal_name,
+                                span: Span {
+                                    str: "AverageRadius",
+                                    start: 468,
+                                    end: 481,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: start_bit,
+                                span: Span {
+                                    str: "6",
+                                    start: 484,
+                                    end: 485,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: signal_size,
+                                span: Span {
+                                    str: "6",
+                                    start: 486,
+                                    end: 487,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: big_endian,
+                                span: Span {
+                                    str: "0",
+                                    start: 488,
+                                    end: 489,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: unsigned_type,
+                                span: Span {
+                                    str: "+",
+                                    start: 489,
+                                    end: 490,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: factor,
+                                span: Span {
+                                    str: "0.1",
+                                    start: 492,
+                                    end: 495,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: offset,
+                                span: Span {
+                                    str: "0",
+                                    start: 496,
+                                    end: 497,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: min_max,
+                                span: Span {
+                                    str: "[0|5]",
+                                    start: 499,
+                                    end: 504,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: minimum,
+                                        span: Span {
+                                            str: "0",
+                                            start: 500,
+                                            end: 501,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: maximum,
+                                        span: Span {
+                                            str: "5",
+                                            start: 502,
+                                            end: 503,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: unit,
+                                span: Span {
+                                    str: "\"m\"",
+                                    start: 505,
+                                    end: 508,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "m",
+                                            start: 506,
+                                            end: 507,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: node_name,
+                                span: Span {
+                                    str: "Vector__XXX",
+                                    start: 509,
+                                    end: 520,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                    Pair {
+                        rule: signal,
+                        span: Span {
+                            str: "\n SG_ Enable : 7|1@0+ (1,0) [0|0] \"-\" Vector__XXX",
+                            start: 520,
                             end: 569,
                         },
-                        inner: [],
+                        inner: [
+                            Pair {
+                                rule: signal_nl_ident,
+                                span: Span {
+                                    str: "\n ",
+                                    start: 520,
+                                    end: 522,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: signal_name,
+                                span: Span {
+                                    str: "Enable",
+                                    start: 526,
+                                    end: 532,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: start_bit,
+                                span: Span {
+                                    str: "7",
+                                    start: 535,
+                                    end: 536,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: signal_size,
+                                span: Span {
+                                    str: "1",
+                                    start: 537,
+                                    end: 538,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: big_endian,
+                                span: Span {
+                                    str: "0",
+                                    start: 539,
+                                    end: 540,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: unsigned_type,
+                                span: Span {
+                                    str: "+",
+                                    start: 540,
+                                    end: 541,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: factor,
+                                span: Span {
+                                    str: "1",
+                                    start: 543,
+                                    end: 544,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: offset,
+                                span: Span {
+                                    str: "0",
+                                    start: 545,
+                                    end: 546,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: min_max,
+                                span: Span {
+                                    str: "[0|0]",
+                                    start: 548,
+                                    end: 553,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: minimum,
+                                        span: Span {
+                                            str: "0",
+                                            start: 549,
+                                            end: 550,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: maximum,
+                                        span: Span {
+                                            str: "0",
+                                            start: 551,
+                                            end: 552,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: unit,
+                                span: Span {
+                                    str: "\"-\"",
+                                    start: 554,
+                                    end: 557,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: string,
+                                        span: Span {
+                                            str: "-",
+                                            start: 555,
+                                            end: 556,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: node_name,
+                                span: Span {
+                                    str: "Vector__XXX",
+                                    start: 558,
+                                    end: 569,
+                                },
+                                inner: [],
+                            },
+                        ],
                     },
                 ],
             },
