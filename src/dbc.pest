@@ -15,7 +15,6 @@ line = _{
         | bit_timing
         | nodes
         | message
-        | signal
         | comment
         | attr_def
         | attr_value
@@ -138,7 +137,7 @@ nodes = ${
 }
 
 /// Message definition: BO_ message_id message_name: message_size transmitter
-message = { msg_var ~ message_name ~ ":" ~ message_size ~ transmitter }
+message = { msg_var ~ message_name ~ ":" ~ message_size ~ transmitter ~ signal* }
 message_name = @{ ident_ext }
 message_size = @{ int }
 transmitter = @{ ident }
@@ -175,7 +174,7 @@ transmitter = @{ ident }
 /// `MultiplexerIdentifier`: Signal definition is only used if the value of the multiplexer signal equals this value.
 
 signal = {
-    signal_literal ~ signal_name ~ multiplexer_indicator? ~ ":" ~
+    signal_nl_ident ~ signal_literal ~ signal_name ~ multiplexer_indicator? ~ ":" ~
     (
         start_bit ~ ("|" ~ signal_size)? ~ "@" ~
         ( big_endian | little_endian ) ~  // 0 | 1
@@ -186,6 +185,8 @@ signal = {
     )
 }
 
+/// FIXME: this rule should capture any number of newlines+whitespaces+comments before the signal definition
+signal_nl_ident = @{ &(NEWLINE ~ WHITESPACE+ ~ signal_literal) ~ NEWLINE ~ WHITESPACE+ }
 multiplexer_indicator = @{ "M" | ("m" ~ (multiplexer_id ~ "M"?)? ) }
 start_bit = @{ int }
 signal_size = @{ int }
