@@ -185,8 +185,12 @@ signal = {
     )
 }
 
-/// FIXME: this rule should capture any number of newlines+whitespaces+comments before the signal definition
-signal_nl_ident = @{ &(NEWLINE ~ WHITESPACE+ ~ signal_literal) ~ NEWLINE ~ WHITESPACE+ }
+/// Captures any number of newlines+whitespaces+comments before the signal definition
+signal_nl_ident = @{
+    NEWLINE ~
+    (WHITESPACE* ~ COMMENT? ~ NEWLINE)* ~
+    WHITESPACE+
+}
 multiplexer_indicator = @{ "M" | ("m" ~ (multiplexer_id ~ "M"?)? ) }
 start_bit = @{ int }
 signal_size = @{ int }
