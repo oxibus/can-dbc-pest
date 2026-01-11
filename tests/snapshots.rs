@@ -36,9 +36,11 @@ test_each_path! { for ["dbc"] in "./tests/fixtures/shared-test-files" as shared 
 // upper case extension
 test_each_path! { for ["DBC"] in "./tests/fixtures/shared-test-files" as shared2 => parse_one_file }
 
+type DecoderFn = Box<dyn Fn(&[u8]) -> Cow<'_, str>>;
+
 /// Get snapshot path (if snapshot should be created) and a decoding
 /// function for a test file path
-fn get_test_info(path: &Path) -> Option<(Option<PathBuf>, Box<dyn Fn(&[u8]) -> Cow<'_, str>>)> {
+fn get_test_info(path: &Path) -> Option<(Option<PathBuf>, DecoderFn)> {
     if !path
         .extension()
         .unwrap_or_default()
@@ -69,14 +71,14 @@ fn get_test_info(path: &Path) -> Option<(Option<PathBuf>, Box<dyn Fn(&[u8]) -> C
                     .join(&path_dir[pos + test_root.len()..])
             });
 
-            let decoder: Box<dyn Fn(&[u8]) -> Cow<'_, str>> = if item.use_cp1251 {
+            let decoder: DecoderFn = if item.use_cp1251 {
                 Box::new(move |v: &[u8]| {
-                    decode_cp1252(v).expect(&format!("Cannot decode {path_str} as cp1252"))
+                    decode_cp1252(v).unwrap_or_else(|| panic!("Cannot decode {path_str} as cp1252"))
                 })
             } else {
                 Box::new(move |v: &[u8]| {
-                    str::from_utf8(v)
-                        .expect(&format!("Cannot decode {path_str} as utf-8"))
+                    std::str::from_utf8(v)
+                        .unwrap_or_else(|_| panic!("Cannot decode {path_str} as utf-8"))
                         .into()
                 })
             };
