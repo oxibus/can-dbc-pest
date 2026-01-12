@@ -36,18 +36,56 @@ test_each_path! { for ["dbc"] in "./tests/fixtures/shared-test-files" as shared 
 // upper case extension
 test_each_path! { for ["DBC"] in "./tests/fixtures/shared-test-files" as shared2 => parse_one_file }
 
-type DecoderFn = Box<dyn Fn(&[u8]) -> Cow<'_, str>>;
+struct Test {
+    config: &'static TestConfig,
+    path: PathBuf,
+    file_name: String,
+}
+
+impl Test {
+    fn new(config: &'static TestConfig, path: PathBuf, file_name: String) -> Self {
+        Self {
+            config,
+            path,
+            file_name,
+        }
+    }
+    fn decode<'a>(&self, data: &'a [u8]) -> Cow<'a, str> {
+        if self.config.use_cp1251 {
+            decode_cp1252(data)
+                .unwrap_or_else(|| panic!("Cannot decode {} as cp1252", self.path.display()))
+        } else {
+            std::str::from_utf8(data)
+                .unwrap_or_else(|_| panic!("Cannot decode {} as utf-8", self.path.display()))
+                .into()
+        }
+    }
+    fn snapshot_path(&self, is_error: bool) -> Option<PathBuf> {
+        (if is_error || self.config.create_snapshot {
+            Some("snapshots")
+        } else if env::var("FORCE_INSTA").is_ok() {
+            Some("snapshots-forced") // this dir is .gitignored
+        } else {
+            None
+        })
+        .map(|v| {
+            PathBuf::from(v)
+                .join(self.config.snapshot_suffix)
+                .join(&self.path)
+        })
+    }
+    fn file_name(&self, is_error: bool) -> String {
+        if is_error {
+            format!("!error___{}", self.file_name)
+        } else {
+            self.file_name.clone()
+        }
+    }
+}
 
 /// Get snapshot path (if snapshot should be created) and a decoding
 /// function for a test file path
-fn get_test_info(path: &Path) -> Option<(Option<PathBuf>, DecoderFn)> {
-    if !path
-        .extension()
-        .unwrap_or_default()
-        .eq_ignore_ascii_case("dbc")
-    {
-        return None;
-    }
+fn get_test_info(path: &Path) -> Test {
     let path_str = path.display().to_string();
     let parent = path.parent().unwrap();
     for item in TEST_DIRS {
@@ -58,32 +96,9 @@ fn get_test_info(path: &Path) -> Option<(Option<PathBuf>, DecoderFn)> {
             path_dir.push('/');
         }
         if let Some(pos) = path_dir.find(&test_root) {
-            let snapshot = (if item.create_snapshot {
-                Some("snapshots")
-            } else if env::var("FORCE_INSTA").is_ok() {
-                Some("snapshots-forced") // this dir is .gitignored
-            } else {
-                None
-            })
-            .map(|v| {
-                PathBuf::from(v)
-                    .join(item.snapshot_suffix)
-                    .join(&path_dir[pos + test_root.len()..])
-            });
-
-            let decoder: DecoderFn = if item.use_cp1251 {
-                Box::new(move |v: &[u8]| {
-                    decode_cp1252(v).unwrap_or_else(|| panic!("Cannot decode {path_str} as cp1252"))
-                })
-            } else {
-                Box::new(move |v: &[u8]| {
-                    std::str::from_utf8(v)
-                        .unwrap_or_else(|_| panic!("Cannot decode {path_str} as utf-8"))
-                        .into()
-                })
-            };
-
-            return Some((snapshot, decoder));
+            let file_name = path.file_stem().unwrap().to_string_lossy().to_string();
+            let path = PathBuf::from(&path_dir[pos + test_root.len()..]);
+            return Test::new(item, path, file_name);
         }
     }
     panic!("Unknown test directory: {path_str}");
@@ -119,29 +134,27 @@ Make sure git submodules are up to date by running
 
 /// Parse a single DBC file and assert a snapshot of the result.
 fn parse_one_file([path]: [&Path; 1]) {
-    let Some((snapshot_path, decoder)) = get_test_info(path) else {
-        return;
-    };
-
-    let file_name = path.file_stem().unwrap().to_string_lossy().to_string();
+    let test = get_test_info(path);
     let buffer = fs::read(path).unwrap();
-    let buffer = decoder(&buffer);
+    let buffer = test.decode(&buffer);
+    let result = DbcParser::parse(Rule::file, &buffer);
+    let is_err = result.is_err();
 
-    match DbcParser::parse(Rule::file, &buffer) {
-        Ok(result) => {
-            if let Some(snapshot_path) = snapshot_path {
-                with_settings! {
-                    {
-                        omit_expression => true,
-                        snapshot_path => snapshot_path,
-                        prepend_module_to_snapshot => false
-                    },
-                    {
-                        assert_debug_snapshot!(file_name, result);
-                    }
+    if let Some(snapshot_path) = test.snapshot_path(is_err) {
+        with_settings! {
+            {
+                omit_expression => true,
+                prepend_module_to_snapshot => false,
+                snapshot_path => snapshot_path,
+            },
+            {
+                match result {
+                    Ok(v) => assert_debug_snapshot!(test.file_name(is_err), v),
+                    Err(e) => assert_debug_snapshot!(test.file_name(is_err), e.to_string()),
                 }
             }
         }
-        Err(e) => panic!("Failed to parse {file_name}.dbc: {e:#?}"),
+    } else if let Err(e) = result {
+        panic!("Failed to parse {}.dbc: {e:#?}", test.file_name);
     }
 }
