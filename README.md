@@ -11,9 +11,7 @@
 A CAN-dbc format parser written with Rust's [Pest](https://pest.rs/) grammar library. CAN databases are used to exchange details about a CAN network, e.g. what messages are being send over the CAN bus and what data do they contain.
 
 ## Development
-
-* This project is easier to develop with [just](https://github.com/casey/just#readme), a modern alternative to `make`.
-  Install it with `cargo install just`.
+* This project is easier to develop with [just](https://just.systems/man/en/), a modern alternative to `make`.
 * To get a list of available commands, run `just`.
 * To run tests, use `just test`.
 

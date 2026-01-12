@@ -1,8 +1,9 @@
 #![cfg(feature = "encodings")]
 
 use std::borrow::Cow;
-use std::fs;
+use std::io::{Error, ErrorKind};
 use std::path::{Path, PathBuf};
+use std::{env, fs};
 
 use can_dbc_pest::{decode_cp1252, DbcParser, Parser as _, Rule};
 use insta::{assert_debug_snapshot, with_settings};
@@ -35,8 +36,11 @@ test_each_path! { for ["dbc"] in "./tests/fixtures/shared-test-files" as shared 
 // upper case extension
 test_each_path! { for ["DBC"] in "./tests/fixtures/shared-test-files" as shared2 => parse_one_file }
 
-/// Get `test root`, `snapshot name suffix`, `use cp1251`, `create snapshot` for the given path
-fn get_test_info(path: &Path) -> Option<(PathBuf, &'static TestConfig)> {
+type DecoderFn = Box<dyn Fn(&[u8]) -> Cow<'_, str>>;
+
+/// Get snapshot path (if snapshot should be created) and a decoding
+/// function for a test file path
+fn get_test_info(path: &Path) -> Option<(Option<PathBuf>, DecoderFn)> {
     if !path
         .extension()
         .unwrap_or_default()
@@ -44,7 +48,7 @@ fn get_test_info(path: &Path) -> Option<(PathBuf, &'static TestConfig)> {
     {
         return None;
     }
-    let path_str = path.to_str().unwrap();
+    let path_str = path.display().to_string();
     let parent = path.parent().unwrap();
     for item in TEST_DIRS {
         // Ensure slashes are there for easier matching
@@ -54,10 +58,32 @@ fn get_test_info(path: &Path) -> Option<(PathBuf, &'static TestConfig)> {
             path_dir.push('/');
         }
         if let Some(pos) = path_dir.find(&test_root) {
-            let parent = PathBuf::from("snapshots")
-                .join(item.snapshot_suffix)
-                .join(&path_dir[pos + test_root.len()..]);
-            return Some((parent, item));
+            let snapshot = (if item.create_snapshot {
+                Some("snapshots")
+            } else if env::var("FORCE_INSTA").is_ok() {
+                Some("snapshots-forced") // this dir is .gitignored
+            } else {
+                None
+            })
+            .map(|v| {
+                PathBuf::from(v)
+                    .join(item.snapshot_suffix)
+                    .join(&path_dir[pos + test_root.len()..])
+            });
+
+            let decoder: DecoderFn = if item.use_cp1251 {
+                Box::new(move |v: &[u8]| {
+                    decode_cp1252(v).unwrap_or_else(|| panic!("Cannot decode {path_str} as cp1252"))
+                })
+            } else {
+                Box::new(move |v: &[u8]| {
+                    std::str::from_utf8(v)
+                        .unwrap_or_else(|_| panic!("Cannot decode {path_str} as utf-8"))
+                        .into()
+                })
+            };
+
+            return Some((snapshot, decoder));
         }
     }
     panic!("Unknown test directory: {path_str}");
@@ -68,10 +94,17 @@ fn get_test_info(path: &Path) -> Option<(PathBuf, &'static TestConfig)> {
 fn test_if_submodules_are_present() {
     for test in TEST_DIRS {
         let dir = Path::new("./tests/fixtures").join(test.test_root);
-        fs::read_dir(&dir).unwrap_or_else(|e| {
-            let dir_display = dir.display();
-            panic!(
-                "
+        fs::read_dir(&dir)
+            .and_then(|v| {
+                v.into_iter()
+                    .next()
+                    .map(|_| ())
+                    .ok_or_else(|| Error::new(ErrorKind::NotFound, "No files or dirs found"))
+            })
+            .unwrap_or_else(|e| {
+                let dir_display = dir.display();
+                panic!(
+                    "
 --------------------------------------------------------------------------
 Error reading dbc test files from   {dir_display}
 {e}
@@ -79,42 +112,24 @@ Make sure git submodules are up to date by running
     git submodule update --init --recursive
 --------------------------------------------------------------------------
 "
-            )
-        });
+                )
+            });
     }
 }
 
 /// Parse a single DBC file and assert a snapshot of the result.
 fn parse_one_file([path]: [&Path; 1]) {
-    let Some((
-        snapshot_path,
-        &TestConfig {
-            use_cp1251,
-            create_snapshot,
-            ..
-        },
-    )) = get_test_info(path)
-    else {
+    let Some((snapshot_path, decoder)) = get_test_info(path) else {
         return;
     };
 
     let file_name = path.file_stem().unwrap().to_string_lossy().to_string();
     let buffer = fs::read(path).unwrap();
-    let buffer = if use_cp1251 {
-        decode_cp1252(&buffer)
-            .unwrap_or_else(|| panic!("Failed to decode {} as cp1252", path.display()))
-    } else {
-        Cow::Borrowed(
-            std::str::from_utf8(&buffer)
-                .unwrap_or_else(|_| panic!("Failed to decode {} as utf-8", path.display())),
-        )
-    };
+    let buffer = decoder(&buffer);
 
     match DbcParser::parse(Rule::file, &buffer) {
         Ok(result) => {
-            if std::env::var("SKIP_INSTA").is_err()
-                && (create_snapshot || std::env::var("FORCE_INSTA").is_ok())
-            {
+            if let Some(snapshot_path) = snapshot_path {
                 with_settings! {
                     {
                         omit_expression => true,
