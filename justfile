@@ -48,6 +48,7 @@ ci-test: env-info test-fmt clippy test test-doc deny && assert-git-is-clean
 # Run minimal subset of tests to ensure compatibility with MSRV
 ci-test-msrv:
     if [ ! -f Cargo.lock.bak ]; then  mv Cargo.lock Cargo.lock.bak ; fi
+    cp Cargo.lock.msrv Cargo.lock
     {{just}} env-info check test
     rm Cargo.lock
     mv Cargo.lock.bak Cargo.lock
