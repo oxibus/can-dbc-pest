@@ -46,7 +46,11 @@ ci-coverage: env-info && \
 ci-test: env-info test-fmt clippy test test-doc deny && assert-git-is-clean
 
 # Run minimal subset of tests to ensure compatibility with MSRV
-ci-test-msrv: env-info check test
+ci-test-msrv:
+    if [ ! -f Cargo.lock.bak ]; then  mv Cargo.lock Cargo.lock.bak ; fi
+    {{just}} env-info check test
+    rm Cargo.lock
+    mv Cargo.lock.bak Cargo.lock
 
 # Clean all build artifacts
 clean:
@@ -105,7 +109,11 @@ get-msrv package=main_crate:  (get-crate-field 'rust_version' package)
 
 # Find the minimum supported Rust version (MSRV) using cargo-msrv extension, and update Cargo.toml
 msrv:  (cargo-install 'cargo-msrv')
-    cargo msrv find --write-msrv --ignore-lockfile --all-features
+    if [ ! -f Cargo.lock.bak ]; then  mv Cargo.lock Cargo.lock.bak ; fi
+    cp Cargo.lock.msrv Cargo.lock
+    cargo msrv find --write-msrv --all-features
+    rm Cargo.lock
+    mv Cargo.lock.bak Cargo.lock
 
 # Run cargo-release
 release *args='':  (cargo-install 'release-plz')
