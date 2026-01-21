@@ -16,8 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - rework testing framework, minor cleanups ([#32](https://github.com/oxibus/can-dbc-pest/pull/32))
 - update snapshot handling and improve justfile commands ([#31](https://github.com/oxibus/can-dbc-pest/pull/31))
 - *(deps)* bump actions/checkout from 5 to 6 in the all-actions-version-updates group ([#30](https://github.com/oxibus/can-dbc-pest/pull/30))
-- minor justfile fixes
-- minor justfile fixes
 
 ## [0.7.1](https://github.com/oxibus/can-dbc-pest/compare/v0.7.0...v0.7.1) - 2025-11-10
 
