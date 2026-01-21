@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.2](https://github.com/oxibus/can-dbc-pest/compare/v0.7.1...v0.7.2) - 2026-01-21
+
+### Other
+
+- [pre-commit.ci] pre-commit autoupdate ([#33](https://github.com/oxibus/can-dbc-pest/pull/33))
+- adjust whitespace rules ([#34](https://github.com/oxibus/can-dbc-pest/pull/34))
+- rework testing framework, minor cleanups ([#32](https://github.com/oxibus/can-dbc-pest/pull/32))
+- update snapshot handling and improve justfile commands ([#31](https://github.com/oxibus/can-dbc-pest/pull/31))
+- *(deps)* bump actions/checkout from 5 to 6 in the all-actions-version-updates group ([#30](https://github.com/oxibus/can-dbc-pest/pull/30))
+
 ## [0.7.1](https://github.com/oxibus/can-dbc-pest/compare/v0.7.0...v0.7.1) - 2025-11-10
 
 ### Fixed
