@@ -135,7 +135,7 @@ Make sure git submodules are up to date by running
 /// Parse a single DBC file and assert a snapshot of the result.
 fn parse_one_file([path]: [&Path; 1]) {
     let test = get_test_info(path);
-    let buffer = fs::read(path).unwrap();
+    let buffer = fs::read(path).unwrap_or_else(|e| panic!("ERROR: {}: {e:#?}", path.display()));
     let buffer = test.decode(&buffer);
     let result = DbcParser::parse(Rule::file, &buffer);
     let is_err = result.is_err();
