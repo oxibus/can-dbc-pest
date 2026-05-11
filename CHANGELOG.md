@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0](https://github.com/oxibus/can-dbc-pest/compare/v0.7.2...v0.8.0) - 2026-05-11
+
+### Other
+
+- Fix parsing of environment variables with multiple access nodes ([#37](https://github.com/oxibus/can-dbc-pest/pull/37))
+- Bump to Pest 2.8.6 which has a slightly different Debug output ([#37](https://github.com/oxibus/can-dbc-pest/pull/37))
+- *(deps)* bump the all-actions-version-updates group across 1 directory with 2 updates ([#36](https://github.com/oxibus/can-dbc-pest/pull/36))
+
 ## [0.7.2](https://github.com/oxibus/can-dbc-pest/compare/v0.7.1...v0.7.2) - 2026-01-21
 
 ### Other
