@@ -1,0 +1,276 @@
+---
+source: tests/snapshots.rs
+---
+[
+    Pair {
+        rule: file,
+        span: Span {
+            str: "VERSION \"\"\n\nNS_ :\n    EV_\n\nBS_:\n\nBU_: Node0 Node1 Node2 Vector__XXX\n\nEV_ EnvVarWithMultipleNodes: 0 [0|1] \"\" 0 1 DUMMY_NODE_VECTOR3 Node0,Node1,Node2;",
+            start: 0,
+            end: 150,
+        },
+        inner: [
+            Pair {
+                rule: version,
+                span: Span {
+                    str: "VERSION \"\"\n",
+                    start: 0,
+                    end: 11,
+                },
+                inner: [
+                    Pair {
+                        rule: quoted_str,
+                        span: Span {
+                            str: "\"\"",
+                            start: 8,
+                            end: 10,
+                        },
+                        inner: [
+                            Pair {
+                                rule: string,
+                                span: Span {
+                                    str: "",
+                                    start: 9,
+                                    end: 9,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: new_symbols,
+                span: Span {
+                    str: "NS_ :\n    EV_\n\n",
+                    start: 12,
+                    end: 27,
+                },
+                inner: [
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "EV_",
+                            start: 22,
+                            end: 25,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: bit_timing,
+                span: Span {
+                    str: "BS_:\n",
+                    start: 27,
+                    end: 32,
+                },
+                inner: [],
+            },
+            Pair {
+                rule: nodes,
+                span: Span {
+                    str: "BU_: Node0 Node1 Node2 Vector__XXX\n\n",
+                    start: 33,
+                    end: 69,
+                },
+                inner: [
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node0",
+                            start: 38,
+                            end: 43,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node1",
+                            start: 44,
+                            end: 49,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node2",
+                            start: 50,
+                            end: 55,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Vector__XXX",
+                            start: 56,
+                            end: 67,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: environment_variable,
+                span: Span {
+                    str: "EV_ EnvVarWithMultipleNodes: 0 [0|1] \"\" 0 1 DUMMY_NODE_VECTOR3 Node0,Node1,Node2;",
+                    start: 69,
+                    end: 150,
+                },
+                inner: [
+                    Pair {
+                        rule: env_var,
+                        span: Span {
+                            str: "EV_ EnvVarWithMultipleNodes",
+                            start: 69,
+                            end: 96,
+                        },
+                        inner: [
+                            Pair {
+                                rule: env_var_name,
+                                span: Span {
+                                    str: "EnvVarWithMultipleNodes",
+                                    start: 73,
+                                    end: 96,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                    Pair {
+                        rule: env_var_type_int,
+                        span: Span {
+                            str: "0",
+                            start: 98,
+                            end: 99,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: min_max,
+                        span: Span {
+                            str: "[0|1]",
+                            start: 100,
+                            end: 105,
+                        },
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    start: 101,
+                                    end: 102,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    start: 103,
+                                    end: 104,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                    Pair {
+                        rule: unit,
+                        span: Span {
+                            str: "\"\"",
+                            start: 106,
+                            end: 108,
+                        },
+                        inner: [
+                            Pair {
+                                rule: string,
+                                span: Span {
+                                    str: "",
+                                    start: 107,
+                                    end: 107,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                    Pair {
+                        rule: init_value,
+                        span: Span {
+                            str: "0",
+                            start: 109,
+                            end: 110,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ev_id,
+                        span: Span {
+                            str: "1",
+                            start: 111,
+                            end: 112,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: access_type,
+                        span: Span {
+                            str: "DUMMY_NODE_VECTOR3",
+                            start: 113,
+                            end: 131,
+                        },
+                        inner: [
+                            Pair {
+                                rule: uint,
+                                span: Span {
+                                    str: "3",
+                                    start: 130,
+                                    end: 131,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node0",
+                            start: 132,
+                            end: 137,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node1",
+                            start: 138,
+                            end: 143,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node2",
+                            start: 144,
+                            end: 149,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    start: 150,
+                    end: 150,
+                },
+                inner: [],
+            },
+        ],
+    },
+]
