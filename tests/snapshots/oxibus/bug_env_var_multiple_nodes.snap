@@ -6,32 +6,28 @@ source: tests/snapshots.rs
         rule: file,
         span: Span {
             str: "VERSION \"\"\n\nNS_ :\n    EV_\n\nBS_:\n\nBU_: Node0 Node1 Node2 Vector__XXX\n\nEV_ EnvVarWithMultipleNodes: 0 [0|1] \"\" 0 1 DUMMY_NODE_VECTOR3 Node0,Node1,Node2;",
-            start: 0,
-            end: 150,
+            range: 0..150,
         },
         inner: [
             Pair {
                 rule: version,
                 span: Span {
                     str: "VERSION \"\"\n",
-                    start: 0,
-                    end: 11,
+                    range: 0..11,
                 },
                 inner: [
                     Pair {
                         rule: quoted_str,
                         span: Span {
                             str: "\"\"",
-                            start: 8,
-                            end: 10,
+                            range: 8..10,
                         },
                         inner: [
                             Pair {
                                 rule: string,
                                 span: Span {
                                     str: "",
-                                    start: 9,
-                                    end: 9,
+                                    range: 9..9,
                                 },
                                 inner: [],
                             },
@@ -43,16 +39,14 @@ source: tests/snapshots.rs
                 rule: new_symbols,
                 span: Span {
                     str: "NS_ :\n    EV_\n\n",
-                    start: 12,
-                    end: 27,
+                    range: 12..27,
                 },
                 inner: [
                     Pair {
                         rule: ident,
                         span: Span {
                             str: "EV_",
-                            start: 22,
-                            end: 25,
+                            range: 22..25,
                         },
                         inner: [],
                     },
@@ -62,8 +56,7 @@ source: tests/snapshots.rs
                 rule: bit_timing,
                 span: Span {
                     str: "BS_:\n",
-                    start: 27,
-                    end: 32,
+                    range: 27..32,
                 },
                 inner: [],
             },
@@ -71,16 +64,14 @@ source: tests/snapshots.rs
                 rule: nodes,
                 span: Span {
                     str: "BU_: Node0 Node1 Node2 Vector__XXX\n\n",
-                    start: 33,
-                    end: 69,
+                    range: 33..69,
                 },
                 inner: [
                     Pair {
                         rule: node_name,
                         span: Span {
                             str: "Node0",
-                            start: 38,
-                            end: 43,
+                            range: 38..43,
                         },
                         inner: [],
                     },
@@ -88,8 +79,7 @@ source: tests/snapshots.rs
                         rule: node_name,
                         span: Span {
                             str: "Node1",
-                            start: 44,
-                            end: 49,
+                            range: 44..49,
                         },
                         inner: [],
                     },
@@ -97,8 +87,7 @@ source: tests/snapshots.rs
                         rule: node_name,
                         span: Span {
                             str: "Node2",
-                            start: 50,
-                            end: 55,
+                            range: 50..55,
                         },
                         inner: [],
                     },
@@ -106,8 +95,7 @@ source: tests/snapshots.rs
                         rule: node_name,
                         span: Span {
                             str: "Vector__XXX",
-                            start: 56,
-                            end: 67,
+                            range: 56..67,
                         },
                         inner: [],
                     },
@@ -117,24 +105,21 @@ source: tests/snapshots.rs
                 rule: environment_variable,
                 span: Span {
                     str: "EV_ EnvVarWithMultipleNodes: 0 [0|1] \"\" 0 1 DUMMY_NODE_VECTOR3 Node0,Node1,Node2;",
-                    start: 69,
-                    end: 150,
+                    range: 69..150,
                 },
                 inner: [
                     Pair {
                         rule: env_var,
                         span: Span {
                             str: "EV_ EnvVarWithMultipleNodes",
-                            start: 69,
-                            end: 96,
+                            range: 69..96,
                         },
                         inner: [
                             Pair {
                                 rule: env_var_name,
                                 span: Span {
                                     str: "EnvVarWithMultipleNodes",
-                                    start: 73,
-                                    end: 96,
+                                    range: 73..96,
                                 },
                                 inner: [],
                             },
@@ -144,8 +129,7 @@ source: tests/snapshots.rs
                         rule: env_var_type_int,
                         span: Span {
                             str: "0",
-                            start: 98,
-                            end: 99,
+                            range: 98..99,
                         },
                         inner: [],
                     },
@@ -153,16 +137,14 @@ source: tests/snapshots.rs
                         rule: min_max,
                         span: Span {
                             str: "[0|1]",
-                            start: 100,
-                            end: 105,
+                            range: 100..105,
                         },
                         inner: [
                             Pair {
                                 rule: minimum,
                                 span: Span {
                                     str: "0",
-                                    start: 101,
-                                    end: 102,
+                                    range: 101..102,
                                 },
                                 inner: [],
                             },
@@ -170,8 +152,7 @@ source: tests/snapshots.rs
                                 rule: maximum,
                                 span: Span {
                                     str: "1",
-                                    start: 103,
-                                    end: 104,
+                                    range: 103..104,
                                 },
                                 inner: [],
                             },
@@ -181,16 +162,14 @@ source: tests/snapshots.rs
                         rule: unit,
                         span: Span {
                             str: "\"\"",
-                            start: 106,
-                            end: 108,
+                            range: 106..108,
                         },
                         inner: [
                             Pair {
                                 rule: string,
                                 span: Span {
                                     str: "",
-                                    start: 107,
-                                    end: 107,
+                                    range: 107..107,
                                 },
                                 inner: [],
                             },
@@ -200,8 +179,7 @@ source: tests/snapshots.rs
                         rule: init_value,
                         span: Span {
                             str: "0",
-                            start: 109,
-                            end: 110,
+                            range: 109..110,
                         },
                         inner: [],
                     },
@@ -209,8 +187,7 @@ source: tests/snapshots.rs
                         rule: ev_id,
                         span: Span {
                             str: "1",
-                            start: 111,
-                            end: 112,
+                            range: 111..112,
                         },
                         inner: [],
                     },
@@ -218,16 +195,14 @@ source: tests/snapshots.rs
                         rule: access_type,
                         span: Span {
                             str: "DUMMY_NODE_VECTOR3",
-                            start: 113,
-                            end: 131,
+                            range: 113..131,
                         },
                         inner: [
                             Pair {
                                 rule: uint,
                                 span: Span {
                                     str: "3",
-                                    start: 130,
-                                    end: 131,
+                                    range: 130..131,
                                 },
                                 inner: [],
                             },
@@ -237,8 +212,7 @@ source: tests/snapshots.rs
                         rule: node_name,
                         span: Span {
                             str: "Node0",
-                            start: 132,
-                            end: 137,
+                            range: 132..137,
                         },
                         inner: [],
                     },
@@ -246,8 +220,7 @@ source: tests/snapshots.rs
                         rule: node_name,
                         span: Span {
                             str: "Node1",
-                            start: 138,
-                            end: 143,
+                            range: 138..143,
                         },
                         inner: [],
                     },
@@ -255,8 +228,7 @@ source: tests/snapshots.rs
                         rule: node_name,
                         span: Span {
                             str: "Node2",
-                            start: 144,
-                            end: 149,
+                            range: 144..149,
                         },
                         inner: [],
                     },
@@ -266,8 +238,7 @@ source: tests/snapshots.rs
                 rule: EOI,
                 span: Span {
                     str: "",
-                    start: 150,
-                    end: 150,
+                    range: 150..150,
                 },
                 inner: [],
             },

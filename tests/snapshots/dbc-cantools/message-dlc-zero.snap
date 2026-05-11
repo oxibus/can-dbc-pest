@@ -6,32 +6,28 @@ source: tests/snapshots.rs
         rule: file,
         span: Span {
             str: "VERSION \"\"\n\nBS_:\n\nBU_: Node TestNode\n\n\nBO_ 1024 Message1: 0 TestNode\n\n\n\n\n",
-            start: 0,
-            end: 73,
+            range: 0..73,
         },
         inner: [
             Pair {
                 rule: version,
                 span: Span {
                     str: "VERSION \"\"\n",
-                    start: 0,
-                    end: 11,
+                    range: 0..11,
                 },
                 inner: [
                     Pair {
                         rule: quoted_str,
                         span: Span {
                             str: "\"\"",
-                            start: 8,
-                            end: 10,
+                            range: 8..10,
                         },
                         inner: [
                             Pair {
                                 rule: string,
                                 span: Span {
                                     str: "",
-                                    start: 9,
-                                    end: 9,
+                                    range: 9..9,
                                 },
                                 inner: [],
                             },
@@ -43,8 +39,7 @@ source: tests/snapshots.rs
                 rule: bit_timing,
                 span: Span {
                     str: "BS_:\n",
-                    start: 12,
-                    end: 17,
+                    range: 12..17,
                 },
                 inner: [],
             },
@@ -52,16 +47,14 @@ source: tests/snapshots.rs
                 rule: nodes,
                 span: Span {
                     str: "BU_: Node TestNode\n\n\n",
-                    start: 18,
-                    end: 39,
+                    range: 18..39,
                 },
                 inner: [
                     Pair {
                         rule: node_name,
                         span: Span {
                             str: "Node",
-                            start: 23,
-                            end: 27,
+                            range: 23..27,
                         },
                         inner: [],
                     },
@@ -69,8 +62,7 @@ source: tests/snapshots.rs
                         rule: node_name,
                         span: Span {
                             str: "TestNode",
-                            start: 28,
-                            end: 36,
+                            range: 28..36,
                         },
                         inner: [],
                     },
@@ -80,24 +72,21 @@ source: tests/snapshots.rs
                 rule: message,
                 span: Span {
                     str: "BO_ 1024 Message1: 0 TestNode",
-                    start: 39,
-                    end: 68,
+                    range: 39..68,
                 },
                 inner: [
                     Pair {
                         rule: msg_var,
                         span: Span {
                             str: "BO_ 1024",
-                            start: 39,
-                            end: 47,
+                            range: 39..47,
                         },
                         inner: [
                             Pair {
                                 rule: message_id,
                                 span: Span {
                                     str: "1024",
-                                    start: 43,
-                                    end: 47,
+                                    range: 43..47,
                                 },
                                 inner: [],
                             },
@@ -107,8 +96,7 @@ source: tests/snapshots.rs
                         rule: message_name,
                         span: Span {
                             str: "Message1",
-                            start: 48,
-                            end: 56,
+                            range: 48..56,
                         },
                         inner: [],
                     },
@@ -116,8 +104,7 @@ source: tests/snapshots.rs
                         rule: message_size,
                         span: Span {
                             str: "0",
-                            start: 58,
-                            end: 59,
+                            range: 58..59,
                         },
                         inner: [],
                     },
@@ -125,8 +112,7 @@ source: tests/snapshots.rs
                         rule: transmitter,
                         span: Span {
                             str: "TestNode",
-                            start: 60,
-                            end: 68,
+                            range: 60..68,
                         },
                         inner: [],
                     },
@@ -136,8 +122,7 @@ source: tests/snapshots.rs
                 rule: EOI,
                 span: Span {
                     str: "",
-                    start: 73,
-                    end: 73,
+                    range: 73..73,
                 },
                 inner: [],
             },

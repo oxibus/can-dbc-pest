@@ -6,32 +6,28 @@ source: tests/snapshots.rs
         rule: file,
         span: Span {
             str: "VERSION \"\"\n\n\nNS_:\n\nBS_:\n\nBU_:\n",
-            start: 0,
-            end: 30,
+            range: 0..30,
         },
         inner: [
             Pair {
                 rule: version,
                 span: Span {
                     str: "VERSION \"\"\n",
-                    start: 0,
-                    end: 11,
+                    range: 0..11,
                 },
                 inner: [
                     Pair {
                         rule: quoted_str,
                         span: Span {
                             str: "\"\"",
-                            start: 8,
-                            end: 10,
+                            range: 8..10,
                         },
                         inner: [
                             Pair {
                                 rule: string,
                                 span: Span {
                                     str: "",
-                                    start: 9,
-                                    end: 9,
+                                    range: 9..9,
                                 },
                                 inner: [],
                             },
@@ -43,8 +39,7 @@ source: tests/snapshots.rs
                 rule: new_symbols,
                 span: Span {
                     str: "NS_:\n\n",
-                    start: 13,
-                    end: 19,
+                    range: 13..19,
                 },
                 inner: [],
             },
@@ -52,8 +47,7 @@ source: tests/snapshots.rs
                 rule: bit_timing,
                 span: Span {
                     str: "BS_:\n",
-                    start: 19,
-                    end: 24,
+                    range: 19..24,
                 },
                 inner: [],
             },
@@ -61,8 +55,7 @@ source: tests/snapshots.rs
                 rule: nodes,
                 span: Span {
                     str: "BU_:\n",
-                    start: 25,
-                    end: 30,
+                    range: 25..30,
                 },
                 inner: [],
             },
@@ -70,8 +63,7 @@ source: tests/snapshots.rs
                 rule: EOI,
                 span: Span {
                     str: "",
-                    start: 30,
-                    end: 30,
+                    range: 30..30,
                 },
                 inner: [],
             },
