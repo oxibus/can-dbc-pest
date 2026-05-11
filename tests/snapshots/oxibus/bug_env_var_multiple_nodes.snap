@@ -1,0 +1,247 @@
+---
+source: tests/snapshots.rs
+---
+[
+    Pair {
+        rule: file,
+        span: Span {
+            str: "VERSION \"\"\n\nNS_ :\n    EV_\n\nBS_:\n\nBU_: Node0 Node1 Node2 Vector__XXX\n\nEV_ EnvVarWithMultipleNodes: 0 [0|1] \"\" 0 1 DUMMY_NODE_VECTOR3 Node0,Node1,Node2;",
+            range: 0..150,
+        },
+        inner: [
+            Pair {
+                rule: version,
+                span: Span {
+                    str: "VERSION \"\"\n",
+                    range: 0..11,
+                },
+                inner: [
+                    Pair {
+                        rule: quoted_str,
+                        span: Span {
+                            str: "\"\"",
+                            range: 8..10,
+                        },
+                        inner: [
+                            Pair {
+                                rule: string,
+                                span: Span {
+                                    str: "",
+                                    range: 9..9,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: new_symbols,
+                span: Span {
+                    str: "NS_ :\n    EV_\n\n",
+                    range: 12..27,
+                },
+                inner: [
+                    Pair {
+                        rule: ident,
+                        span: Span {
+                            str: "EV_",
+                            range: 22..25,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: bit_timing,
+                span: Span {
+                    str: "BS_:\n",
+                    range: 27..32,
+                },
+                inner: [],
+            },
+            Pair {
+                rule: nodes,
+                span: Span {
+                    str: "BU_: Node0 Node1 Node2 Vector__XXX\n\n",
+                    range: 33..69,
+                },
+                inner: [
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node0",
+                            range: 38..43,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node1",
+                            range: 44..49,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node2",
+                            range: 50..55,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Vector__XXX",
+                            range: 56..67,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: environment_variable,
+                span: Span {
+                    str: "EV_ EnvVarWithMultipleNodes: 0 [0|1] \"\" 0 1 DUMMY_NODE_VECTOR3 Node0,Node1,Node2;",
+                    range: 69..150,
+                },
+                inner: [
+                    Pair {
+                        rule: env_var,
+                        span: Span {
+                            str: "EV_ EnvVarWithMultipleNodes",
+                            range: 69..96,
+                        },
+                        inner: [
+                            Pair {
+                                rule: env_var_name,
+                                span: Span {
+                                    str: "EnvVarWithMultipleNodes",
+                                    range: 73..96,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                    Pair {
+                        rule: env_var_type_int,
+                        span: Span {
+                            str: "0",
+                            range: 98..99,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: min_max,
+                        span: Span {
+                            str: "[0|1]",
+                            range: 100..105,
+                        },
+                        inner: [
+                            Pair {
+                                rule: minimum,
+                                span: Span {
+                                    str: "0",
+                                    range: 101..102,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: maximum,
+                                span: Span {
+                                    str: "1",
+                                    range: 103..104,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                    Pair {
+                        rule: unit,
+                        span: Span {
+                            str: "\"\"",
+                            range: 106..108,
+                        },
+                        inner: [
+                            Pair {
+                                rule: string,
+                                span: Span {
+                                    str: "",
+                                    range: 107..107,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                    Pair {
+                        rule: init_value,
+                        span: Span {
+                            str: "0",
+                            range: 109..110,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: ev_id,
+                        span: Span {
+                            str: "1",
+                            range: 111..112,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: access_type,
+                        span: Span {
+                            str: "DUMMY_NODE_VECTOR3",
+                            range: 113..131,
+                        },
+                        inner: [
+                            Pair {
+                                rule: uint,
+                                span: Span {
+                                    str: "3",
+                                    range: 130..131,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node0",
+                            range: 132..137,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node1",
+                            range: 138..143,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: node_name,
+                        span: Span {
+                            str: "Node2",
+                            range: 144..149,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    range: 150..150,
+                },
+                inner: [],
+            },
+        ],
+    },
+]

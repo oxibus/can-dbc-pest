@@ -6,32 +6,28 @@ source: tests/snapshots.rs
         rule: file,
         span: Span {
             str: "VERSION \"6.0\"\n\n\nNS_ : \n\tNS_DESC_\n\tCM_\n\tBA_DEF_\n\tBA_\n\tVAL_\n\tCAT_DEF_\n\tCAT_\n\tFILTER\n\tBA_DEF_DEF_\n\tEV_DATA_\n\tENVVAR_DATA_\n\tSGTYPE_\n\tSGTYPE_VAL_\n\tBA_DEF_SGTYPE_\n\tBA_SGTYPE_\n\tSIG_TYPE_REF_\n\tVAL_TABLE_\n\tSIG_GROUP_\n\tSIG_VALTYPE_\n\tSIGTYPE_VALTYPE_\n\tBO_TX_BU_\n\tBA_DEF_REL_\n\tBA_REL_\n\tBA_DEF_DEF_REL_\n\tBU_SG_REL_\n\tBU_EV_REL_\n\tBU_BO_REL_\n\tSG_MUL_VAL_\n\nBS_:\n\nBU_: \n\n\nBO_ 1568 Msg1: 2 Peripherals\n SG_ sig22 m2 : 15|8@0+ (1,0) [0|1] \"\" Vector__XXX\n SG_ sig12 m1 : 15|8@0+ (1,0) [0|1] \"\" Vector__XXX\n SG_ sig1 M : 7|8@0+ (1,0) [0|0] \"\" Vector__XXX\n\nBO_ 1365 Msg2: 8 ECU\n SG_ Test7 : 63|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test6 : 55|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test5 : 47|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test4 : 39|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test3 : 31|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test2 : 23|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test1 : 15|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test0 : 7|8@0+ (1,0) [0|0] \"\" Vector__XXX\n\nBO_TX_BU_ 1365 : ECU,Peripherals;\n\n\nCM_ SG_ 1568 sig22 \"another comment for sig1=2\";\nCM_ SG_ 1568 sig12 \"another comment for sig1=1\";\nCM_ SG_ 1568 sig1 \"a comment\";\nCM_ BO_ 1365 \"test\";\n\n\n\nVAL_ 1365 Test7 1 \"A\" 2 \"B\" 3 \"C\" 4 \"D\" ;\n\n\n\n",
-            start: 0,
-            end: 1173,
+            range: 0..1173,
         },
         inner: [
             Pair {
                 rule: version,
                 span: Span {
                     str: "VERSION \"6.0\"\n",
-                    start: 0,
-                    end: 14,
+                    range: 0..14,
                 },
                 inner: [
                     Pair {
                         rule: quoted_str,
                         span: Span {
                             str: "\"6.0\"",
-                            start: 8,
-                            end: 13,
+                            range: 8..13,
                         },
                         inner: [
                             Pair {
                                 rule: string,
                                 span: Span {
                                     str: "6.0",
-                                    start: 9,
-                                    end: 12,
+                                    range: 9..12,
                                 },
                                 inner: [],
                             },
@@ -43,16 +39,14 @@ source: tests/snapshots.rs
                 rule: new_symbols,
                 span: Span {
                     str: "NS_ : \n\tNS_DESC_\n\tCM_\n\tBA_DEF_\n\tBA_\n\tVAL_\n\tCAT_DEF_\n\tCAT_\n\tFILTER\n\tBA_DEF_DEF_\n\tEV_DATA_\n\tENVVAR_DATA_\n\tSGTYPE_\n\tSGTYPE_VAL_\n\tBA_DEF_SGTYPE_\n\tBA_SGTYPE_\n\tSIG_TYPE_REF_\n\tVAL_TABLE_\n\tSIG_GROUP_\n\tSIG_VALTYPE_\n\tSIGTYPE_VALTYPE_\n\tBO_TX_BU_\n\tBA_DEF_REL_\n\tBA_REL_\n\tBA_DEF_DEF_REL_\n\tBU_SG_REL_\n\tBU_EV_REL_\n\tBU_BO_REL_\n\tSG_MUL_VAL_\n\n",
-                    start: 16,
-                    end: 340,
+                    range: 16..340,
                 },
                 inner: [
                     Pair {
                         rule: ident,
                         span: Span {
                             str: "NS_DESC_",
-                            start: 24,
-                            end: 32,
+                            range: 24..32,
                         },
                         inner: [],
                     },
@@ -60,8 +54,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "CM_",
-                            start: 34,
-                            end: 37,
+                            range: 34..37,
                         },
                         inner: [],
                     },
@@ -69,8 +62,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BA_DEF_",
-                            start: 39,
-                            end: 46,
+                            range: 39..46,
                         },
                         inner: [],
                     },
@@ -78,8 +70,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BA_",
-                            start: 48,
-                            end: 51,
+                            range: 48..51,
                         },
                         inner: [],
                     },
@@ -87,8 +78,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "VAL_",
-                            start: 53,
-                            end: 57,
+                            range: 53..57,
                         },
                         inner: [],
                     },
@@ -96,8 +86,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "CAT_DEF_",
-                            start: 59,
-                            end: 67,
+                            range: 59..67,
                         },
                         inner: [],
                     },
@@ -105,8 +94,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "CAT_",
-                            start: 69,
-                            end: 73,
+                            range: 69..73,
                         },
                         inner: [],
                     },
@@ -114,8 +102,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "FILTER",
-                            start: 75,
-                            end: 81,
+                            range: 75..81,
                         },
                         inner: [],
                     },
@@ -123,8 +110,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BA_DEF_DEF_",
-                            start: 83,
-                            end: 94,
+                            range: 83..94,
                         },
                         inner: [],
                     },
@@ -132,8 +118,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "EV_DATA_",
-                            start: 96,
-                            end: 104,
+                            range: 96..104,
                         },
                         inner: [],
                     },
@@ -141,8 +126,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "ENVVAR_DATA_",
-                            start: 106,
-                            end: 118,
+                            range: 106..118,
                         },
                         inner: [],
                     },
@@ -150,8 +134,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "SGTYPE_",
-                            start: 120,
-                            end: 127,
+                            range: 120..127,
                         },
                         inner: [],
                     },
@@ -159,8 +142,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "SGTYPE_VAL_",
-                            start: 129,
-                            end: 140,
+                            range: 129..140,
                         },
                         inner: [],
                     },
@@ -168,8 +150,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BA_DEF_SGTYPE_",
-                            start: 142,
-                            end: 156,
+                            range: 142..156,
                         },
                         inner: [],
                     },
@@ -177,8 +158,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BA_SGTYPE_",
-                            start: 158,
-                            end: 168,
+                            range: 158..168,
                         },
                         inner: [],
                     },
@@ -186,8 +166,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "SIG_TYPE_REF_",
-                            start: 170,
-                            end: 183,
+                            range: 170..183,
                         },
                         inner: [],
                     },
@@ -195,8 +174,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "VAL_TABLE_",
-                            start: 185,
-                            end: 195,
+                            range: 185..195,
                         },
                         inner: [],
                     },
@@ -204,8 +182,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "SIG_GROUP_",
-                            start: 197,
-                            end: 207,
+                            range: 197..207,
                         },
                         inner: [],
                     },
@@ -213,8 +190,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "SIG_VALTYPE_",
-                            start: 209,
-                            end: 221,
+                            range: 209..221,
                         },
                         inner: [],
                     },
@@ -222,8 +198,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "SIGTYPE_VALTYPE_",
-                            start: 223,
-                            end: 239,
+                            range: 223..239,
                         },
                         inner: [],
                     },
@@ -231,8 +206,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BO_TX_BU_",
-                            start: 241,
-                            end: 250,
+                            range: 241..250,
                         },
                         inner: [],
                     },
@@ -240,8 +214,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BA_DEF_REL_",
-                            start: 252,
-                            end: 263,
+                            range: 252..263,
                         },
                         inner: [],
                     },
@@ -249,8 +222,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BA_REL_",
-                            start: 265,
-                            end: 272,
+                            range: 265..272,
                         },
                         inner: [],
                     },
@@ -258,8 +230,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BA_DEF_DEF_REL_",
-                            start: 274,
-                            end: 289,
+                            range: 274..289,
                         },
                         inner: [],
                     },
@@ -267,8 +238,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BU_SG_REL_",
-                            start: 291,
-                            end: 301,
+                            range: 291..301,
                         },
                         inner: [],
                     },
@@ -276,8 +246,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BU_EV_REL_",
-                            start: 303,
-                            end: 313,
+                            range: 303..313,
                         },
                         inner: [],
                     },
@@ -285,8 +254,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "BU_BO_REL_",
-                            start: 315,
-                            end: 325,
+                            range: 315..325,
                         },
                         inner: [],
                     },
@@ -294,8 +262,7 @@ source: tests/snapshots.rs
                         rule: ident,
                         span: Span {
                             str: "SG_MUL_VAL_",
-                            start: 327,
-                            end: 338,
+                            range: 327..338,
                         },
                         inner: [],
                     },
@@ -305,8 +272,7 @@ source: tests/snapshots.rs
                 rule: bit_timing,
                 span: Span {
                     str: "BS_:\n",
-                    start: 340,
-                    end: 345,
+                    range: 340..345,
                 },
                 inner: [],
             },
@@ -314,8 +280,7 @@ source: tests/snapshots.rs
                 rule: nodes,
                 span: Span {
                     str: "BU_: \n\n\n",
-                    start: 346,
-                    end: 354,
+                    range: 346..354,
                 },
                 inner: [],
             },
@@ -323,24 +288,21 @@ source: tests/snapshots.rs
                 rule: message,
                 span: Span {
                     str: "BO_ 1568 Msg1: 2 Peripherals\n SG_ sig22 m2 : 15|8@0+ (1,0) [0|1] \"\" Vector__XXX\n SG_ sig12 m1 : 15|8@0+ (1,0) [0|1] \"\" Vector__XXX\n SG_ sig1 M : 7|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                    start: 354,
-                    end: 532,
+                    range: 354..532,
                 },
                 inner: [
                     Pair {
                         rule: msg_var,
                         span: Span {
                             str: "BO_ 1568",
-                            start: 354,
-                            end: 362,
+                            range: 354..362,
                         },
                         inner: [
                             Pair {
                                 rule: message_id,
                                 span: Span {
                                     str: "1568",
-                                    start: 358,
-                                    end: 362,
+                                    range: 358..362,
                                 },
                                 inner: [],
                             },
@@ -350,8 +312,7 @@ source: tests/snapshots.rs
                         rule: message_name,
                         span: Span {
                             str: "Msg1",
-                            start: 363,
-                            end: 367,
+                            range: 363..367,
                         },
                         inner: [],
                     },
@@ -359,8 +320,7 @@ source: tests/snapshots.rs
                         rule: message_size,
                         span: Span {
                             str: "2",
-                            start: 369,
-                            end: 370,
+                            range: 369..370,
                         },
                         inner: [],
                     },
@@ -368,8 +328,7 @@ source: tests/snapshots.rs
                         rule: transmitter,
                         span: Span {
                             str: "Peripherals",
-                            start: 371,
-                            end: 382,
+                            range: 371..382,
                         },
                         inner: [],
                     },
@@ -377,16 +336,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ sig22 m2 : 15|8@0+ (1,0) [0|1] \"\" Vector__XXX",
-                            start: 382,
-                            end: 433,
+                            range: 382..433,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 382,
-                                    end: 384,
+                                    range: 382..384,
                                 },
                                 inner: [],
                             },
@@ -394,8 +351,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "sig22",
-                                    start: 388,
-                                    end: 393,
+                                    range: 388..393,
                                 },
                                 inner: [],
                             },
@@ -403,8 +359,7 @@ source: tests/snapshots.rs
                                 rule: multiplexer_indicator,
                                 span: Span {
                                     str: "m2",
-                                    start: 394,
-                                    end: 396,
+                                    range: 394..396,
                                 },
                                 inner: [],
                             },
@@ -412,8 +367,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "15",
-                                    start: 399,
-                                    end: 401,
+                                    range: 399..401,
                                 },
                                 inner: [],
                             },
@@ -421,8 +375,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 402,
-                                    end: 403,
+                                    range: 402..403,
                                 },
                                 inner: [],
                             },
@@ -430,8 +383,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 404,
-                                    end: 405,
+                                    range: 404..405,
                                 },
                                 inner: [],
                             },
@@ -439,8 +391,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 405,
-                                    end: 406,
+                                    range: 405..406,
                                 },
                                 inner: [],
                             },
@@ -448,8 +399,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 408,
-                                    end: 409,
+                                    range: 408..409,
                                 },
                                 inner: [],
                             },
@@ -457,8 +407,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 410,
-                                    end: 411,
+                                    range: 410..411,
                                 },
                                 inner: [],
                             },
@@ -466,16 +415,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|1]",
-                                    start: 413,
-                                    end: 418,
+                                    range: 413..418,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 414,
-                                            end: 415,
+                                            range: 414..415,
                                         },
                                         inner: [],
                                     },
@@ -483,8 +430,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "1",
-                                            start: 416,
-                                            end: 417,
+                                            range: 416..417,
                                         },
                                         inner: [],
                                     },
@@ -494,16 +440,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 419,
-                                    end: 421,
+                                    range: 419..421,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 420,
-                                            end: 420,
+                                            range: 420..420,
                                         },
                                         inner: [],
                                     },
@@ -513,8 +457,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 422,
-                                    end: 433,
+                                    range: 422..433,
                                 },
                                 inner: [],
                             },
@@ -524,16 +467,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ sig12 m1 : 15|8@0+ (1,0) [0|1] \"\" Vector__XXX",
-                            start: 433,
-                            end: 484,
+                            range: 433..484,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 433,
-                                    end: 435,
+                                    range: 433..435,
                                 },
                                 inner: [],
                             },
@@ -541,8 +482,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "sig12",
-                                    start: 439,
-                                    end: 444,
+                                    range: 439..444,
                                 },
                                 inner: [],
                             },
@@ -550,8 +490,7 @@ source: tests/snapshots.rs
                                 rule: multiplexer_indicator,
                                 span: Span {
                                     str: "m1",
-                                    start: 445,
-                                    end: 447,
+                                    range: 445..447,
                                 },
                                 inner: [],
                             },
@@ -559,8 +498,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "15",
-                                    start: 450,
-                                    end: 452,
+                                    range: 450..452,
                                 },
                                 inner: [],
                             },
@@ -568,8 +506,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 453,
-                                    end: 454,
+                                    range: 453..454,
                                 },
                                 inner: [],
                             },
@@ -577,8 +514,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 455,
-                                    end: 456,
+                                    range: 455..456,
                                 },
                                 inner: [],
                             },
@@ -586,8 +522,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 456,
-                                    end: 457,
+                                    range: 456..457,
                                 },
                                 inner: [],
                             },
@@ -595,8 +530,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 459,
-                                    end: 460,
+                                    range: 459..460,
                                 },
                                 inner: [],
                             },
@@ -604,8 +538,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 461,
-                                    end: 462,
+                                    range: 461..462,
                                 },
                                 inner: [],
                             },
@@ -613,16 +546,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|1]",
-                                    start: 464,
-                                    end: 469,
+                                    range: 464..469,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 465,
-                                            end: 466,
+                                            range: 465..466,
                                         },
                                         inner: [],
                                     },
@@ -630,8 +561,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "1",
-                                            start: 467,
-                                            end: 468,
+                                            range: 467..468,
                                         },
                                         inner: [],
                                     },
@@ -641,16 +571,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 470,
-                                    end: 472,
+                                    range: 470..472,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 471,
-                                            end: 471,
+                                            range: 471..471,
                                         },
                                         inner: [],
                                     },
@@ -660,8 +588,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 473,
-                                    end: 484,
+                                    range: 473..484,
                                 },
                                 inner: [],
                             },
@@ -671,16 +598,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ sig1 M : 7|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                            start: 484,
-                            end: 532,
+                            range: 484..532,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 484,
-                                    end: 486,
+                                    range: 484..486,
                                 },
                                 inner: [],
                             },
@@ -688,8 +613,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "sig1",
-                                    start: 490,
-                                    end: 494,
+                                    range: 490..494,
                                 },
                                 inner: [],
                             },
@@ -697,8 +621,7 @@ source: tests/snapshots.rs
                                 rule: multiplexer_indicator,
                                 span: Span {
                                     str: "M",
-                                    start: 495,
-                                    end: 496,
+                                    range: 495..496,
                                 },
                                 inner: [],
                             },
@@ -706,8 +629,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "7",
-                                    start: 499,
-                                    end: 500,
+                                    range: 499..500,
                                 },
                                 inner: [],
                             },
@@ -715,8 +637,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 501,
-                                    end: 502,
+                                    range: 501..502,
                                 },
                                 inner: [],
                             },
@@ -724,8 +645,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 503,
-                                    end: 504,
+                                    range: 503..504,
                                 },
                                 inner: [],
                             },
@@ -733,8 +653,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 504,
-                                    end: 505,
+                                    range: 504..505,
                                 },
                                 inner: [],
                             },
@@ -742,8 +661,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 507,
-                                    end: 508,
+                                    range: 507..508,
                                 },
                                 inner: [],
                             },
@@ -751,8 +669,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 509,
-                                    end: 510,
+                                    range: 509..510,
                                 },
                                 inner: [],
                             },
@@ -760,16 +677,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|0]",
-                                    start: 512,
-                                    end: 517,
+                                    range: 512..517,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 513,
-                                            end: 514,
+                                            range: 513..514,
                                         },
                                         inner: [],
                                     },
@@ -777,8 +692,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "0",
-                                            start: 515,
-                                            end: 516,
+                                            range: 515..516,
                                         },
                                         inner: [],
                                     },
@@ -788,16 +702,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 518,
-                                    end: 520,
+                                    range: 518..520,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 519,
-                                            end: 519,
+                                            range: 519..519,
                                         },
                                         inner: [],
                                     },
@@ -807,8 +719,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 521,
-                                    end: 532,
+                                    range: 521..532,
                                 },
                                 inner: [],
                             },
@@ -820,24 +731,21 @@ source: tests/snapshots.rs
                 rule: message,
                 span: Span {
                     str: "BO_ 1365 Msg2: 8 ECU\n SG_ Test7 : 63|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test6 : 55|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test5 : 47|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test4 : 39|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test3 : 31|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test2 : 23|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test1 : 15|8@0+ (1,0) [0|0] \"\" Vector__XXX\n SG_ Test0 : 7|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                    start: 534,
-                    end: 937,
+                    range: 534..937,
                 },
                 inner: [
                     Pair {
                         rule: msg_var,
                         span: Span {
                             str: "BO_ 1365",
-                            start: 534,
-                            end: 542,
+                            range: 534..542,
                         },
                         inner: [
                             Pair {
                                 rule: message_id,
                                 span: Span {
                                     str: "1365",
-                                    start: 538,
-                                    end: 542,
+                                    range: 538..542,
                                 },
                                 inner: [],
                             },
@@ -847,8 +755,7 @@ source: tests/snapshots.rs
                         rule: message_name,
                         span: Span {
                             str: "Msg2",
-                            start: 543,
-                            end: 547,
+                            range: 543..547,
                         },
                         inner: [],
                     },
@@ -856,8 +763,7 @@ source: tests/snapshots.rs
                         rule: message_size,
                         span: Span {
                             str: "8",
-                            start: 549,
-                            end: 550,
+                            range: 549..550,
                         },
                         inner: [],
                     },
@@ -865,8 +771,7 @@ source: tests/snapshots.rs
                         rule: transmitter,
                         span: Span {
                             str: "ECU",
-                            start: 551,
-                            end: 554,
+                            range: 551..554,
                         },
                         inner: [],
                     },
@@ -874,16 +779,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ Test7 : 63|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                            start: 554,
-                            end: 602,
+                            range: 554..602,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 554,
-                                    end: 556,
+                                    range: 554..556,
                                 },
                                 inner: [],
                             },
@@ -891,8 +794,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "Test7",
-                                    start: 560,
-                                    end: 565,
+                                    range: 560..565,
                                 },
                                 inner: [],
                             },
@@ -900,8 +802,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "63",
-                                    start: 568,
-                                    end: 570,
+                                    range: 568..570,
                                 },
                                 inner: [],
                             },
@@ -909,8 +810,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 571,
-                                    end: 572,
+                                    range: 571..572,
                                 },
                                 inner: [],
                             },
@@ -918,8 +818,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 573,
-                                    end: 574,
+                                    range: 573..574,
                                 },
                                 inner: [],
                             },
@@ -927,8 +826,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 574,
-                                    end: 575,
+                                    range: 574..575,
                                 },
                                 inner: [],
                             },
@@ -936,8 +834,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 577,
-                                    end: 578,
+                                    range: 577..578,
                                 },
                                 inner: [],
                             },
@@ -945,8 +842,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 579,
-                                    end: 580,
+                                    range: 579..580,
                                 },
                                 inner: [],
                             },
@@ -954,16 +850,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|0]",
-                                    start: 582,
-                                    end: 587,
+                                    range: 582..587,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 583,
-                                            end: 584,
+                                            range: 583..584,
                                         },
                                         inner: [],
                                     },
@@ -971,8 +865,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "0",
-                                            start: 585,
-                                            end: 586,
+                                            range: 585..586,
                                         },
                                         inner: [],
                                     },
@@ -982,16 +875,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 588,
-                                    end: 590,
+                                    range: 588..590,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 589,
-                                            end: 589,
+                                            range: 589..589,
                                         },
                                         inner: [],
                                     },
@@ -1001,8 +892,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 591,
-                                    end: 602,
+                                    range: 591..602,
                                 },
                                 inner: [],
                             },
@@ -1012,16 +902,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ Test6 : 55|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                            start: 602,
-                            end: 650,
+                            range: 602..650,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 602,
-                                    end: 604,
+                                    range: 602..604,
                                 },
                                 inner: [],
                             },
@@ -1029,8 +917,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "Test6",
-                                    start: 608,
-                                    end: 613,
+                                    range: 608..613,
                                 },
                                 inner: [],
                             },
@@ -1038,8 +925,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "55",
-                                    start: 616,
-                                    end: 618,
+                                    range: 616..618,
                                 },
                                 inner: [],
                             },
@@ -1047,8 +933,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 619,
-                                    end: 620,
+                                    range: 619..620,
                                 },
                                 inner: [],
                             },
@@ -1056,8 +941,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 621,
-                                    end: 622,
+                                    range: 621..622,
                                 },
                                 inner: [],
                             },
@@ -1065,8 +949,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 622,
-                                    end: 623,
+                                    range: 622..623,
                                 },
                                 inner: [],
                             },
@@ -1074,8 +957,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 625,
-                                    end: 626,
+                                    range: 625..626,
                                 },
                                 inner: [],
                             },
@@ -1083,8 +965,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 627,
-                                    end: 628,
+                                    range: 627..628,
                                 },
                                 inner: [],
                             },
@@ -1092,16 +973,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|0]",
-                                    start: 630,
-                                    end: 635,
+                                    range: 630..635,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 631,
-                                            end: 632,
+                                            range: 631..632,
                                         },
                                         inner: [],
                                     },
@@ -1109,8 +988,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "0",
-                                            start: 633,
-                                            end: 634,
+                                            range: 633..634,
                                         },
                                         inner: [],
                                     },
@@ -1120,16 +998,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 636,
-                                    end: 638,
+                                    range: 636..638,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 637,
-                                            end: 637,
+                                            range: 637..637,
                                         },
                                         inner: [],
                                     },
@@ -1139,8 +1015,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 639,
-                                    end: 650,
+                                    range: 639..650,
                                 },
                                 inner: [],
                             },
@@ -1150,16 +1025,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ Test5 : 47|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                            start: 650,
-                            end: 698,
+                            range: 650..698,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 650,
-                                    end: 652,
+                                    range: 650..652,
                                 },
                                 inner: [],
                             },
@@ -1167,8 +1040,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "Test5",
-                                    start: 656,
-                                    end: 661,
+                                    range: 656..661,
                                 },
                                 inner: [],
                             },
@@ -1176,8 +1048,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "47",
-                                    start: 664,
-                                    end: 666,
+                                    range: 664..666,
                                 },
                                 inner: [],
                             },
@@ -1185,8 +1056,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 667,
-                                    end: 668,
+                                    range: 667..668,
                                 },
                                 inner: [],
                             },
@@ -1194,8 +1064,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 669,
-                                    end: 670,
+                                    range: 669..670,
                                 },
                                 inner: [],
                             },
@@ -1203,8 +1072,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 670,
-                                    end: 671,
+                                    range: 670..671,
                                 },
                                 inner: [],
                             },
@@ -1212,8 +1080,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 673,
-                                    end: 674,
+                                    range: 673..674,
                                 },
                                 inner: [],
                             },
@@ -1221,8 +1088,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 675,
-                                    end: 676,
+                                    range: 675..676,
                                 },
                                 inner: [],
                             },
@@ -1230,16 +1096,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|0]",
-                                    start: 678,
-                                    end: 683,
+                                    range: 678..683,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 679,
-                                            end: 680,
+                                            range: 679..680,
                                         },
                                         inner: [],
                                     },
@@ -1247,8 +1111,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "0",
-                                            start: 681,
-                                            end: 682,
+                                            range: 681..682,
                                         },
                                         inner: [],
                                     },
@@ -1258,16 +1121,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 684,
-                                    end: 686,
+                                    range: 684..686,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 685,
-                                            end: 685,
+                                            range: 685..685,
                                         },
                                         inner: [],
                                     },
@@ -1277,8 +1138,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 687,
-                                    end: 698,
+                                    range: 687..698,
                                 },
                                 inner: [],
                             },
@@ -1288,16 +1148,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ Test4 : 39|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                            start: 698,
-                            end: 746,
+                            range: 698..746,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 698,
-                                    end: 700,
+                                    range: 698..700,
                                 },
                                 inner: [],
                             },
@@ -1305,8 +1163,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "Test4",
-                                    start: 704,
-                                    end: 709,
+                                    range: 704..709,
                                 },
                                 inner: [],
                             },
@@ -1314,8 +1171,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "39",
-                                    start: 712,
-                                    end: 714,
+                                    range: 712..714,
                                 },
                                 inner: [],
                             },
@@ -1323,8 +1179,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 715,
-                                    end: 716,
+                                    range: 715..716,
                                 },
                                 inner: [],
                             },
@@ -1332,8 +1187,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 717,
-                                    end: 718,
+                                    range: 717..718,
                                 },
                                 inner: [],
                             },
@@ -1341,8 +1195,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 718,
-                                    end: 719,
+                                    range: 718..719,
                                 },
                                 inner: [],
                             },
@@ -1350,8 +1203,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 721,
-                                    end: 722,
+                                    range: 721..722,
                                 },
                                 inner: [],
                             },
@@ -1359,8 +1211,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 723,
-                                    end: 724,
+                                    range: 723..724,
                                 },
                                 inner: [],
                             },
@@ -1368,16 +1219,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|0]",
-                                    start: 726,
-                                    end: 731,
+                                    range: 726..731,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 727,
-                                            end: 728,
+                                            range: 727..728,
                                         },
                                         inner: [],
                                     },
@@ -1385,8 +1234,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "0",
-                                            start: 729,
-                                            end: 730,
+                                            range: 729..730,
                                         },
                                         inner: [],
                                     },
@@ -1396,16 +1244,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 732,
-                                    end: 734,
+                                    range: 732..734,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 733,
-                                            end: 733,
+                                            range: 733..733,
                                         },
                                         inner: [],
                                     },
@@ -1415,8 +1261,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 735,
-                                    end: 746,
+                                    range: 735..746,
                                 },
                                 inner: [],
                             },
@@ -1426,16 +1271,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ Test3 : 31|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                            start: 746,
-                            end: 794,
+                            range: 746..794,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 746,
-                                    end: 748,
+                                    range: 746..748,
                                 },
                                 inner: [],
                             },
@@ -1443,8 +1286,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "Test3",
-                                    start: 752,
-                                    end: 757,
+                                    range: 752..757,
                                 },
                                 inner: [],
                             },
@@ -1452,8 +1294,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "31",
-                                    start: 760,
-                                    end: 762,
+                                    range: 760..762,
                                 },
                                 inner: [],
                             },
@@ -1461,8 +1302,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 763,
-                                    end: 764,
+                                    range: 763..764,
                                 },
                                 inner: [],
                             },
@@ -1470,8 +1310,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 765,
-                                    end: 766,
+                                    range: 765..766,
                                 },
                                 inner: [],
                             },
@@ -1479,8 +1318,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 766,
-                                    end: 767,
+                                    range: 766..767,
                                 },
                                 inner: [],
                             },
@@ -1488,8 +1326,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 769,
-                                    end: 770,
+                                    range: 769..770,
                                 },
                                 inner: [],
                             },
@@ -1497,8 +1334,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 771,
-                                    end: 772,
+                                    range: 771..772,
                                 },
                                 inner: [],
                             },
@@ -1506,16 +1342,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|0]",
-                                    start: 774,
-                                    end: 779,
+                                    range: 774..779,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 775,
-                                            end: 776,
+                                            range: 775..776,
                                         },
                                         inner: [],
                                     },
@@ -1523,8 +1357,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "0",
-                                            start: 777,
-                                            end: 778,
+                                            range: 777..778,
                                         },
                                         inner: [],
                                     },
@@ -1534,16 +1367,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 780,
-                                    end: 782,
+                                    range: 780..782,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 781,
-                                            end: 781,
+                                            range: 781..781,
                                         },
                                         inner: [],
                                     },
@@ -1553,8 +1384,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 783,
-                                    end: 794,
+                                    range: 783..794,
                                 },
                                 inner: [],
                             },
@@ -1564,16 +1394,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ Test2 : 23|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                            start: 794,
-                            end: 842,
+                            range: 794..842,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 794,
-                                    end: 796,
+                                    range: 794..796,
                                 },
                                 inner: [],
                             },
@@ -1581,8 +1409,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "Test2",
-                                    start: 800,
-                                    end: 805,
+                                    range: 800..805,
                                 },
                                 inner: [],
                             },
@@ -1590,8 +1417,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "23",
-                                    start: 808,
-                                    end: 810,
+                                    range: 808..810,
                                 },
                                 inner: [],
                             },
@@ -1599,8 +1425,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 811,
-                                    end: 812,
+                                    range: 811..812,
                                 },
                                 inner: [],
                             },
@@ -1608,8 +1433,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 813,
-                                    end: 814,
+                                    range: 813..814,
                                 },
                                 inner: [],
                             },
@@ -1617,8 +1441,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 814,
-                                    end: 815,
+                                    range: 814..815,
                                 },
                                 inner: [],
                             },
@@ -1626,8 +1449,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 817,
-                                    end: 818,
+                                    range: 817..818,
                                 },
                                 inner: [],
                             },
@@ -1635,8 +1457,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 819,
-                                    end: 820,
+                                    range: 819..820,
                                 },
                                 inner: [],
                             },
@@ -1644,16 +1465,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|0]",
-                                    start: 822,
-                                    end: 827,
+                                    range: 822..827,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 823,
-                                            end: 824,
+                                            range: 823..824,
                                         },
                                         inner: [],
                                     },
@@ -1661,8 +1480,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "0",
-                                            start: 825,
-                                            end: 826,
+                                            range: 825..826,
                                         },
                                         inner: [],
                                     },
@@ -1672,16 +1490,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 828,
-                                    end: 830,
+                                    range: 828..830,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 829,
-                                            end: 829,
+                                            range: 829..829,
                                         },
                                         inner: [],
                                     },
@@ -1691,8 +1507,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 831,
-                                    end: 842,
+                                    range: 831..842,
                                 },
                                 inner: [],
                             },
@@ -1702,16 +1517,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ Test1 : 15|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                            start: 842,
-                            end: 890,
+                            range: 842..890,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 842,
-                                    end: 844,
+                                    range: 842..844,
                                 },
                                 inner: [],
                             },
@@ -1719,8 +1532,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "Test1",
-                                    start: 848,
-                                    end: 853,
+                                    range: 848..853,
                                 },
                                 inner: [],
                             },
@@ -1728,8 +1540,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "15",
-                                    start: 856,
-                                    end: 858,
+                                    range: 856..858,
                                 },
                                 inner: [],
                             },
@@ -1737,8 +1548,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 859,
-                                    end: 860,
+                                    range: 859..860,
                                 },
                                 inner: [],
                             },
@@ -1746,8 +1556,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 861,
-                                    end: 862,
+                                    range: 861..862,
                                 },
                                 inner: [],
                             },
@@ -1755,8 +1564,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 862,
-                                    end: 863,
+                                    range: 862..863,
                                 },
                                 inner: [],
                             },
@@ -1764,8 +1572,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 865,
-                                    end: 866,
+                                    range: 865..866,
                                 },
                                 inner: [],
                             },
@@ -1773,8 +1580,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 867,
-                                    end: 868,
+                                    range: 867..868,
                                 },
                                 inner: [],
                             },
@@ -1782,16 +1588,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|0]",
-                                    start: 870,
-                                    end: 875,
+                                    range: 870..875,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 871,
-                                            end: 872,
+                                            range: 871..872,
                                         },
                                         inner: [],
                                     },
@@ -1799,8 +1603,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "0",
-                                            start: 873,
-                                            end: 874,
+                                            range: 873..874,
                                         },
                                         inner: [],
                                     },
@@ -1810,16 +1613,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 876,
-                                    end: 878,
+                                    range: 876..878,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 877,
-                                            end: 877,
+                                            range: 877..877,
                                         },
                                         inner: [],
                                     },
@@ -1829,8 +1630,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 879,
-                                    end: 890,
+                                    range: 879..890,
                                 },
                                 inner: [],
                             },
@@ -1840,16 +1640,14 @@ source: tests/snapshots.rs
                         rule: signal,
                         span: Span {
                             str: "\n SG_ Test0 : 7|8@0+ (1,0) [0|0] \"\" Vector__XXX",
-                            start: 890,
-                            end: 937,
+                            range: 890..937,
                         },
                         inner: [
                             Pair {
                                 rule: signal_nl_ident,
                                 span: Span {
                                     str: "\n ",
-                                    start: 890,
-                                    end: 892,
+                                    range: 890..892,
                                 },
                                 inner: [],
                             },
@@ -1857,8 +1655,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "Test0",
-                                    start: 896,
-                                    end: 901,
+                                    range: 896..901,
                                 },
                                 inner: [],
                             },
@@ -1866,8 +1663,7 @@ source: tests/snapshots.rs
                                 rule: start_bit,
                                 span: Span {
                                     str: "7",
-                                    start: 904,
-                                    end: 905,
+                                    range: 904..905,
                                 },
                                 inner: [],
                             },
@@ -1875,8 +1671,7 @@ source: tests/snapshots.rs
                                 rule: signal_size,
                                 span: Span {
                                     str: "8",
-                                    start: 906,
-                                    end: 907,
+                                    range: 906..907,
                                 },
                                 inner: [],
                             },
@@ -1884,8 +1679,7 @@ source: tests/snapshots.rs
                                 rule: big_endian,
                                 span: Span {
                                     str: "0",
-                                    start: 908,
-                                    end: 909,
+                                    range: 908..909,
                                 },
                                 inner: [],
                             },
@@ -1893,8 +1687,7 @@ source: tests/snapshots.rs
                                 rule: unsigned_type,
                                 span: Span {
                                     str: "+",
-                                    start: 909,
-                                    end: 910,
+                                    range: 909..910,
                                 },
                                 inner: [],
                             },
@@ -1902,8 +1695,7 @@ source: tests/snapshots.rs
                                 rule: factor,
                                 span: Span {
                                     str: "1",
-                                    start: 912,
-                                    end: 913,
+                                    range: 912..913,
                                 },
                                 inner: [],
                             },
@@ -1911,8 +1703,7 @@ source: tests/snapshots.rs
                                 rule: offset,
                                 span: Span {
                                     str: "0",
-                                    start: 914,
-                                    end: 915,
+                                    range: 914..915,
                                 },
                                 inner: [],
                             },
@@ -1920,16 +1711,14 @@ source: tests/snapshots.rs
                                 rule: min_max,
                                 span: Span {
                                     str: "[0|0]",
-                                    start: 917,
-                                    end: 922,
+                                    range: 917..922,
                                 },
                                 inner: [
                                     Pair {
                                         rule: minimum,
                                         span: Span {
                                             str: "0",
-                                            start: 918,
-                                            end: 919,
+                                            range: 918..919,
                                         },
                                         inner: [],
                                     },
@@ -1937,8 +1726,7 @@ source: tests/snapshots.rs
                                         rule: maximum,
                                         span: Span {
                                             str: "0",
-                                            start: 920,
-                                            end: 921,
+                                            range: 920..921,
                                         },
                                         inner: [],
                                     },
@@ -1948,16 +1736,14 @@ source: tests/snapshots.rs
                                 rule: unit,
                                 span: Span {
                                     str: "\"\"",
-                                    start: 923,
-                                    end: 925,
+                                    range: 923..925,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "",
-                                            start: 924,
-                                            end: 924,
+                                            range: 924..924,
                                         },
                                         inner: [],
                                     },
@@ -1967,8 +1753,7 @@ source: tests/snapshots.rs
                                 rule: node_name,
                                 span: Span {
                                     str: "Vector__XXX",
-                                    start: 926,
-                                    end: 937,
+                                    range: 926..937,
                                 },
                                 inner: [],
                             },
@@ -1980,16 +1765,14 @@ source: tests/snapshots.rs
                 rule: message_transmitter,
                 span: Span {
                     str: "BO_TX_BU_ 1365 : ECU,Peripherals;",
-                    start: 939,
-                    end: 972,
+                    range: 939..972,
                 },
                 inner: [
                     Pair {
                         rule: message_id,
                         span: Span {
                             str: "1365",
-                            start: 949,
-                            end: 953,
+                            range: 949..953,
                         },
                         inner: [],
                     },
@@ -1997,8 +1780,7 @@ source: tests/snapshots.rs
                         rule: transmitter,
                         span: Span {
                             str: "ECU",
-                            start: 956,
-                            end: 959,
+                            range: 956..959,
                         },
                         inner: [],
                     },
@@ -2006,8 +1788,7 @@ source: tests/snapshots.rs
                         rule: transmitter,
                         span: Span {
                             str: "Peripherals",
-                            start: 960,
-                            end: 971,
+                            range: 960..971,
                         },
                         inner: [],
                     },
@@ -2017,24 +1798,21 @@ source: tests/snapshots.rs
                 rule: comment,
                 span: Span {
                     str: "CM_ SG_ 1568 sig22 \"another comment for sig1=2\";",
-                    start: 975,
-                    end: 1023,
+                    range: 975..1023,
                 },
                 inner: [
                     Pair {
                         rule: comment_signal,
                         span: Span {
                             str: "SG_ 1568 sig22 \"another comment for sig1=2\"",
-                            start: 979,
-                            end: 1022,
+                            range: 979..1022,
                         },
                         inner: [
                             Pair {
                                 rule: message_id,
                                 span: Span {
                                     str: "1568",
-                                    start: 983,
-                                    end: 987,
+                                    range: 983..987,
                                 },
                                 inner: [],
                             },
@@ -2042,8 +1820,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "sig22",
-                                    start: 988,
-                                    end: 993,
+                                    range: 988..993,
                                 },
                                 inner: [],
                             },
@@ -2051,16 +1828,14 @@ source: tests/snapshots.rs
                                 rule: quoted_str,
                                 span: Span {
                                     str: "\"another comment for sig1=2\"",
-                                    start: 994,
-                                    end: 1022,
+                                    range: 994..1022,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "another comment for sig1=2",
-                                            start: 995,
-                                            end: 1021,
+                                            range: 995..1021,
                                         },
                                         inner: [],
                                     },
@@ -2074,24 +1849,21 @@ source: tests/snapshots.rs
                 rule: comment,
                 span: Span {
                     str: "CM_ SG_ 1568 sig12 \"another comment for sig1=1\";",
-                    start: 1024,
-                    end: 1072,
+                    range: 1024..1072,
                 },
                 inner: [
                     Pair {
                         rule: comment_signal,
                         span: Span {
                             str: "SG_ 1568 sig12 \"another comment for sig1=1\"",
-                            start: 1028,
-                            end: 1071,
+                            range: 1028..1071,
                         },
                         inner: [
                             Pair {
                                 rule: message_id,
                                 span: Span {
                                     str: "1568",
-                                    start: 1032,
-                                    end: 1036,
+                                    range: 1032..1036,
                                 },
                                 inner: [],
                             },
@@ -2099,8 +1871,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "sig12",
-                                    start: 1037,
-                                    end: 1042,
+                                    range: 1037..1042,
                                 },
                                 inner: [],
                             },
@@ -2108,16 +1879,14 @@ source: tests/snapshots.rs
                                 rule: quoted_str,
                                 span: Span {
                                     str: "\"another comment for sig1=1\"",
-                                    start: 1043,
-                                    end: 1071,
+                                    range: 1043..1071,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "another comment for sig1=1",
-                                            start: 1044,
-                                            end: 1070,
+                                            range: 1044..1070,
                                         },
                                         inner: [],
                                     },
@@ -2131,24 +1900,21 @@ source: tests/snapshots.rs
                 rule: comment,
                 span: Span {
                     str: "CM_ SG_ 1568 sig1 \"a comment\";",
-                    start: 1073,
-                    end: 1103,
+                    range: 1073..1103,
                 },
                 inner: [
                     Pair {
                         rule: comment_signal,
                         span: Span {
                             str: "SG_ 1568 sig1 \"a comment\"",
-                            start: 1077,
-                            end: 1102,
+                            range: 1077..1102,
                         },
                         inner: [
                             Pair {
                                 rule: message_id,
                                 span: Span {
                                     str: "1568",
-                                    start: 1081,
-                                    end: 1085,
+                                    range: 1081..1085,
                                 },
                                 inner: [],
                             },
@@ -2156,8 +1922,7 @@ source: tests/snapshots.rs
                                 rule: signal_name,
                                 span: Span {
                                     str: "sig1",
-                                    start: 1086,
-                                    end: 1090,
+                                    range: 1086..1090,
                                 },
                                 inner: [],
                             },
@@ -2165,16 +1930,14 @@ source: tests/snapshots.rs
                                 rule: quoted_str,
                                 span: Span {
                                     str: "\"a comment\"",
-                                    start: 1091,
-                                    end: 1102,
+                                    range: 1091..1102,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "a comment",
-                                            start: 1092,
-                                            end: 1101,
+                                            range: 1092..1101,
                                         },
                                         inner: [],
                                     },
@@ -2188,24 +1951,21 @@ source: tests/snapshots.rs
                 rule: comment,
                 span: Span {
                     str: "CM_ BO_ 1365 \"test\";",
-                    start: 1104,
-                    end: 1124,
+                    range: 1104..1124,
                 },
                 inner: [
                     Pair {
                         rule: comment_message,
                         span: Span {
                             str: "BO_ 1365 \"test\"",
-                            start: 1108,
-                            end: 1123,
+                            range: 1108..1123,
                         },
                         inner: [
                             Pair {
                                 rule: message_id,
                                 span: Span {
                                     str: "1365",
-                                    start: 1112,
-                                    end: 1116,
+                                    range: 1112..1116,
                                 },
                                 inner: [],
                             },
@@ -2213,16 +1973,14 @@ source: tests/snapshots.rs
                                 rule: quoted_str,
                                 span: Span {
                                     str: "\"test\"",
-                                    start: 1117,
-                                    end: 1123,
+                                    range: 1117..1123,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "test",
-                                            start: 1118,
-                                            end: 1122,
+                                            range: 1118..1122,
                                         },
                                         inner: [],
                                     },
@@ -2236,16 +1994,14 @@ source: tests/snapshots.rs
                 rule: value_table_def,
                 span: Span {
                     str: "VAL_ 1365 Test7 1 \"A\" 2 \"B\" 3 \"C\" 4 \"D\" ;",
-                    start: 1128,
-                    end: 1169,
+                    range: 1128..1169,
                 },
                 inner: [
                     Pair {
                         rule: message_id,
                         span: Span {
                             str: "1365",
-                            start: 1133,
-                            end: 1137,
+                            range: 1133..1137,
                         },
                         inner: [],
                     },
@@ -2253,8 +2009,7 @@ source: tests/snapshots.rs
                         rule: signal_name,
                         span: Span {
                             str: "Test7",
-                            start: 1138,
-                            end: 1143,
+                            range: 1138..1143,
                         },
                         inner: [],
                     },
@@ -2262,16 +2017,14 @@ source: tests/snapshots.rs
                         rule: table_value_description,
                         span: Span {
                             str: "1 \"A\"",
-                            start: 1144,
-                            end: 1149,
+                            range: 1144..1149,
                         },
                         inner: [
                             Pair {
                                 rule: int,
                                 span: Span {
                                     str: "1",
-                                    start: 1144,
-                                    end: 1145,
+                                    range: 1144..1145,
                                 },
                                 inner: [],
                             },
@@ -2279,16 +2032,14 @@ source: tests/snapshots.rs
                                 rule: quoted_str,
                                 span: Span {
                                     str: "\"A\"",
-                                    start: 1146,
-                                    end: 1149,
+                                    range: 1146..1149,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "A",
-                                            start: 1147,
-                                            end: 1148,
+                                            range: 1147..1148,
                                         },
                                         inner: [],
                                     },
@@ -2300,16 +2051,14 @@ source: tests/snapshots.rs
                         rule: table_value_description,
                         span: Span {
                             str: "2 \"B\"",
-                            start: 1150,
-                            end: 1155,
+                            range: 1150..1155,
                         },
                         inner: [
                             Pair {
                                 rule: int,
                                 span: Span {
                                     str: "2",
-                                    start: 1150,
-                                    end: 1151,
+                                    range: 1150..1151,
                                 },
                                 inner: [],
                             },
@@ -2317,16 +2066,14 @@ source: tests/snapshots.rs
                                 rule: quoted_str,
                                 span: Span {
                                     str: "\"B\"",
-                                    start: 1152,
-                                    end: 1155,
+                                    range: 1152..1155,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "B",
-                                            start: 1153,
-                                            end: 1154,
+                                            range: 1153..1154,
                                         },
                                         inner: [],
                                     },
@@ -2338,16 +2085,14 @@ source: tests/snapshots.rs
                         rule: table_value_description,
                         span: Span {
                             str: "3 \"C\"",
-                            start: 1156,
-                            end: 1161,
+                            range: 1156..1161,
                         },
                         inner: [
                             Pair {
                                 rule: int,
                                 span: Span {
                                     str: "3",
-                                    start: 1156,
-                                    end: 1157,
+                                    range: 1156..1157,
                                 },
                                 inner: [],
                             },
@@ -2355,16 +2100,14 @@ source: tests/snapshots.rs
                                 rule: quoted_str,
                                 span: Span {
                                     str: "\"C\"",
-                                    start: 1158,
-                                    end: 1161,
+                                    range: 1158..1161,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "C",
-                                            start: 1159,
-                                            end: 1160,
+                                            range: 1159..1160,
                                         },
                                         inner: [],
                                     },
@@ -2376,16 +2119,14 @@ source: tests/snapshots.rs
                         rule: table_value_description,
                         span: Span {
                             str: "4 \"D\"",
-                            start: 1162,
-                            end: 1167,
+                            range: 1162..1167,
                         },
                         inner: [
                             Pair {
                                 rule: int,
                                 span: Span {
                                     str: "4",
-                                    start: 1162,
-                                    end: 1163,
+                                    range: 1162..1163,
                                 },
                                 inner: [],
                             },
@@ -2393,16 +2134,14 @@ source: tests/snapshots.rs
                                 rule: quoted_str,
                                 span: Span {
                                     str: "\"D\"",
-                                    start: 1164,
-                                    end: 1167,
+                                    range: 1164..1167,
                                 },
                                 inner: [
                                     Pair {
                                         rule: string,
                                         span: Span {
                                             str: "D",
-                                            start: 1165,
-                                            end: 1166,
+                                            range: 1165..1166,
                                         },
                                         inner: [],
                                     },
@@ -2416,8 +2155,7 @@ source: tests/snapshots.rs
                 rule: EOI,
                 span: Span {
                     str: "",
-                    start: 1173,
-                    end: 1173,
+                    range: 1173..1173,
                 },
                 inner: [],
             },
