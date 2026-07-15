@@ -14,6 +14,7 @@ A CAN-dbc format parser written with Rust's [Pest](https://pest.rs/) grammar lib
 * This project is easier to develop with [just](https://just.systems/man/en/), a modern alternative to `make`.
 * To get a list of available commands, run `just`.
 * To run tests, use `just test`.
+* This project uses [insta](https://insta.rs) for snapshot testing. To update the snapshots run `just bless`
 
 ## License
 
