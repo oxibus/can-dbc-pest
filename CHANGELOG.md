@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.1](https://github.com/oxibus/can-dbc-pest/compare/v0.8.0...v0.8.1) - 2026-07-15
+
+### Other
+
+- update clippy, fmt, just ([#43](https://github.com/oxibus/can-dbc-pest/pull/43))
+- *(deps)* bump codecov/codecov-action from 6 to 7 in the all-actions-version-updates group ([#40](https://github.com/oxibus/can-dbc-pest/pull/40))
+
 ## [0.8.0](https://github.com/oxibus/can-dbc-pest/compare/v0.7.2...v0.8.0) - 2026-05-11
 
 ### Other
